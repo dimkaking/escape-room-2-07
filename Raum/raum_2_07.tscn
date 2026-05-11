@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cpx8dsfsehwri"]
+
+[ext_resource type="Texture2D" uid="uid://dlyqid80ek811" path="res://Raum/boden2.png" id="1_el2ph"]
+
+[node name="main" type="Node2D" unique_id=938015616]
+
+[node name="Raum_2_07" type="Node2D" parent="." unique_id=2101799717]
+
+[node name="Boden2" type="Sprite2D" parent="Raum_2_07" unique_id=1404728785]
+position = Vector2(298.50003, 199.74998)
+scale = Vector2(0.39127603, 0.39306638)
+texture = ExtResource("1_el2ph")
+
+[node name="Boden3" type="Sprite2D" parent="Raum_2_07" unique_id=1375736361]
+position = Vector2(899.75, 201.12498)
+scale = Vector2(0.39290363, 0.3947754)
+texture = ExtResource("1_el2ph")
+
+[node name="Boden4" type="Sprite2D" parent="Raum_2_07" unique_id=1032612114]
+position = Vector2(301, 600)
+scale = Vector2(0.39127603, 0.39306638)
+texture = ExtResource("1_el2ph")
+
+[node name="Boden5" type="Sprite2D" parent="Raum_2_07" unique_id=1453042513]
+position = Vector2(902.75, 599.375)
+scale = Vector2(0.39290363, 0.3957519)
+texture = ExtResource("1_el2ph")
