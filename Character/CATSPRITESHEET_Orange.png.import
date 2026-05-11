@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyq5q4d22jqsk"
-path="res://.godot/imported/shadow_transparent.png-a4ebca2b3caa0ac2f800c050163562b9.ctex"
+uid="uid://bij36cvifg5pu"
+path="res://.godot/imported/CATSPRITESHEET_Orange.png-acab2621384ab016c0983e80b5b0bd70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character/Tim - characterAnimations - v1.2/shadow_transparent.png"
-dest_files=["res://.godot/imported/shadow_transparent.png-a4ebca2b3caa0ac2f800c050163562b9.ctex"]
+source_file="res://Character/CATSPRITESHEET_Orange.png"
+dest_files=["res://.godot/imported/CATSPRITESHEET_Orange.png-acab2621384ab016c0983e80b5b0bd70.ctex"]
 
 [params]
 
