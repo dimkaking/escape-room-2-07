@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cpx8dsfsehwri"]
+
+[ext_resource type="Texture2D" uid="uid://dlyqid80ek811" path="res://boden2.png" id="1_8f2mq"]
+[ext_resource type="Texture2D" uid="uid://dyxo5l0sw05u7" path="res://player.jpg" id="2_26s20"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1uagu"]
+radius = 55.0
+height = 176.0
+
+[node name="main" type="Node2D" unique_id=938015616]
+
+[node name="Raum_2_07" type="Node2D" parent="." unique_id=2101799717]
+
+[node name="Boden2" type="Sprite2D" parent="Raum_2_07" unique_id=1404728785]
+position = Vector2(285, 166)
+scale = Vector2(0.3736979, 0.32714844)
+texture = ExtResource("1_8f2mq")
+
+[node name="Boden4" type="Sprite2D" parent="Raum_2_07" unique_id=873952796]
+position = Vector2(285.50003, 501.25)
+scale = Vector2(0.37434897, 0.32861325)
+texture = ExtResource("1_8f2mq")
+
+[node name="Boden5" type="Sprite2D" parent="Raum_2_07" unique_id=1270441743]
+position = Vector2(861.50006, 500)
+scale = Vector2(0.37565103, 0.32714844)
+texture = ExtResource("1_8f2mq")
+
+[node name="Boden3" type="Sprite2D" parent="Raum_2_07" unique_id=1024799903]
+position = Vector2(860.5, 166)
+scale = Vector2(0.37695313, 0.32617188)
+texture = ExtResource("1_8f2mq")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1528897942]
+position = Vector2(282, 266)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=53703931]
+position = Vector2(-92, -3)
+shape = SubResource("CapsuleShape2D_1uagu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=91504975]
+position = Vector2(-90, 4)
+scale = Vector2(0.305, 0.36)
+texture = ExtResource("2_26s20")
