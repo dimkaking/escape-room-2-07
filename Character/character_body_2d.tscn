@@ -1,3 +1,81 @@
 [gd_scene format=3 uid="uid://deamc044ynb4f"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=402315286]
+[ext_resource type="Texture2D" uid="uid://bldrhhaug4ws4" path="res://Character/Tim - characterAnimations - v1.2/JumpPack_CharacterSpriteSheet.png" id="1_dgo7w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpas3"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j04ei"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no5qb"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o8ka"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdd2i"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxgpy"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p238e"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ite47"]
+atlas = ExtResource("1_dgo7w")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f786e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpas3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j04ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no5qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o8ka")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdd2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxgpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p238e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ite47")
+}],
+"loop": true,
+"name": &"run",
+"speed": 9.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=402315286]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864270027]
+position = Vector2(175.99998, 153.99998)
+scale = Vector2(1.71875, 1.75)
+sprite_frames = SubResource("SpriteFrames_f786e")
+animation = &"idle"
+frame_progress = 0.2386321
