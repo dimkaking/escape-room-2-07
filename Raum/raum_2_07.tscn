@@ -99,18 +99,6 @@ shape = SubResource("CapsuleShape2D_li45p")
 position = Vector2(97, 101)
 shape = SubResource("CapsuleShape2D_li45p")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Raum_2_07/Furniture/Main table" unique_id=1191064822]
-position = Vector2(285, 80)
-shape = SubResource("RectangleShape2D_qm08a")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Raum_2_07/Furniture/Main table" unique_id=1019339282]
-position = Vector2(97, 40)
-shape = SubResource("CapsuleShape2D_li45p")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Raum_2_07/Furniture/Main table" unique_id=1022407453]
-position = Vector2(97, 101)
-shape = SubResource("CapsuleShape2D_li45p")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=734916987]
 
 [node name="Sprite2D2" type="Sprite2D" parent="Raum_2_07/Furniture/StaticBody2D" unique_id=515201621]
@@ -120,5 +108,17 @@ texture = ExtResource("2_qm08a")
 [node name="Sprite2D3" type="Sprite2D" parent="Raum_2_07/Furniture/StaticBody2D" unique_id=449786526]
 position = Vector2(280, 223)
 texture = ExtResource("2_qm08a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Raum_2_07/Furniture/StaticBody2D" unique_id=1191064822]
+position = Vector2(285, 80)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Raum_2_07/Furniture/StaticBody2D" unique_id=1019339282]
+position = Vector2(253, 41)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Raum_2_07/Furniture/StaticBody2D" unique_id=1022407453]
+position = Vector2(253, 102)
+shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="Player" parent="." unique_id=402315286 instance=ExtResource("2_q2tbe")]

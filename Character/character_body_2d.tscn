@@ -504,7 +504,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j04ei"]
-height = 26.0
+radius = 16.0
+height = 32.0
 
 [node name="Player" type="CharacterBody2D" unique_id=402315286]
 script = ExtResource("1_dpas3")
@@ -517,7 +518,7 @@ frame_progress = 0.042159263
 
 [node name="TargetArrow" type="AnimatedSprite2D" parent="." unique_id=62706311]
 position = Vector2(71.99999, 46.999996)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_eb8o4")
 frame_progress = 0.9531805
 
