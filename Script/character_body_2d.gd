@@ -10,6 +10,7 @@ enum {
 @onready var anim = $AnimatedSprite2D
 @onready var target_arrow = $TargetArrow
 
+@export var foot_offset := Vector2(0, -20)
 @export var speed := 200.0
 
 var target_position: Vector2
@@ -30,10 +31,12 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			target_position = get_global_mouse_position()
+			var click_position = get_global_mouse_position()
+			
+			target_position = click_position + foot_offset
 			moving = true
 
-			target_arrow.global_position = target_position
+			target_arrow.global_position = click_position
 			target_arrow.visible = true
 			target_arrow.play("default")
 
