@@ -503,6 +503,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j04ei"]
+height = 26.0
+
 [node name="Player" type="CharacterBody2D" unique_id=402315286]
 script = ExtResource("1_dpas3")
 
@@ -516,4 +519,17 @@ frame_progress = 0.042159263
 position = Vector2(71.99999, 46.999996)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_eb8o4")
-frame_progress = 0.42441764
+frame_progress = 0.9531805
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=448703516]
+zoom = Vector2(1.3, 1.3)
+limit_left = 0
+limit_top = 0
+limit_right = 900
+limit_bottom = 550
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012973942]
+position = Vector2(0, 23)
+shape = SubResource("CapsuleShape2D_j04ei")
