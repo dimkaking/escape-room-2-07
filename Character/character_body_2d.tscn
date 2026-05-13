@@ -523,15 +523,16 @@ sprite_frames = SubResource("SpriteFrames_eb8o4")
 frame_progress = 0.9531805
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=448703516]
-zoom = Vector2(2, 2)
-limit_left = 150
-limit_top = 125
+zoom = Vector2(1.6, 1.6)
+limit_left = 100
+limit_top = 60
 limit_right = 1050
 limit_bottom = 675
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1012973942]
+visible = false
 position = Vector2(1, -2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_j04ei")
