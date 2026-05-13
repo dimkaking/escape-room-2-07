@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpx8dsfsehwri"]
 
-[ext_resource type="Texture2D" uid="uid://dlyqid80ek811" path="res://Raum/boden2.png" id="1_el2ph"]
+[ext_resource type="Texture2D" uid="uid://bd4mt3xssppw1" path="res://Raum/Floor.png" id="1_qm08a"]
 [ext_resource type="PackedScene" uid="uid://deamc044ynb4f" path="res://Character/character_body_2d.tscn" id="2_q2tbe"]
 [ext_resource type="Texture2D" uid="uid://0dwcsyel658o" path="res://Raum/Furniture/Tisch+Stuhl.png" id="2_qm08a"]
 [ext_resource type="Texture2D" uid="uid://jng861vl8ogt" path="res://Raum/Furniture/Tisch+Stuhl_1.png" id="3_qm08a"]
@@ -12,33 +12,19 @@ size = Vector2(70, 143.75)
 height = 42.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qm08a"]
-vertices = PackedVector2Array(623.0703, 305.10938, 621.0625, -2.78125, 648.0625, -2.203125, 650.0625, 304.78125, 641.8125, 388, 502.75, 389.10156, 506.7422, 548, 482, 548, 482, 394.20313, 483.03125, 304.10938, 363.9297, 550.22656, 343, 550.75, 343, 394, 362.9375, 391.78906, 225.92969, 545.15625, -0.8984375, 548.8281, 3.90625, 3.5625, 77.25, 158.89063, 73.25, 0.4375, 224.92969, 394, 188, 160.10938, 339, 306.10938, 339, -7.796875, 371.96094, -7.1796875, 370.96875, 302.89063, 901.9375, -7.1171875, 899.0469, 550.7969, 761.7031, 548.1797, 756.6875, 388, 758.9375, 307.22656, 760.9297, -8.8671875, 482.03125, -8, 512, -8, 512, 303.89063, 188, -5.171875, 225.15625, -5.8203125, 230.15625, 304.89063, 622.7031, 387.89844, 627.6875, 551.72656, 644.8125, 551.2578)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(16, 18, 17), PackedInt32Array(19, 14, 17, 20), PackedInt32Array(21, 22, 23, 24, 13, 12), PackedInt32Array(25, 26, 27, 28, 29), PackedInt32Array(29, 30, 25), PackedInt32Array(3, 29, 28, 4), PackedInt32Array(9, 31, 32, 33, 5), PackedInt32Array(20, 34, 35, 36, 19), PackedInt32Array(12, 19, 36, 21), PackedInt32Array(8, 13, 24, 9), PackedInt32Array(37, 5, 33, 0), PackedInt32Array(38, 37, 0, 4, 39)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-6, -6, 83, -10, 87, 149, 178, 150, 178, -15, 235, -16, 240, 295, 329, 296, 329, -18, 382, -17, 381, 293, 473, 294, 472, -18, 522, -18, 522, 294, 613, 295, 611, -13, 658, -12, 660, 295, 749, 297, 751, -19, 912, -17, 909, 561, 752, 558, 747, 398, 652, 398, 655, 561, 618, 562, 613, 398, 513, 399, 517, 558, 472, 558, 472, 404, 373, 402, 374, 560, 333, 561, 333, 404, 235, 404, 236, 555, -11, 559)])
+vertices = PackedVector2Array(219.13281, 394, 232.11719, 549, -0.9609375, 549, 76.67969, 159, 183.64063, 159, 368.28125, 550, 330.8672, 550, 343.8672, 394, 357.28125, 392, 173.64063, -2, 228.0625, -2, 230.0625, 304.89063, 505.5625, 388, 512.5625, 550, 468.57813, 550, 477.59375, 392, 483.47656, 304.10938, 653.4922, 548, 613.5703, 548, 622.5781, 388, 645.4922, 388, 623.5078, 305.1172, 608.5, -2, 648.0625, -2, 650.0625, 304.78125, 469.46875, 0, 511.03125, 0, 512.03125, 303.89063, 339.39844, 306.1172, 327.39063, -2, 371, -2, 371, 302.89063, 0.96875, -2, 81.67969, -2, 759.2031, 307.22656, 753.2031, 1, 900.96094, 1, 899.03125, 550.8125, 757.25, 388, 753.25, 548.1797)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(4, 9, 10, 11, 0), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24, 20), PackedInt32Array(16, 25, 26, 27, 12), PackedInt32Array(28, 29, 30, 31, 8, 7), PackedInt32Array(32, 33, 3, 2), PackedInt32Array(7, 0, 11, 28), PackedInt32Array(15, 8, 31, 16), PackedInt32Array(19, 12, 27, 21), PackedInt32Array(34, 35, 36, 37), PackedInt32Array(20, 19, 21), PackedInt32Array(38, 20, 24, 34), PackedInt32Array(38, 34, 37), PackedInt32Array(38, 37, 39)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-9, -12, 92, -12, 87, 149, 173, 149, 163, -12, 238, -12, 240, 295, 329, 296, 317, -12, 381, -12, 381, 293, 473, 294, 459, -10, 521, -10, 522, 294, 613, 295, 598, -12, 658, -12, 660, 295, 749, 297, 743, -9, 911, -9, 909, 561, 743, 558, 747, 398, 656, 398, 664, 558, 603, 558, 612, 398, 516, 398, 523, 560, 458, 560, 467, 402, 368, 402, 379, 560, 320, 560, 333, 404, 230, 404, 243, 559, -11, 559)])
 
 [node name="main" type="Node2D" unique_id=938015616]
 
 [node name="Raum_2_07" type="Node2D" parent="." unique_id=2101799717]
+position = Vector2(149, 125)
 
-[node name="Boden2" type="Sprite2D" parent="Raum_2_07" unique_id=1404728785]
-position = Vector2(298.50003, 199.74998)
-scale = Vector2(0.39127603, 0.39306638)
-texture = ExtResource("1_el2ph")
-
-[node name="Boden3" type="Sprite2D" parent="Raum_2_07" unique_id=1375736361]
-position = Vector2(899.75, 201.12498)
-scale = Vector2(0.39290363, 0.3947754)
-texture = ExtResource("1_el2ph")
-
-[node name="Boden4" type="Sprite2D" parent="Raum_2_07" unique_id=1032612114]
-position = Vector2(301, 602)
-scale = Vector2(0.39127603, 0.39306638)
-texture = ExtResource("1_el2ph")
-
-[node name="Boden5" type="Sprite2D" parent="Raum_2_07" unique_id=1453042513]
-position = Vector2(902.75, 599.375)
-scale = Vector2(0.39290363, 0.3957519)
-texture = ExtResource("1_el2ph")
+[node name="Floor" type="Sprite2D" parent="Raum_2_07" unique_id=1760630736]
+position = Vector2(451, 275.49997)
+scale = Vector2(0.56109726, 0.559633)
+texture = ExtResource("1_qm08a")
 
 [node name="Furniture" type="Node2D" parent="Raum_2_07" unique_id=671531414]
 
@@ -151,7 +137,7 @@ position = Vector2(533, 102)
 shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 3" unique_id=774500499]
-position = Vector2(565, 215)
+position = Vector2(566, 215)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 3" unique_id=34793429]
@@ -199,7 +185,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 [node name="Tables" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=748281688]
 
 [node name="Sprite2D4" type="Sprite2D" parent="Raum_2_07/Furniture/Tables" unique_id=640962474]
-position = Vector2(285, 469)
+position = Vector2(285, 470)
 rotation = -3.1415925
 texture = ExtResource("3_qm08a")
 
@@ -255,7 +241,7 @@ position = Vector2(393, 509)
 shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=681885166]
-position = Vector2(285, 476.75)
+position = Vector2(285, 478)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D38" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1744945850]
@@ -270,4 +256,4 @@ shape = SubResource("CapsuleShape2D_li45p")
 navigation_polygon = SubResource("NavigationPolygon_qm08a")
 
 [node name="Player" parent="Raum_2_07" unique_id=402315286 instance=ExtResource("2_q2tbe")]
-position = Vector2(108, 445)
+position = Vector2(151, 434)
