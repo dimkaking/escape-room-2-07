@@ -9,21 +9,26 @@ enum {
 
 @onready var anim = $AnimatedSprite2D
 @onready var target_arrow = $TargetArrow
+@onready var nav_agent = $NavigationAgent2D
 
-@export var foot_offset := Vector2(0, -20)
+@export var foot_offset := Vector2(0, 10)
 @export var speed := 200.0
+var last_position: Vector2
+var arrow_position: Vector2
+var clicked_on_obstacle := false
 
-var target_position: Vector2
 var moving := false
 var idle_dir = DOWN
 
 
 func _ready():
-	target_position = global_position
-	
+	last_position = global_position
 	target_arrow.visible = false
 	target_arrow.top_level = true
-	
+
+	nav_agent.path_desired_distance = 4.0
+	nav_agent.target_desired_distance = 8.0
+
 	if target_arrow.sprite_frames.has_animation("default"):
 		target_arrow.play("default")
 
@@ -32,8 +37,17 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var click_position = get_global_mouse_position()
-			
-			target_position = click_position + foot_offset
+			arrow_position = click_position
+
+			var navigation_map = get_world_2d().navigation_map
+			var closest_floor_position = NavigationServer2D.map_get_closest_point(
+				navigation_map,
+				click_position
+			)
+
+			clicked_on_obstacle = click_position.distance_to(closest_floor_position) > 5
+
+			nav_agent.target_position = closest_floor_position + foot_offset
 			moving = true
 
 			target_arrow.global_position = click_position
@@ -43,21 +57,45 @@ func _input(event):
 
 func _physics_process(delta: float) -> void:
 	if moving:
-		var direction = global_position.direction_to(target_position)
+		if nav_agent.is_navigation_finished():
+			stop_moving()
+			return
+
+		var next_position = nav_agent.get_next_path_position()
+		var direction = global_position.direction_to(next_position)
+
 		velocity = direction * speed
-
 		play_walk_animation(direction)
-
-		if global_position.distance_to(target_position) < 5:
-			velocity = Vector2.ZERO
-			moving = false
-			target_arrow.visible = false
-			idle()
+		move_and_slide()
 	else:
 		velocity = Vector2.ZERO
 		idle()
 
-	move_and_slide()
+
+func stop_moving():
+	velocity = Vector2.ZERO
+	moving = false
+	target_arrow.visible = false
+	
+	if clicked_on_obstacle:
+		look_at_point(arrow_position)
+	
+	idle()
+	
+func look_at_point(point: Vector2):
+	var direction = point - global_position
+
+	# Если стрелка заметно левее или правее — смотрим вбок
+	if abs(direction.x) > 8:
+		if direction.x > 0:
+			idle_dir = RIGHT
+		else:
+			idle_dir = LEFT
+	else:
+		if direction.y > 0:
+			idle_dir = DOWN
+		else:
+			idle_dir = UP
 
 
 func play_walk_animation(direction: Vector2):

@@ -6,10 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://jng861vl8ogt" path="res://Raum/Furniture/Tisch+Stuhl_1.png" id="3_qm08a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm08a"]
-size = Vector2(70, 159)
+size = Vector2(70, 143.75)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_li45p"]
 height = 42.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qm08a"]
+vertices = PackedVector2Array(623.0703, 305.10938, 621.0625, -2.78125, 648.0625, -2.203125, 650.0625, 304.78125, 641.8125, 388, 502.75, 389.10156, 506.7422, 548, 482, 548, 482, 394.20313, 483.03125, 304.10938, 363.9297, 550.22656, 343, 550.75, 343, 394, 362.9375, 391.78906, 225.92969, 545.15625, -0.8984375, 548.8281, 3.90625, 3.5625, 77.25, 158.89063, 73.25, 0.4375, 224.92969, 394, 188, 160.10938, 339, 306.10938, 339, -7.796875, 371.96094, -7.1796875, 370.96875, 302.89063, 901.9375, -7.1171875, 899.0469, 550.7969, 761.7031, 548.1797, 756.6875, 388, 758.9375, 307.22656, 760.9297, -8.8671875, 482.03125, -8, 512, -8, 512, 303.89063, 188, -5.171875, 225.15625, -5.8203125, 230.15625, 304.89063, 622.7031, 387.89844, 627.6875, 551.72656, 644.8125, 551.2578)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(16, 18, 17), PackedInt32Array(19, 14, 17, 20), PackedInt32Array(21, 22, 23, 24, 13, 12), PackedInt32Array(25, 26, 27, 28, 29), PackedInt32Array(29, 30, 25), PackedInt32Array(3, 29, 28, 4), PackedInt32Array(9, 31, 32, 33, 5), PackedInt32Array(20, 34, 35, 36, 19), PackedInt32Array(12, 19, 36, 21), PackedInt32Array(8, 13, 24, 9), PackedInt32Array(37, 5, 33, 0), PackedInt32Array(38, 37, 0, 4, 39)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6, -6, 83, -10, 87, 149, 178, 150, 178, -15, 235, -16, 240, 295, 329, 296, 329, -18, 382, -17, 381, 293, 473, 294, 472, -18, 522, -18, 522, 294, 613, 295, 611, -13, 658, -12, 660, 295, 749, 297, 751, -19, 912, -17, 909, 561, 752, 558, 747, 398, 652, 398, 655, 561, 618, 562, 613, 398, 513, 399, 517, 558, 472, 558, 472, 404, 373, 402, 374, 560, 333, 561, 333, 404, 235, 404, 236, 555, -11, 559)])
 
 [node name="main" type="Node2D" unique_id=938015616]
 
@@ -37,34 +42,6 @@ texture = ExtResource("1_el2ph")
 
 [node name="Furniture" type="Node2D" parent="Raum_2_07" unique_id=671531414]
 
-[node name="Sprite2D12" type="Sprite2D" parent="Raum_2_07/Furniture" unique_id=1992783960]
-position = Vector2(700, 80)
-texture = ExtResource("2_qm08a")
-
-[node name="Sprite2D13" type="Sprite2D" parent="Raum_2_07/Furniture" unique_id=2000556953]
-position = Vector2(700, 223)
-texture = ExtResource("2_qm08a")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Raum_2_07/Furniture" unique_id=640962474]
-position = Vector2(285, 469)
-rotation = 3.1415927
-texture = ExtResource("3_qm08a")
-
-[node name="Sprite2D5" type="Sprite2D" parent="Raum_2_07/Furniture" unique_id=1426418281]
-position = Vector2(425, 470)
-rotation = 3.1415927
-texture = ExtResource("3_qm08a")
-
-[node name="Sprite2D6" type="Sprite2D" parent="Raum_2_07/Furniture" unique_id=1883014139]
-position = Vector2(565, 470)
-rotation = 3.1415927
-texture = ExtResource("3_qm08a")
-
-[node name="Sprite2D7" type="Sprite2D" parent="Raum_2_07/Furniture" unique_id=1518139941]
-position = Vector2(705, 470)
-rotation = 3.1415927
-texture = ExtResource("3_qm08a")
-
 [node name="Main table" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=291457308]
 
 [node name="Sprite2D" type="Sprite2D" parent="Raum_2_07/Furniture/Main table" unique_id=1293106687]
@@ -72,7 +49,7 @@ position = Vector2(125, 80)
 texture = ExtResource("2_qm08a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/Main table" unique_id=510603076]
-position = Vector2(130, 79.5)
+position = Vector2(130, 72)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Raum_2_07/Furniture/Main table" unique_id=346163943]
@@ -94,7 +71,7 @@ position = Vector2(280, 223)
 texture = ExtResource("2_qm08a")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 1" unique_id=1191064822]
-position = Vector2(285, 80)
+position = Vector2(285, 71.125)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 1" unique_id=1019339282]
@@ -106,7 +83,7 @@ position = Vector2(253, 102)
 shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 1" unique_id=1277434035]
-position = Vector2(285, 222)
+position = Vector2(285, 216)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 1" unique_id=76184828]
@@ -119,16 +96,16 @@ shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="Table 2" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=529726212]
 
-[node name="Sprite2D9" type="Sprite2D" parent="Raum_2_07/Furniture/Table 2" unique_id=422681225]
-position = Vector2(420, 223)
-texture = ExtResource("2_qm08a")
-
 [node name="Sprite2D8" type="Sprite2D" parent="Raum_2_07/Furniture/Table 2" unique_id=1033745247]
 position = Vector2(420, 80)
 texture = ExtResource("2_qm08a")
 
+[node name="Sprite2D9" type="Sprite2D" parent="Raum_2_07/Furniture/Table 2" unique_id=422681225]
+position = Vector2(420, 223)
+texture = ExtResource("2_qm08a")
+
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 2" unique_id=1886871324]
-position = Vector2(425, 222)
+position = Vector2(425, 215)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 2" unique_id=1760146189]
@@ -140,7 +117,7 @@ position = Vector2(393, 244)
 shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 2" unique_id=763359229]
-position = Vector2(425, 79)
+position = Vector2(425, 72)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 2" unique_id=1898884676]
@@ -162,7 +139,7 @@ position = Vector2(560, 223)
 texture = ExtResource("2_qm08a")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 3" unique_id=1145299167]
-position = Vector2(565, 80)
+position = Vector2(565, 71)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 3" unique_id=8503579]
@@ -174,7 +151,7 @@ position = Vector2(533, 102)
 shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 3" unique_id=774500499]
-position = Vector2(565, 222)
+position = Vector2(565, 215)
 shape = SubResource("RectangleShape2D_qm08a")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 3" unique_id=34793429]
@@ -185,4 +162,112 @@ shape = SubResource("CapsuleShape2D_li45p")
 position = Vector2(533, 244)
 shape = SubResource("CapsuleShape2D_li45p")
 
-[node name="Player" parent="." unique_id=402315286 instance=ExtResource("2_q2tbe")]
+[node name="Table 4" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=1950901369]
+
+[node name="Sprite2D12" type="Sprite2D" parent="Raum_2_07/Furniture/Table 4" unique_id=1992783960]
+position = Vector2(700, 80)
+texture = ExtResource("2_qm08a")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Raum_2_07/Furniture/Table 4" unique_id=2000556953]
+position = Vector2(700, 223)
+texture = ExtResource("2_qm08a")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 4" unique_id=182785074]
+position = Vector2(705, 72)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 4" unique_id=114191946]
+position = Vector2(673, 41)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 4" unique_id=1330752807]
+position = Vector2(673, 102)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 4" unique_id=1448978008]
+position = Vector2(705, 215)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 4" unique_id=1677620758]
+position = Vector2(673, 183)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Raum_2_07/Furniture/Table 4" unique_id=1732700957]
+position = Vector2(673, 244)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="Tables" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=748281688]
+
+[node name="Sprite2D4" type="Sprite2D" parent="Raum_2_07/Furniture/Tables" unique_id=640962474]
+position = Vector2(285, 469)
+rotation = -3.1415925
+texture = ExtResource("3_qm08a")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Raum_2_07/Furniture/Tables" unique_id=1426418281]
+position = Vector2(425, 470)
+rotation = -3.1415925
+texture = ExtResource("3_qm08a")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Raum_2_07/Furniture/Tables" unique_id=1883014139]
+position = Vector2(565, 470)
+rotation = -3.1415925
+texture = ExtResource("3_qm08a")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Raum_2_07/Furniture/Tables" unique_id=1518139941]
+position = Vector2(705, 470)
+rotation = -3.1415925
+texture = ExtResource("3_qm08a")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1787560270]
+position = Vector2(705, 478)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=331925805]
+position = Vector2(673, 449)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1755332423]
+position = Vector2(673, 509)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1783328837]
+position = Vector2(565, 478)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=116582805]
+position = Vector2(533, 449)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1976558372]
+position = Vector2(533, 509)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=242203264]
+position = Vector2(425, 478)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=630842559]
+position = Vector2(393, 449)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1136482347]
+position = Vector2(393, 509)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=681885166]
+position = Vector2(285, 476.75)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1744945850]
+position = Vector2(253, 447)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tables" unique_id=1076686005]
+position = Vector2(253, 507)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Raum_2_07" unique_id=1180720086]
+navigation_polygon = SubResource("NavigationPolygon_qm08a")
+
+[node name="Player" parent="Raum_2_07" unique_id=402315286 instance=ExtResource("2_q2tbe")]
+position = Vector2(108, 445)
