@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://deamc044ynb4f" path="res://Character/character_body_2d.tscn" id="2_q2tbe"]
 [ext_resource type="Texture2D" uid="uid://0dwcsyel658o" path="res://Raum/Furniture/Tisch+Stuhl.png" id="2_qm08a"]
 [ext_resource type="Texture2D" uid="uid://jng861vl8ogt" path="res://Raum/Furniture/Tisch+Stuhl_1.png" id="3_qm08a"]
+[ext_resource type="Texture2D" uid="uid://doovhkf3yyfuj" path="res://Raum/5197482634227946821.jpg" id="5_li45p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm08a"]
 size = Vector2(70, 159)
@@ -120,5 +121,28 @@ shape = SubResource("CapsuleShape2D_li45p")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Raum_2_07/Furniture/StaticBody2D" unique_id=1022407453]
 position = Vector2(253, 102)
 shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="5197482634227946822" type="Sprite2D" parent="." unique_id=531530148]
+position = Vector2(660, -44)
+scale = Vector2(3.9666667, 1.2785714)
+texture = ExtResource("5_li45p")
+flip_h = true
+
+[node name="5197482634227946823" type="Sprite2D" parent="." unique_id=1697421178]
+position = Vector2(-34.256584, 77.770004)
+rotation = -1.5707964
+scale = Vector2(-2.7294998, 1.2716693)
+texture = ExtResource("5_li45p")
+
+[node name="5197482634227946824" type="Sprite2D" parent="." unique_id=522021871]
+position = Vector2(-34, 428)
+rotation = -1.5707964
+scale = Vector2(3.1177402, 1.2597401)
+texture = ExtResource("5_li45p")
+
+[node name="5197482634227946821" type="Sprite2D" parent="." unique_id=371343495]
+position = Vector2(174.00002, -44.000004)
+scale = Vector2(4.159375, 1.2785714)
+texture = ExtResource("5_li45p")
 
 [node name="Player" parent="." unique_id=402315286 instance=ExtResource("2_q2tbe")]
