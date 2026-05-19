@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6vaphcm7kq0d"
-path="res://.godot/imported/Wall2.png-e9d12cccd81a2285f409e0779304ff29.ctex"
+uid="uid://b8w3icy65t7gm"
+path="res://.godot/imported/Tisch_Lehrer.png-77556e1e3db50bb2a1c0dd43f8afd364.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Raum/Wall2.png"
-dest_files=["res://.godot/imported/Wall2.png-e9d12cccd81a2285f409e0779304ff29.ctex"]
+source_file="res://Raum/Furniture/Tisch_Lehrer.png"
+dest_files=["res://.godot/imported/Tisch_Lehrer.png-77556e1e3db50bb2a1c0dd43f8afd364.ctex"]
 
 [params]
 

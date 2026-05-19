@@ -13,16 +13,14 @@ enum {
 
 @export var foot_offset := Vector2(0, 10)
 @export var speed := 200.0
-var last_position: Vector2
+
 var arrow_position: Vector2
 var clicked_on_obstacle := false
-
 var moving := false
 var idle_dir = DOWN
 
 
 func _ready():
-	last_position = global_position
 	target_arrow.visible = false
 	target_arrow.top_level = true
 
@@ -38,6 +36,27 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var click_position = get_global_mouse_position()
 			arrow_position = click_position
+
+			var space_state = get_world_2d().direct_space_state
+			var query = PhysicsPointQueryParameters2D.new()
+			query.position = click_position
+			query.collide_with_areas = true
+			query.collide_with_bodies = false
+
+			var results = space_state.intersect_point(query)
+
+			for result in results:
+				var clicked_area = result.collider
+
+				if clicked_area.is_in_group("interactable_table"):
+					nav_agent.target_position = clicked_area.approach_point.global_position
+					moving = true
+					clicked_on_obstacle = true
+
+					target_arrow.global_position = click_position
+					target_arrow.visible = true
+					target_arrow.play("default")
+					return
 
 			var navigation_map = get_world_2d().navigation_map
 			var closest_floor_position = NavigationServer2D.map_get_closest_point(
@@ -76,16 +95,16 @@ func stop_moving():
 	velocity = Vector2.ZERO
 	moving = false
 	target_arrow.visible = false
-	
+
 	if clicked_on_obstacle:
 		look_at_point(arrow_position)
-	
+
 	idle()
-	
+
+
 func look_at_point(point: Vector2):
 	var direction = point - global_position
 
-	# Если стрелка заметно левее или правее — смотрим вбок
 	if abs(direction.x) > 8:
 		if direction.x > 0:
 			idle_dir = RIGHT
