@@ -1,26 +1,35 @@
 [gd_scene format=3 uid="uid://cpx8dsfsehwri"]
 
 [ext_resource type="Texture2D" uid="uid://bd4mt3xssppw1" path="res://Raum/Floor.png" id="1_qm08a"]
+[ext_resource type="Texture2D" uid="uid://b2edfwhctluho" path="res://Raum/classroom_bottom_wall_900x60 (3).png" id="2_1gs6l"]
 [ext_resource type="Texture2D" uid="uid://6vaphcm7kq0d" path="res://Raum/Wall_front.png" id="2_li45p"]
 [ext_resource type="PackedScene" uid="uid://deamc044ynb4f" path="res://Character/character_body_2d.tscn" id="2_q2tbe"]
 [ext_resource type="Texture2D" uid="uid://0dwcsyel658o" path="res://Raum/Furniture/Tisch+Stuhl.png" id="2_qm08a"]
 [ext_resource type="Texture2D" uid="uid://jng861vl8ogt" path="res://Raum/Furniture/Tisch+Stuhl_1.png" id="3_qm08a"]
 [ext_resource type="Script" uid="uid://cjx6dgyrwq52x" path="res://Script/click_area.gd" id="5_wpxyh"]
 [ext_resource type="Texture2D" uid="uid://3f0ocyuuni6j" path="res://Raum/Wall_left (1).png" id="6_wo1wm"]
-[ext_resource type="Texture2D" uid="uid://bygyh3ucicfkv" path="res://Raum/Furniture/Tisch_front (1).png" id="7_xc3s8"]
+[ext_resource type="Texture2D" uid="uid://boxytpbwospjq" path="res://Raum/Furniture/Tisch_front (2).png" id="7_xc3s8"]
 [ext_resource type="Texture2D" uid="uid://b8w3icy65t7gm" path="res://Raum/Furniture/Tisch_Lehrer.png" id="8_1gs6l"]
 [ext_resource type="Script" uid="uid://crgwoxfi6dee7" path="res://Script/character_body_2d.gd" id="8_ifl08"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_wo1wm"]
-a = Vector2(907, 335.5)
-b = Vector2(907, -333.5)
+a = Vector2(9, 272.5)
+b = Vector2(9, -334.5)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_li45p"]
 a = Vector2(-2.0000153, -373)
 b = Vector2(-1.9999771, 528)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xc3s8"]
+a = Vector2(904, -60)
+b = Vector2(904, 612)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_i2e1h"]
+a = Vector2(905, 544)
+b = Vector2(5, 544)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm08a"]
-size = Vector2(70, 143.75)
+size = Vector2(70, 165.875)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_li45p"]
 height = 42.0
@@ -46,28 +55,27 @@ texture = ExtResource("1_qm08a")
 [node name="Wall" type="StaticBody2D" parent="Raum_2_07" unique_id=343980866]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=972930383]
-visible = false
-position = Vector2(-3, 274.5)
-shape = SubResource("SegmentShape2D_wo1wm")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=665265047]
-visible = false
 position = Vector2(-3, 274.5)
 shape = SubResource("SegmentShape2D_wo1wm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=407405774]
-visible = false
 position = Vector2(531, 2)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_li45p")
 
+[node name="Sprite2D" type="Sprite2D" parent="Raum_2_07/Wall" unique_id=932678310]
+position = Vector2(454.82397, 570.0916)
+rotation = -3.1415925
+scale = Vector2(0.99944824, 1.4278924)
+texture = ExtResource("2_1gs6l")
+
 [node name="Wall_front" type="Sprite2D" parent="Raum_2_07/Wall" unique_id=2101668565]
-position = Vector2(451.00003, -31)
+position = Vector2(451, -31)
 scale = Vector2(1.0066665, 1.1666666)
 texture = ExtResource("2_li45p")
 
 [node name="Wall_left" type="Sprite2D" parent="Raum_2_07/Wall" unique_id=1670357572]
-position = Vector2(-5, 275)
+position = Vector2(-3, 275)
 scale = Vector2(1, 0.9941176)
 texture = ExtResource("6_wo1wm")
 
@@ -75,6 +83,12 @@ texture = ExtResource("6_wo1wm")
 position = Vector2(913, 275)
 scale = Vector2(1, 0.9941176)
 texture = ExtResource("6_wo1wm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=1532252712]
+shape = SubResource("SegmentShape2D_xc3s8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=530827505]
+shape = SubResource("SegmentShape2D_i2e1h")
 
 [node name="Furniture" type="Node2D" parent="Raum_2_07" unique_id=671531414]
 
@@ -103,6 +117,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table/ClickArea" unique_id=1739923998]
+visible = false
 position = Vector2(126.5, 59.5)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -134,6 +149,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table1/ClickArea" unique_id=1770551226]
+visible = false
 position = Vector2(281, 60)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -165,6 +181,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table2/ClickArea" unique_id=323754134]
+visible = false
 position = Vector2(282, 203)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -197,6 +214,7 @@ position = Vector2(139, 1)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table3/ClickArea" unique_id=516429278]
+visible = false
 position = Vector2(283, 60)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -228,6 +246,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table4/ClickArea" unique_id=2074266567]
+visible = false
 position = Vector2(422, 204)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -255,6 +274,7 @@ position = Vector2(282, 1)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table5/ClickArea" unique_id=1170071001]
+visible = false
 position = Vector2(280, 61)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -292,6 +312,7 @@ position = Vector2(143, 0)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table6/ClickArea" unique_id=22000352]
+visible = false
 position = Vector2(419, 204)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -324,6 +345,7 @@ position = Vector2(143, 0)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table7/ClickArea" unique_id=727217015]
+visible = false
 position = Vector2(559, 61)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -356,6 +378,7 @@ position = Vector2(143, 0)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table8/ClickArea" unique_id=1824522519]
+visible = false
 position = Vector2(559, 204)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -389,6 +412,7 @@ position = Vector2(143, 0)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table9/ClickArea" unique_id=357816819]
+visible = false
 position = Vector2(139, 478)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -422,6 +446,7 @@ position = Vector2(143, 0)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table10/ClickArea" unique_id=161211225]
+visible = false
 position = Vector2(279, 479)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -455,6 +480,7 @@ position = Vector2(143, 0)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table11/ClickArea" unique_id=1639022074]
+visible = false
 position = Vector2(418, 479)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -488,6 +514,7 @@ position = Vector2(140, 2)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table12/ClickArea" unique_id=946542670]
+visible = false
 position = Vector2(561, 478)
 shape = SubResource("RectangleShape2D_wo1wm")
 
@@ -499,6 +526,25 @@ position = Vector2(646, 496)
 [node name="Sprite2D" type="Sprite2D" parent="Raum_2_07/Furniture/table_front" unique_id=1921625261]
 position = Vector2(802, 34)
 texture = ExtResource("7_xc3s8")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Raum_2_07/Furniture/table_front" unique_id=1838061620]
+visible = false
+position = Vector2(821.0625, 25)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="ClickArea" type="Area2D" parent="Raum_2_07/Furniture/table_front" unique_id=263555330 groups=["interactable_table"]]
+position = Vector2(140, 2)
+script = ExtResource("5_wpxyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table_front/ClickArea" unique_id=1460347563]
+visible = false
+position = Vector2(672, 23)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wo1wm")
+
+[node name="ApproachPoint" type="Marker2D" parent="Raum_2_07/Furniture/table_front" unique_id=1066822806]
+position = Vector2(849, 81)
 
 [node name="table_teacher" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=1741706307]
 
@@ -517,11 +563,11 @@ position = Vector2(817, 124)
 shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="ClickArea" type="Area2D" parent="Raum_2_07/Furniture/table_teacher" unique_id=2137548348 groups=["interactable_table"]]
-visible = false
 position = Vector2(140, 2)
 script = ExtResource("5_wpxyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table_teacher/ClickArea" unique_id=1517040102]
+visible = false
 position = Vector2(636, 129)
 shape = SubResource("RectangleShape2D_wo1wm")
 

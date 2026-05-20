@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bygyh3ucicfkv"
-path="res://.godot/imported/Tisch_front (1).png-8f3579ea3cc5e68103f5bea5c72a3fd3.ctex"
+uid="uid://b2edfwhctluho"
+path="res://.godot/imported/classroom_bottom_wall_900x60 (3).png-f622f768cf6650ab9fb7314ee3b4369a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Raum/Furniture/Tisch_front (1).png"
-dest_files=["res://.godot/imported/Tisch_front (1).png-8f3579ea3cc5e68103f5bea5c72a3fd3.ctex"]
+source_file="res://Raum/classroom_bottom_wall_900x60 (3).png"
+dest_files=["res://.godot/imported/classroom_bottom_wall_900x60 (3).png-f622f768cf6650ab9fb7314ee3b4369a.ctex"]
 
 [params]
 
