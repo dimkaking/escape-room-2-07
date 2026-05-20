@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqjn5r4tntjlk"
-path="res://.godot/imported/TarasK.png-d8d57f77307d410f685400a317a85263.ctex"
+path="res://.godot/imported/TarasK.png-3cce54652a9f8e33e7cfa7c4d5c3bdac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character/tisch1/TarasK.png"
-dest_files=["res://.godot/imported/TarasK.png-d8d57f77307d410f685400a317a85263.ctex"]
+source_file="res://Character/table1/TarasK.png"
+dest_files=["res://.godot/imported/TarasK.png-3cce54652a9f8e33e7cfa7c4d5c3bdac.ctex"]
 
 [params]
 
