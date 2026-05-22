@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjv8okus22qea"
-path="res://.godot/imported/Pedro.png-4e1911d0550a01670c4b4a0e916cb2b3.ctex"
+uid="uid://xqvebeecm4s1"
+path="res://.godot/imported/Doctor_Barth.png-01c30c19d2ff1e71ceccf914545cc22d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character/table7/Pedro.png"
-dest_files=["res://.godot/imported/Pedro.png-4e1911d0550a01670c4b4a0e916cb2b3.ctex"]
+source_file="res://Character/table_teacher/Doctor_Barth.png"
+dest_files=["res://.godot/imported/Doctor_Barth.png-01c30c19d2ff1e71ceccf914545cc22d.ctex"]
 
 [params]
 
