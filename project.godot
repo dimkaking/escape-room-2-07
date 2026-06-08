@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Escape Room 2-07"
-run/main_scene="uid://cpx8dsfsehwri"
+run/main_scene="uid://c5cllwra1sbp7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
