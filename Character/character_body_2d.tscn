@@ -640,12 +640,14 @@ height = 38.0
 script = SubResource("GDScript_dpas3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864270027]
+z_index = 5
 position = Vector2(0, -31)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_f786e")
 animation = &"idle_down"
 
 [node name="TargetArrow" type="AnimatedSprite2D" parent="." unique_id=62706311]
+z_index = 10
 position = Vector2(71.99999, 46.999996)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_eb8o4")
