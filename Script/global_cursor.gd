@@ -12,5 +12,4 @@ func _input(event):
 			Input.set_custom_mouse_cursor(click_cursor)
 		else:
 			Input.set_custom_mouse_cursor(normal_cursor)
-		#test
 		
