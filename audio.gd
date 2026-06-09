@@ -13,3 +13,16 @@ func _process(delta: float) -> void:
 
 func _on_zuruck_pressed() -> void:
 	get_tree().change_scene_to_file("res://setting.tscn")
+
+
+func _on_audio_pressed() -> void:
+	sound_enabled = !sound_enabled
+	
+var sound_enabled = true
+
+AudioServer.set_bus_mute(0, !sound_enabled)
+
+if sound_enabled:
+$audio.text = "🔊"
+else:
+$audio.text = "🔇"
