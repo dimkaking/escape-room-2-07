@@ -36,6 +36,7 @@ scale = Vector2(0.78125, 0.78125)
 texture = ExtResource("2_raj00")
 
 [node name="Spielen" type="Button" parent="." unique_id=21572017]
+modulate = Color(0.9987819, 0.9987819, 0.9987819, 1)
 offset_left = 519.0
 offset_top = 237.0
 offset_right = 738.0
