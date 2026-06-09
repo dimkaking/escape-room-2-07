@@ -30,10 +30,10 @@ func _on_audio_pressed() -> void:
 script = ExtResource("1_ouk20")
 
 [node name="Spielen" type="Button" parent="." unique_id=21572017]
-offset_left = 324.0
-offset_top = 343.0
-offset_right = 758.0
-offset_bottom = 488.0
+offset_left = 327.0
+offset_top = 338.0
+offset_right = 761.0
+offset_bottom = 483.0
 theme_override_font_sizes/font_size = 100
 text = "Spielen"
 
@@ -46,12 +46,12 @@ theme_override_font_sizes/font_size = 100
 text = "Beenden"
 
 [node name="Label" type="Label" parent="." unique_id=1319987980]
-offset_left = 120.0
-offset_top = 83.0
-offset_right = 984.0
-offset_bottom = 230.0
+offset_left = 457.0
+offset_top = 544.0
+offset_right = 581.0
+offset_bottom = 691.0
 theme_override_font_sizes/font_size = 100
-text = "Escape Raum 2.07"
+text = "e"
 script = ExtResource("1_lti8b")
 
 [node name="Setting" type="Button" parent="." unique_id=1534612216]
