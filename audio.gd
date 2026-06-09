@@ -15,14 +15,24 @@ func _on_zuruck_pressed() -> void:
 	get_tree().change_scene_to_file("res://setting.tscn")
 
 
-func _on_audio_pressed() -> void:
-	sound_enabled = !sound_enabled
-	
-var sound_enabled = true
+#func _on_audio_pressed() -> void:
+var music_enabled := true
 
-AudioServer.set_bus_mute(0, !sound_enabled)
+func _ready():
+		pass
 
-if sound_enabled:
-$audio.text = "🔊"
-else:
-$audio.text = "🔇"
+func _on_audio_pressed():
+	music_enabled = !music_enabled
+
+	if music_enabled:
+		menuMusic.play()
+	else:
+		menuMusic.stop()
+
+	update_icon()
+
+func update_icon():
+	if music_enabled:
+		$Button.text = "🔊"
+	else:
+		$Button.text = "🔇"
