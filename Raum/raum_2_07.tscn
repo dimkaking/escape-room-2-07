@@ -9,10 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jng861vl8ogt" path="res://Raum/Furniture/Tisch+Stuhl_1.png" id="3_qm08a"]
 [ext_resource type="Script" uid="uid://cjx6dgyrwq52x" path="res://Script/click_area.gd" id="5_wpxyh"]
 [ext_resource type="Texture2D" uid="uid://3f0ocyuuni6j" path="res://Raum/Wall_left (1).png" id="6_wo1wm"]
-<<<<<<< Updated upstream
-[ext_resource type="Script" path="res://Raum/table_highlight.gd" id="7_i2e1h"]
-=======
->>>>>>> Stashed changes
+
 [ext_resource type="Texture2D" uid="uid://boxytpbwospjq" path="res://Raum/Furniture/Tisch_front (2).png" id="7_xc3s8"]
 [ext_resource type="Texture2D" uid="uid://b8w3icy65t7gm" path="res://Raum/Furniture/Tisch_Lehrer.png" id="8_1gs6l"]
 [ext_resource type="Script" uid="uid://crgwoxfi6dee7" path="res://Script/character_body_2d.gd" id="8_ifl08"]
