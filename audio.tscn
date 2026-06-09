@@ -11,7 +11,8 @@ offset_top = 137.0
 offset_right = 680.0
 offset_bottom = 333.0
 theme_override_font_sizes/font_size = 137
-text = "🔊"
+text = "🔊 
+🔇"
 
 [node name="zuruck" type="Button" parent="." unique_id=1767362665]
 offset_left = 927.0
@@ -21,4 +22,5 @@ offset_bottom = 723.0
 theme_override_font_sizes/font_size = 50
 text = "züruck"
 
+[connection signal="pressed" from="audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="zuruck" to="." method="_on_zuruck_pressed"]
