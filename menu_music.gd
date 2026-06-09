@@ -1,11 +1,18 @@
 extends Node2D
 
+var music_enabled := true
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func toggle_music():
+	music_enabled = !music_enabled
 
+	if music_enabled:
+		$menuMusic.play()
+	else:
+		$menuMusic.stop()
+		
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func play_music():
+	$menuMusic.play()
+
+func stop_music():
+	$menuMusic.stop()

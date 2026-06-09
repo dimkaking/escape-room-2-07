@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cpx8dsfsehwri"]
 
+[ext_resource type="Script" uid="uid://nfp2b8f158a7" path="res://Raum/raum_2_07.gd" id="1_0regy"]
 [ext_resource type="Texture2D" uid="uid://bd4mt3xssppw1" path="res://Raum/Floor.png" id="1_qm08a"]
 [ext_resource type="Texture2D" uid="uid://b2edfwhctluho" path="res://Raum/classroom_bottom_wall_900x60 (3).png" id="2_1gs6l"]
 [ext_resource type="Texture2D" uid="uid://6vaphcm7kq0d" path="res://Raum/Wall_front.png" id="2_li45p"]
@@ -9,7 +10,7 @@
 [ext_resource type="Script" uid="uid://cjx6dgyrwq52x" path="res://Script/click_area.gd" id="5_wpxyh"]
 [ext_resource type="Texture2D" uid="uid://boluo8vqlsgqm" path="res://Raum/Furniture/table_glow.png" id="6_vy4s5"]
 [ext_resource type="Texture2D" uid="uid://3f0ocyuuni6j" path="res://Raum/Wall_left (1).png" id="6_wo1wm"]
-[ext_resource type="Script" uid="uid://bt507yimegphm" path="res://Raum/Furniture/table_highlight.gd" id="7_i2e1h"]
+[ext_resource type="Script" path="res://Raum/table_highlight.gd" id="7_i2e1h"]
 [ext_resource type="Texture2D" uid="uid://boxytpbwospjq" path="res://Raum/Furniture/Tisch_front (2).png" id="7_xc3s8"]
 [ext_resource type="Texture2D" uid="uid://b8w3icy65t7gm" path="res://Raum/Furniture/Tisch_Lehrer.png" id="8_1gs6l"]
 [ext_resource type="Script" uid="uid://crgwoxfi6dee7" path="res://Script/character_body_2d.gd" id="8_ifl08"]
@@ -51,6 +52,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32
 outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -9, 89, -9, 81, 150, 172, 150, 165, -12, 238, -12, 240, 295, 329, 296, 317, -12, 381, -12, 381, 293, 473, 294, 459, -10, 521, -10, 522, 294, 613, 295, 598, -12, 658, -12, 660, 295, 749, 297, 747, 219, 819, 221, 819, 68, 902, 67, 908, 551, 744, 551, 747, 398, 656, 398, 665, 552, 602, 552, 612, 398, 516, 398, 523, 553, 458, 553, 465, 401, 370, 401, 380, 554, 320, 554, 332, 402, 230, 403, 243, 552, -4, 552)])
 
 [node name="main" type="Node2D" unique_id=938015616]
+script = ExtResource("1_0regy")
 
 [node name="Raum_2_07" type="Node2D" parent="." unique_id=2101799717]
 position = Vector2(149, 125)
