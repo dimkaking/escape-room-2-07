@@ -7,8 +7,8 @@
 script = ExtResource("1_a42w7")
 
 [node name="MenuBackground" type="Sprite2D" parent="." unique_id=958931925]
-position = Vector2(602.5, 402)
-scale = Vector2(0.78059894, 0.78515625)
+position = Vector2(600, 400)
+scale = Vector2(0.78124994, 0.78125)
 texture = ExtResource("2_53plc")
 
 [node name="Sprache" type="Button" parent="." unique_id=1580654769]
@@ -28,10 +28,10 @@ theme_override_font_sizes/font_size = 50
 text = "Audio"
 
 [node name="Zuruck" type="Button" parent="." unique_id=251672630]
-offset_left = 877.0
-offset_top = 380.0
-offset_right = 969.0
-offset_bottom = 423.0
+offset_left = 876.0
+offset_top = 378.0
+offset_right = 968.0
+offset_bottom = 421.0
 theme_override_font_sizes/font_size = 25
 text = "züruck"
 

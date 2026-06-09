@@ -16,7 +16,7 @@ func _on_sprache_pressed() -> void:
 
 
 func _on_audio_pressed() -> void:
-	get_tree().change_scene_to_file("res://Menu/audio.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://Menu/menu_audio.tscn") # Replace with function body.
 
 
 func _on_zuruck_pressed() -> void:

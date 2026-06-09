@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://v5ol2ftdd25o"]
+
+[ext_resource type="Script" uid="uid://c27shj51xr5pq" path="res://Raum/game_music.gd" id="1_beqww"]
+[ext_resource type="AudioStream" uid="uid://ckclk87e5r2fd" path="res://Sounds/game.mp3" id="2_xiy7p"]
+
+[node name="GameMusic" type="Node2D" unique_id=814994337]
+script = ExtResource("1_beqww")
+
+[node name="gameMusic" type="AudioStreamPlayer" parent="." unique_id=163852172]
+stream = ExtResource("2_xiy7p")

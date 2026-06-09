@@ -1,40 +1,46 @@
 [gd_scene format=3 uid="uid://c6uien7e614oi"]
 
 [ext_resource type="Script" uid="uid://cj6b133hnvrm2" path="res://Menu/sprache.gd" id="1_qwrsy"]
+[ext_resource type="Texture2D" uid="uid://ckg0bu66vy2b" path="res://Menu/menu_background.png" id="2_3jeh6"]
 
 [node name="sprache" type="Node2D" unique_id=1049465785]
 script = ExtResource("1_qwrsy")
 
-[node name="Button" type="Button" parent="." unique_id=1595204510]
-offset_left = 435.0
-offset_top = 103.0
-offset_right = 691.0
-offset_bottom = 235.0
-theme_override_font_sizes/font_size = 100
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=803490414]
+position = Vector2(600, 399.99997)
+scale = Vector2(0.78125, 0.78125)
+texture = ExtResource("2_3jeh6")
+
+[node name="de" type="Button" parent="." unique_id=1595204510]
+offset_left = 440.0
+offset_top = 255.0
+offset_right = 513.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 50
 text = "DE"
 
-[node name="Button2" type="Button" parent="." unique_id=1974386]
-offset_left = 437.0
-offset_top = 292.0
-offset_right = 691.0
-offset_bottom = 407.0
-theme_override_font_sizes/font_size = 100
-text = "EN"
-
-[node name="Button3" type="Button" parent="." unique_id=1955233284]
-offset_left = 439.0
-offset_top = 469.0
-offset_right = 693.0
-offset_bottom = 580.0
-theme_override_font_sizes/font_size = 100
+[node name="ukr" type="Button" parent="." unique_id=1955233284]
+offset_left = 583.0
+offset_top = 255.0
+offset_right = 692.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 50
 text = "UKR"
 
-[node name="zuruck" type="Button" parent="." unique_id=112446862]
-offset_left = 980.0
-offset_top = 665.0
-offset_right = 1151.0
-offset_bottom = 742.0
+[node name="en" type="Button" parent="." unique_id=1974386]
+offset_left = 765.0
+offset_top = 255.0
+offset_right = 840.0
+offset_bottom = 332.0
 theme_override_font_sizes/font_size = 50
+text = "EN"
+
+[node name="zuruck" type="Button" parent="." unique_id=112446862]
+offset_left = 879.0
+offset_top = 378.0
+offset_right = 968.0
+offset_bottom = 421.0
+theme_override_font_sizes/font_size = 25
 text = "züruck"
 
 [connection signal="pressed" from="zuruck" to="." method="_on_zuruck_pressed"]
