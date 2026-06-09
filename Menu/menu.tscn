@@ -45,9 +45,9 @@ theme_override_font_sizes/font_size = 51
 text = "Spielen"
 
 [node name="Beenden" type="Button" parent="." unique_id=2116099522]
-offset_left = 519.0
+offset_left = 523.0
 offset_top = 338.0
-offset_right = 741.0
+offset_right = 745.0
 offset_bottom = 415.0
 theme_override_font_sizes/font_size = 50
 text = "Beenden"

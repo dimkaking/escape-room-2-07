@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://d7qbhlex7cg3" path="res://Raum/Furniture/table_glow_1.png" id="9_0regy"]
 [ext_resource type="Texture2D" uid="uid://ceyuf2sse10kg" path="res://Raum/Furniture/two_tables_glow.png" id="9_a0ont"]
 [ext_resource type="Texture2D" uid="uid://cmpycl1ekfsr3" path="res://Raum/Furniture/teacher_table_glow.png" id="13_0regy"]
-[ext_resource type="PackedScene" uid="uid://cvqtgl4mae4ta" path="res://Raum/PauseMenu.tscn" id="17_80rol"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_wo1wm"]
 a = Vector2(9, 272.5)
@@ -762,9 +761,12 @@ navigation_polygon = SubResource("NavigationPolygon_qm08a")
 [node name="Player" parent="Raum_2_07" unique_id=402315286 instance=ExtResource("2_q2tbe")]
 position = Vector2(106, 412)
 script = ExtResource("8_ifl08")
+<<<<<<< HEAD
 
 [node name="CanvasLayer" parent="." unique_id=1103573741 instance=ExtResource("17_80rol")]
 =======
 [node name="Player" parent="." unique_id=402315286 instance=ExtResource("2_q2tbe")]
 position = Vector2(-2, -3)
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6763076 (пауза кнопки)
