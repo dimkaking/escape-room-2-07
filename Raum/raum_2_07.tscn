@@ -144,10 +144,12 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("7_i2e1h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table/HighlightArea" unique_id=261384889]
+visible = false
 position = Vector2(85.33332, 50.666664)
 shape = SubResource("RectangleShape2D_a0ont")
 
 [node name="main_table2" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=949510320]
+visible = false
 position = Vector2(155, 142)
 
 [node name="Sprite2D" type="Sprite2D" parent="Raum_2_07/Furniture/main_table2" unique_id=1383553098]
@@ -193,6 +195,56 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("7_i2e1h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table2/HighlightArea" unique_id=1008468076]
+position = Vector2(85.33332, 50.666664)
+shape = SubResource("RectangleShape2D_a0ont")
+
+[node name="main_table3" type="StaticBody2D" parent="Raum_2_07/Furniture" unique_id=777432136]
+visible = false
+position = Vector2(155, 142)
+
+[node name="Sprite2D" type="Sprite2D" parent="Raum_2_07/Furniture/main_table3" unique_id=1014614147]
+z_index = 2
+position = Vector2(125, 69)
+texture = ExtResource("2_qm08a")
+
+[node name="GlowSprite" type="Sprite2D" parent="Raum_2_07/Furniture/main_table3" unique_id=1938099988]
+z_index = 2
+position = Vector2(127, 67)
+scale = Vector2(0.97, 0.97)
+texture = ExtResource("6_vy4s5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table3" unique_id=985217231]
+visible = false
+position = Vector2(130, 66)
+shape = SubResource("RectangleShape2D_qm08a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table3" unique_id=38533282]
+visible = false
+position = Vector2(97, 34)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table3" unique_id=230064258]
+visible = false
+position = Vector2(97, 95)
+shape = SubResource("CapsuleShape2D_li45p")
+
+[node name="ClickArea" type="Area2D" parent="Raum_2_07/Furniture/main_table3" unique_id=1632169633 groups=["interactable_table"]]
+script = ExtResource("5_wpxyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table3/ClickArea" unique_id=1187847995]
+visible = false
+position = Vector2(127.5, 59.125)
+shape = SubResource("RectangleShape2D_wo1wm")
+
+[node name="ApproachPoint" type="Marker2D" parent="Raum_2_07/Furniture/main_table3" unique_id=854738735]
+position = Vector2(79, 71)
+
+[node name="HighlightArea" type="Area2D" parent="Raum_2_07/Furniture/main_table3" unique_id=1970513634]
+material = SubResource("CanvasItemMaterial_i2e1h")
+scale = Vector2(1.5, 1.5)
+script = ExtResource("7_i2e1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/main_table3/HighlightArea" unique_id=1485400082]
 position = Vector2(85.33332, 50.666664)
 shape = SubResource("RectangleShape2D_a0ont")
 
