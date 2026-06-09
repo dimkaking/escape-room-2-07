@@ -762,6 +762,3 @@ navigation_polygon = SubResource("NavigationPolygon_qm08a")
 position = Vector2(106, 412)
 script = ExtResource("8_ifl08")
 
-[node name="CanvasLayer" parent="." unique_id=1103573741 instance=ExtResource("17_80rol")]
-[node name="Player" parent="." unique_id=402315286 instance=ExtResource("2_q2tbe")]
-position = Vector2(-2, -3)
