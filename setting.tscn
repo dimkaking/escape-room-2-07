@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dlnexwppn18ke"]
+
+[ext_resource type="Script" path="res://setting.gd" id="1_a42w7"]
+
+[node name="Setting" type="Node2D" unique_id=1044961322]
+script = ExtResource("1_a42w7")
+
+[node name="Sprache" type="Button" parent="." unique_id=1580654769]
+offset_left = 398.0
+offset_top = 145.0
+offset_right = 732.0
+offset_bottom = 294.0
+theme_override_font_sizes/font_size = 100
+text = "Sprache"
+
+[node name="Audio" type="Button" parent="." unique_id=1248633943]
+offset_left = 400.0
+offset_top = 355.0
+offset_right = 796.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 100
+text = "Audio"
+
+[node name="Zuruck" type="Button" parent="." unique_id=251672630]
+offset_left = 929.0
+offset_top = 608.0
+offset_right = 1149.0
+offset_bottom = 723.0
+theme_override_font_sizes/font_size = 45
+text = "züruck"
+
+[connection signal="pressed" from="Sprache" to="." method="_on_sprache_pressed"]
+[connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Zuruck" to="." method="_on_zuruck_pressed"]

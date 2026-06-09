@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cbkhb0i7rb5g1"]
+
+[ext_resource type="AudioStream" uid="uid://bh6g4vdoxcfs0" path="res://Sounds/menu.mp3" id="1_1u6hb"]
+[ext_resource type="Script" path="res://menu_music.gd" id="1_doxou"]
+
+[node name="menuMusic" type="Node2D" unique_id=524910188]
+script = ExtResource("1_doxou")
+
+[node name="menuMusic" type="AudioStreamPlayer" parent="." unique_id=1640197122]
+stream = ExtResource("1_1u6hb")
+autoplay = true
+bus = &"musik menu"
