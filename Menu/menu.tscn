@@ -31,8 +31,8 @@ func _on_audio_pressed() -> void:
 script = ExtResource("1_ouk20")
 
 [node name="MenuBackground" type="Sprite2D" parent="." unique_id=125467869]
-position = Vector2(598, 403.00003)
-scale = Vector2(0.7786458, 0.7817383)
+position = Vector2(599.99994, 399.99997)
+scale = Vector2(0.78125, 0.78125)
 texture = ExtResource("2_raj00")
 
 [node name="Spielen" type="Button" parent="." unique_id=21572017]
@@ -66,10 +66,10 @@ anchor_left = -0.74200004
 anchor_top = -3.6810002
 anchor_right = -0.74200004
 anchor_bottom = -3.6810002
-offset_left = 899.0
-offset_top = 358.0
-offset_right = 965.0
-offset_bottom = 424.0
+offset_left = 902.0
+offset_top = 355.0
+offset_right = 968.0
+offset_bottom = 421.0
 theme_override_colors/font_hover_color = Color(0.9189037, 0.7831773, 0.8439896, 1)
 theme_override_font_sizes/font_size = 42
 text = "⚙️"

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ddl87dwwv7pnl"]
+
+[ext_resource type="Script" uid="uid://0ypcyv4t8yub" path="res://Menu/menu_audio.gd" id="1_qc0l7"]
+[ext_resource type="Texture2D" uid="uid://ckg0bu66vy2b" path="res://Menu/menu_background.png" id="2_x71bk"]
+
+[node name="Audio" type="Node2D" unique_id=1376657719]
+script = ExtResource("1_qc0l7")
+
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=152983161]
+position = Vector2(600.0001, 399.75)
+scale = Vector2(0.7812501, 0.7817383)
+texture = ExtResource("2_x71bk")
+
+[node name="audio" type="Button" parent="." unique_id=779223460]
+offset_left = 560.0
+offset_top = 237.0
+offset_right = 705.0
+offset_bottom = 382.0
+theme_override_font_sizes/font_size = 100
+text = "🔊 
+"
+
+[node name="zuruck" type="Button" parent="." unique_id=1767362665]
+offset_left = 879.0
+offset_top = 378.0
+offset_right = 968.0
+offset_bottom = 421.0
+theme_override_font_sizes/font_size = 25
+text = "züruck"
+
+[connection signal="pressed" from="audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="zuruck" to="." method="_on_zuruck_pressed"]
