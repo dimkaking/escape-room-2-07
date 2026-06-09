@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7c580bv002aa" path="res://Menu/label.gd" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://cpst6ta1tu77v" path="res://Menu/menu.gd" id="1_ouk20"]
+[ext_resource type="Texture2D" uid="uid://ckg0bu66vy2b" path="res://Menu/menu_background.png" id="2_raj00"]
 
 [sub_resource type="GDScript" id="GDScript_ouk20"]
 script/source = "extends Button
@@ -29,28 +30,33 @@ func _on_audio_pressed() -> void:
 [node name="Menu" type="Node2D" unique_id=217230377]
 script = ExtResource("1_ouk20")
 
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=125467869]
+position = Vector2(598, 403.00003)
+scale = Vector2(0.7786458, 0.7817383)
+texture = ExtResource("2_raj00")
+
 [node name="Spielen" type="Button" parent="." unique_id=21572017]
-offset_left = 327.0
-offset_top = 338.0
-offset_right = 761.0
-offset_bottom = 483.0
-theme_override_font_sizes/font_size = 100
+offset_left = 519.0
+offset_top = 237.0
+offset_right = 738.0
+offset_bottom = 315.0
+theme_override_font_sizes/font_size = 51
 text = "Spielen"
 
 [node name="Beenden" type="Button" parent="." unique_id=2116099522]
-offset_left = 330.0
-offset_top = 540.0
-offset_right = 766.0
-offset_bottom = 685.0
-theme_override_font_sizes/font_size = 100
+offset_left = 523.0
+offset_top = 338.0
+offset_right = 745.0
+offset_bottom = 415.0
+theme_override_font_sizes/font_size = 50
 text = "Beenden"
 
 [node name="Label" type="Label" parent="." unique_id=1319987980]
-offset_left = 457.0
-offset_top = 544.0
-offset_right = 581.0
-offset_bottom = 691.0
-theme_override_font_sizes/font_size = 100
+offset_left = 1596.0
+offset_top = 72.0
+offset_right = 1654.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 39
 text = "e"
 script = ExtResource("1_lti8b")
 
@@ -60,12 +66,12 @@ anchor_left = -0.74200004
 anchor_top = -3.6810002
 anchor_right = -0.74200004
 anchor_bottom = -3.6810002
-offset_left = 971.0
-offset_top = 585.0
-offset_right = 1116.0
-offset_bottom = 730.0
+offset_left = 899.0
+offset_top = 358.0
+offset_right = 965.0
+offset_bottom = 424.0
 theme_override_colors/font_hover_color = Color(0.9189037, 0.7831773, 0.8439896, 1)
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 42
 text = "⚙️"
 script = SubResource("GDScript_ouk20")
 

@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_setting_pressed() -> void:
-	get_tree().change_scene_to_file("res://setting.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://Menu/setting.tscn") # Replace with function body.

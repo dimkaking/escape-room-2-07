@@ -1,32 +1,38 @@
 [gd_scene format=3 uid="uid://bge4jh5kiyxun"]
 
 [ext_resource type="Script" uid="uid://cjoqwrkhtx6x3" path="res://Menu/setting.gd" id="1_a42w7"]
+[ext_resource type="Texture2D" uid="uid://ckg0bu66vy2b" path="res://Menu/menu_background.png" id="2_53plc"]
 
 [node name="Setting" type="Node2D" unique_id=1044961322]
 script = ExtResource("1_a42w7")
 
+[node name="MenuBackground" type="Sprite2D" parent="." unique_id=958931925]
+position = Vector2(602.5, 402)
+scale = Vector2(0.78059894, 0.78515625)
+texture = ExtResource("2_53plc")
+
 [node name="Sprache" type="Button" parent="." unique_id=1580654769]
-offset_left = 398.0
-offset_top = 145.0
-offset_right = 732.0
-offset_bottom = 294.0
-theme_override_font_sizes/font_size = 100
+offset_left = 535.0
+offset_top = 247.0
+offset_right = 738.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 50
 text = "Sprache"
 
 [node name="Audio" type="Button" parent="." unique_id=1248633943]
-offset_left = 400.0
-offset_top = 355.0
-offset_right = 796.0
-offset_bottom = 504.0
-theme_override_font_sizes/font_size = 100
+offset_left = 534.0
+offset_top = 336.0
+offset_right = 737.0
+offset_bottom = 413.0
+theme_override_font_sizes/font_size = 50
 text = "Audio"
 
 [node name="Zuruck" type="Button" parent="." unique_id=251672630]
-offset_left = 929.0
-offset_top = 608.0
-offset_right = 1149.0
-offset_bottom = 723.0
-theme_override_font_sizes/font_size = 45
+offset_left = 877.0
+offset_top = 380.0
+offset_right = 969.0
+offset_bottom = 423.0
+theme_override_font_sizes/font_size = 25
 text = "züruck"
 
 [connection signal="pressed" from="Sprache" to="." method="_on_sprache_pressed"]

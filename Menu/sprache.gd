@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_zuruck_pressed() -> void:
-	get_tree().change_scene_to_file("res://setting.tscn")
+	get_tree().change_scene_to_file("res://Menu/setting.tscn")
