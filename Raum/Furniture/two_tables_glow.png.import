@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc3bvolny4h5b"
-path="res://.godot/imported/two_tables_glow (1).png-524be3dab6a383a54b1b36249b78a651.ctex"
+uid="uid://ceyuf2sse10kg"
+path="res://.godot/imported/two_tables_glow.png-e91178c988c82787332d042405ab1f5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://two_tables_glow (1).png"
-dest_files=["res://.godot/imported/two_tables_glow (1).png-524be3dab6a383a54b1b36249b78a651.ctex"]
+source_file="res://Raum/Furniture/two_tables_glow.png"
+dest_files=["res://.godot/imported/two_tables_glow.png-e91178c988c82787332d042405ab1f5e.ctex"]
 
 [params]
 
