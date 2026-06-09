@@ -76,6 +76,7 @@ position = Vector2(531, 2)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_li45p")
 
+<<<<<<< Updated upstream
 [node name="Sprite2D" type="Sprite2D" parent="Raum_2_07/Wall" unique_id=932678310]
 position = Vector2(454.7705, 561.1153)
 rotation = -3.1415925
@@ -763,3 +764,7 @@ position = Vector2(106, 412)
 script = ExtResource("8_ifl08")
 
 [node name="CanvasLayer" parent="." unique_id=1103573741 instance=ExtResource("17_80rol")]
+=======
+[node name="Player" parent="." unique_id=402315286 instance=ExtResource("2_q2tbe")]
+position = Vector2(-2, -3)
+>>>>>>> Stashed changes
