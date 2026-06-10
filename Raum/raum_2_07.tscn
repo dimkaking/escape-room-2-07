@@ -16,9 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://d7qbhlex7cg3" path="res://Raum/Furniture/table_glow_1.png" id="9_0regy"]
 [ext_resource type="Texture2D" uid="uid://ceyuf2sse10kg" path="res://Raum/Furniture/two_tables_glow.png" id="9_a0ont"]
 [ext_resource type="Texture2D" uid="uid://cmpycl1ekfsr3" path="res://Raum/Furniture/teacher_table_glow.png" id="13_0regy"]
-
 [ext_resource type="PackedScene" uid="uid://csauua65ntl2y" path="res://Raum/PauseMenu.tscn" id="17_80rol"]
-
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_wo1wm"]
 a = Vector2(9, 272.5)

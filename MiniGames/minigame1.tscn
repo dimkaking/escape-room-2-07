@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bpqwyf8cnlwja"]
 
 [ext_resource type="Texture2D" uid="uid://bqjn5r4tntjlk" path="res://Character/table1/TarasK.png" id="1_l5xv4"]
+[ext_resource type="Script" uid="uid://c3gecthybarap" path="res://MiniGames/minigame_1.gd" id="1_ljti6"]
 [ext_resource type="Texture2D" uid="uid://dhghfjyaq437e" path="res://Character/table1/TarasS.png" id="2_ljti6"]
 
 [node name="MiniGame1" type="Node2D" unique_id=1124920780]
+script = ExtResource("1_ljti6")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1834364296]
 offset_right = 1200.0
@@ -21,8 +23,10 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_ljti6")
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=1986426433]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 101.0
+offset_top = 25.0
+offset_right = 463.0
+offset_bottom = 190.0
 
 [node name="NameLabel" type="Label" parent="DialogueBox" unique_id=765789420]
 layout_mode = 0
@@ -31,8 +35,10 @@ offset_bottom = 23.0
 
 [node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=2102238049]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 481.0
+offset_top = 37.0
+offset_right = 878.0
+offset_bottom = 215.0
 
 [node name="NextButton" type="Button" parent="DialogueBox" unique_id=405815047]
 layout_mode = 0
@@ -40,20 +46,57 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="TaskPanel" type="Panel" parent="." unique_id=398995369]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 627.0
+offset_top = 342.0
+offset_right = 1198.0
+offset_bottom = 579.0
 
-[node name="QuestionLabel" type="Label" parent="TaskPanel" unique_id=167205727]
+[node name="IpLabel" type="Label" parent="TaskPanel" unique_id=2100884123]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="AnswerInput" type="LineEdit" parent="TaskPanel" unique_id=1543778358]
+[node name="MaskLabel" type="Label" parent="TaskPanel" unique_id=924930428]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MaskInput" type="LineEdit" parent="TaskPanel" unique_id=2022425186]
 layout_mode = 0
 offset_right = 68.5
 offset_bottom = 31.0
 
-[node name="CheckButton" type="Button" parent="TaskPanel" unique_id=2146148170]
+[node name="FirstLabel" type="Label" parent="TaskPanel" unique_id=563398126]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="FirstInput" type="LineEdit" parent="TaskPanel" unique_id=1090977327]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="LastLabel" type="Label" parent="TaskPanel" unique_id=1675388462]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LastInput" type="LineEdit" parent="TaskPanel" unique_id=769335698]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="BroadcastLabel" type="Label" parent="TaskPanel" unique_id=2049671529]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BroadcastInput" type="LineEdit" parent="TaskPanel" unique_id=612139957]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="CheckButton" type="Button" parent="TaskPanel" unique_id=1662904218]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
@@ -61,3 +104,6 @@ offset_bottom = 8.0
 [node name="BackButton" type="Button" parent="." unique_id=894767634]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
