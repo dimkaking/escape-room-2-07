@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bpqwyf8cnlwja"]
+
+[ext_resource type="Texture2D" uid="uid://bqjn5r4tntjlk" path="res://Character/table1/TarasK.png" id="1_l5xv4"]
+[ext_resource type="Texture2D" uid="uid://dhghfjyaq437e" path="res://Character/table1/TarasS.png" id="2_ljti6"]
+
+[node name="MiniGame1" type="Node2D" unique_id=1124920780]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1834364296]
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[node name="StudentSprite" type="Sprite2D" parent="." unique_id=1900866494]
+position = Vector2(225.00003, 371)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_l5xv4")
+
+[node name="StudentSprite2" type="Sprite2D" parent="." unique_id=1989254161]
+position = Vector2(516, 361)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ljti6")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=1986426433]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="DialogueBox" unique_id=765789420]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=2102238049]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NextButton" type="Button" parent="DialogueBox" unique_id=405815047]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="TaskPanel" type="Panel" parent="." unique_id=398995369]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuestionLabel" type="Label" parent="TaskPanel" unique_id=167205727]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnswerInput" type="LineEdit" parent="TaskPanel" unique_id=1543778358]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="CheckButton" type="Button" parent="TaskPanel" unique_id=2146148170]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackButton" type="Button" parent="." unique_id=894767634]
+offset_right = 8.0
+offset_bottom = 8.0

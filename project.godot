@@ -26,6 +26,7 @@ MenuMusic="*uid://dxg35pcvhdxnj"
 GameMusic="*uid://v5ol2ftdd25o"
 Audio="*uid://5ot31oklf71g"
 ClickSound="*uid://bjs7iiuggfjvs"
+GameState="*uid://b5ksmvmr7jkk8"
 
 [display]
 
