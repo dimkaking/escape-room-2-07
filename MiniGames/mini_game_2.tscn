@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dn0csrmvdqkxu"]
+
+[ext_resource type="Texture2D" uid="uid://c15fxjcnrptbk" path="res://Character/table2/Max.png" id="1_08pux"]
+
+[node name="MiniGame2" type="Node2D" unique_id=2014577961]
+
+[node name="Background" type="ColorRect" parent="." unique_id=605188683]
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[node name="StudentSprite" type="Sprite2D" parent="." unique_id=1005635405]
+position = Vector2(276, 384)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_08pux")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=1896637790]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="DialogueBox" unique_id=27964230]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=201870933]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NextButton" type="Button" parent="DialogueBox" unique_id=1245517359]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="TaskPanel" type="Panel" parent="." unique_id=683228284]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuestionLabel" type="Label" parent="TaskPanel" unique_id=977979076]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnswerInput" type="LineEdit" parent="TaskPanel" unique_id=748776624]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="CheckButton" type="Button" parent="TaskPanel" unique_id=1714020761]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackButton" type="Button" parent="." unique_id=999558600]
+offset_right = 8.0
+offset_bottom = 8.0
