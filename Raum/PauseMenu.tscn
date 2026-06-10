@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://34d1stcbp62w" path="res://Raum/pause_menu.gd" id="1_1fapk"]
 
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1943059786]
 process_mode = 3
 script = ExtResource("1_1fapk")
