@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csauua65ntl2y"]
 
-[ext_resource type="Script" path="res://Raum/pause_menu.gd" id="1_1fapk"]
+[ext_resource type="Script" uid="uid://34d1stcbp62w" path="res://Raum/pause_menu.gd" id="1_1fapk"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1943059786]
 process_mode = 3
@@ -28,7 +28,7 @@ offset_bottom = 381.0
 theme_override_font_sizes/font_size = 50
 text = "Audio"
 
-[node name="Hauptmenü" type="Button" parent="Panel" unique_id=2031699107]
+[node name="Hauptmenu" type="Button" parent="Panel" unique_id=2031699107]
 process_mode = 3
 offset_left = 461.0
 offset_top = 410.0
@@ -39,4 +39,4 @@ text = "Hauptmenü"
 
 [connection signal="pressed" from="Panel/Fortsetzen" to="." method="_on_fortsetzen_pressed"]
 [connection signal="pressed" from="Panel/Audio" to="." method="_on_audio_pressed"]
-[connection signal="pressed" from="Panel/Hauptmenü" to="." method="_on_hauptmenü_pressed"]
+[connection signal="pressed" from="Panel/Hauptmenu" to="." method="_on_hauptmenu_pressed"]
