@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bjs7iiuggfjvs"]
+
+[ext_resource type="Script" uid="uid://d3rcyxib5rq5r" path="res://Menu/click_sound.gd" id="1_xbgll"]
+[ext_resource type="AudioStream" uid="uid://qjompa142nde" path="res://Sounds/click.wav" id="2_56gqh"]
+
+[node name="ClickSound" type="Node2D" unique_id=35974418]
+script = ExtResource("1_xbgll")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1317124211]
+stream = ExtResource("2_56gqh")
