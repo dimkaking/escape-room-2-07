@@ -3,6 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c15fxjcnrptbk" path="res://Character/table2/Max.png" id="1_08pux"]
 [ext_resource type="Script" uid="uid://c27etb3sbvw1k" path="res://MiniGames/mini_game_2.gd" id="1_ktwh5"]
 [ext_resource type="Script" uid="uid://d33nrbhv4chvq" path="res://MiniGames/next_button.gd" id="3_u03jf"]
+[ext_resource type="Texture2D" uid="uid://b54mixy843vqf" path="res://MiniGames/Бумажка .png" id="4_6q2gv"]
+[ext_resource type="Script" uid="uid://b0y6esei1qtsc" path="res://MiniGames/müll_area_2d.gd" id="4_a0fn5"]
+[ext_resource type="Texture2D" uid="uid://bbye7r4tc5dcq" path="res://MiniGames/Мусорка.png" id="5_xhqij"]
+[ext_resource type="Script" uid="uid://ce0u25guxrama" path="res://MiniGames/papir_area_2d_2.gd" id="6_0n4ya"]
+[ext_resource type="Script" uid="uid://dfbfpqgb1k8ce" path="res://MiniGames/score_label.gd" id="8_0n4ya"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l2l81"]
+a = Vector2(-281.6172, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0n4ya"]
+radius = 43.205193
 
 [node name="MiniGame2" type="Node2D" unique_id=2014577961]
 script = ExtResource("1_ktwh5")
@@ -54,27 +65,38 @@ offset_right = 71.0
 offset_bottom = 122.0
 text = "zurück"
 
-[node name="TaskPanel" type="Panel" parent="." unique_id=683228284]
-offset_left = 278.0
-offset_top = 101.0
-offset_right = 730.0
-offset_bottom = 364.0
+[node name="MüllArea2D" type="Area2D" parent="." unique_id=2000903447]
+position = Vector2(887.99994, 441.99997)
+scale = Vector2(0.18109669, 0.17464115)
+script = ExtResource("4_a0fn5")
 
-[node name="QuestionLabel" type="Label" parent="TaskPanel" unique_id=977979076]
-layout_mode = 0
-offset_left = -247.0
-offset_top = 174.0
-offset_right = -164.0
-offset_bottom = 197.0
+[node name="müll" type="Sprite2D" parent="MüllArea2D" unique_id=330495052]
+texture = ExtResource("5_xhqij")
 
-[node name="CheckButton" type="Button" parent="TaskPanel" unique_id=1714020761]
-layout_mode = 0
-offset_left = -240.0
-offset_top = 108.0
-offset_right = -195.0
-offset_bottom = 126.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MüllArea2D" unique_id=2143832945]
+position = Vector2(93.872856, -57.26011)
+shape = SubResource("SegmentShape2D_l2l81")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=372402557]
+[node name="PapirArea2D2" type="Area2D" parent="." unique_id=1370226222]
+position = Vector2(886.99994, 208.00003)
+scale = Vector2(0.19043478, 0.19807692)
+script = ExtResource("6_0n4ya")
+
+[node name="papir" type="Sprite2D" parent="PapirArea2D2" unique_id=439015840]
+texture = ExtResource("4_6q2gv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PapirArea2D2" unique_id=1997247415]
+position = Vector2(-15.753104, 50.485287)
+shape = SubResource("CircleShape2D_0n4ya")
+
+[node name="ScoreLabel" type="Label" parent="PapirArea2D2" unique_id=595598349]
+offset_left = 819.1782
+offset_top = 217.08728
+offset_right = 968.1782
+offset_bottom = 355.08728
+script = ExtResource("8_0n4ya")
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="area_entered" from="PapirArea2D2" to="." method="_on_papir_area_2d_2_area_entered"]
+[connection signal="tree_entered" from="PapirArea2D2/papir" to="." method="_on_papir_tree_entered"]

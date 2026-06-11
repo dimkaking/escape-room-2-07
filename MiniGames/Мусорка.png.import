@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0prljd4q8uat"
-path="res://.godot/imported/Мусорка+Бумажка.png-369087fdfb673a599f78aeb435eef724.ctex"
+uid="uid://bbye7r4tc5dcq"
+path="res://.godot/imported/Мусорка.png-6de638689a380c245c9f9acea0f8b92a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MiniGames/Мусорка+Бумажка.png"
-dest_files=["res://.godot/imported/Мусорка+Бумажка.png-369087fdfb673a599f78aeb435eef724.ctex"]
+source_file="res://MiniGames/Мусорка.png"
+dest_files=["res://.godot/imported/Мусорка.png-6de638689a380c245c9f9acea0f8b92a.ctex"]
 
 [params]
 
