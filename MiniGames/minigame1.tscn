@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bpqwyf8cnlwja"]
+[gd_scene format=3 uid="uid://bpxoa2577tc45"]
 
 [ext_resource type="Texture2D" uid="uid://bqjn5r4tntjlk" path="res://Character/table1/TarasK.png" id="1_l5xv4"]
-[ext_resource type="Script" uid="uid://c3gecthybarap" path="res://MiniGames/minigame_1.gd" id="1_ljti6"]
+[ext_resource type="Script" path="res://MiniGames/minigame_1.gd" id="1_ljti6"]
 [ext_resource type="Texture2D" uid="uid://dhghfjyaq437e" path="res://Character/table1/TarasS.png" id="2_ljti6"]
 
 [node name="MiniGame1" type="Node2D" unique_id=1124920780]
