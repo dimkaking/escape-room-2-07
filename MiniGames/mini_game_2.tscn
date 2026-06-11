@@ -1,47 +1,64 @@
 [gd_scene format=3 uid="uid://dn0csrmvdqkxu"]
 
 [ext_resource type="Texture2D" uid="uid://c15fxjcnrptbk" path="res://Character/table2/Max.png" id="1_08pux"]
+[ext_resource type="Script" uid="uid://c27etb3sbvw1k" path="res://MiniGames/mini_game_2.gd" id="1_ktwh5"]
+[ext_resource type="Script" uid="uid://d33nrbhv4chvq" path="res://MiniGames/next_button.gd" id="3_u03jf"]
 
 [node name="MiniGame2" type="Node2D" unique_id=2014577961]
+script = ExtResource("1_ktwh5")
 
 [node name="Background" type="ColorRect" parent="." unique_id=605188683]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1201.0
-offset_bottom = 801.0
+offset_right = 1200.0
+offset_bottom = 800.0
 color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=1005635405]
-position = Vector2(137.00002, 184)
-scale = Vector2(0.155, 0.155)
+position = Vector2(116, 544)
+scale = Vector2(0.205, 0.205)
 texture = ExtResource("1_08pux")
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=1896637790]
-offset_left = 210.0
-offset_top = 241.0
-offset_right = 464.0
-offset_bottom = 333.0
+offset_left = 33.0
+offset_top = 621.0
+offset_right = 613.0
+offset_bottom = 752.0
 
 [node name="NameLabel" type="Label" parent="DialogueBox" unique_id=27964230]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 65.0
+offset_bottom = 42.0
 
 [node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=201870933]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 254.0
+offset_top = 1.0
+offset_right = 579.0
+offset_bottom = 76.0
 
 [node name="NextButton" type="Button" parent="DialogueBox" unique_id=1245517359]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 504.0
+offset_top = 86.0
+offset_right = 572.0
+offset_bottom = 119.0
+text = "weiter"
+script = ExtResource("3_u03jf")
+
+[node name="BackButton" type="Button" parent="DialogueBox" unique_id=999558600]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 90.0
+offset_right = 71.0
+offset_bottom = 122.0
+text = "zurück"
 
 [node name="TaskPanel" type="Panel" parent="." unique_id=683228284]
-offset_left = 881.0
-offset_top = 556.0
-offset_right = 937.0
-offset_bottom = 591.0
+offset_left = 127.0
+offset_top = 63.0
+offset_right = 183.0
+offset_bottom = 98.0
 
 [node name="QuestionLabel" type="Label" parent="TaskPanel" unique_id=977979076]
 layout_mode = 0
@@ -52,16 +69,19 @@ offset_bottom = 23.0
 [node name="AnswerInput" type="LineEdit" parent="TaskPanel" unique_id=748776624]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 61.0
-offset_top = 65.0
-offset_right = 192.0
-offset_bottom = 124.0
+offset_left = -14.0
+offset_top = 208.0
+offset_right = 187.0
+offset_bottom = 262.0
 
 [node name="CheckButton" type="Button" parent="TaskPanel" unique_id=1714020761]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 37.0
+offset_top = 104.0
+offset_right = 82.0
+offset_bottom = 122.0
 
-[node name="BackButton" type="Button" parent="." unique_id=999558600]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=372402557]
+
+[connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
