@@ -38,10 +38,10 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="TaskPanel" type="Panel" parent="." unique_id=683228284]
-offset_left = 881.0
-offset_top = 556.0
-offset_right = 937.0
-offset_bottom = 591.0
+offset_left = 127.0
+offset_top = 50.0
+offset_right = 183.0
+offset_bottom = 85.0
 
 [node name="QuestionLabel" type="Label" parent="TaskPanel" unique_id=977979076]
 layout_mode = 0
