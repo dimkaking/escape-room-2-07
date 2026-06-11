@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6jm87mdrrh1c"
-path="res://.godot/imported/Screenshot 2026-06-11 104202.png-bd234dc9cf1cd492ea5bf376289fe17f.ctex"
+uid="uid://50v4dmdc66vn"
+path="res://.godot/imported/piece_2.jpg-57942c44b8d2e008744f91b786a98a24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MiniGames/Screenshot 2026-06-11 104202.png"
-dest_files=["res://.godot/imported/Screenshot 2026-06-11 104202.png-bd234dc9cf1cd492ea5bf376289fe17f.ctex"]
+source_file="res://MiniGames/Puzzle/piece_2.jpg"
+dest_files=["res://.godot/imported/piece_2.jpg-57942c44b8d2e008744f91b786a98a24.ctex"]
 
 [params]
 

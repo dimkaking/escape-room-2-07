@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b83s8jeanbiqu"]
+
+[ext_resource type="Script" uid="uid://b8lxcrx2maykg" path="res://MiniGames/Puzzle/puzzle_piece.gd" id="1_gcy3u"]
+[ext_resource type="Texture2D" uid="uid://dja1tghc7whgc" path="res://MiniGames/Puzzle/piece_1.jpg" id="2_7fpko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixa2f"]
+size = Vector2(109, 72)
+
+[node name="PuzzlePiece" type="Area2D" unique_id=1274932004]
+script = ExtResource("1_gcy3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=613567472]
+position = Vector2(182, 168)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_7fpko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1687318882]
+position = Vector2(181.5, 168)
+shape = SubResource("RectangleShape2D_ixa2f")

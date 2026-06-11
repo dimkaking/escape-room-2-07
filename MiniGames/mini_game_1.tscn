@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bpxoa2577tc45"]
 
-[ext_resource type="Texture2D" uid="uid://bqjn5r4tntjlk" path="res://Character/table1/TarasK.png" id="1_l5xv4"]
-[ext_resource type="Script" path="res://MiniGames/minigame_1.gd" id="1_ljti6"]
-[ext_resource type="Texture2D" uid="uid://dhghfjyaq437e" path="res://Character/table1/TarasS.png" id="2_ljti6"]
+[ext_resource type="Script" uid="uid://c3gecthybarap" path="res://MiniGames/mini_game_1.gd" id="1_1sf78"]
+[ext_resource type="Texture2D" uid="uid://bqjn5r4tntjlk" path="res://Character/table1/TarasK.png" id="2_d44vh"]
+[ext_resource type="Texture2D" uid="uid://dhghfjyaq437e" path="res://Character/table1/TarasS.png" id="3_2amww"]
 
 [node name="MiniGame1" type="Node2D" unique_id=1124920780]
-script = ExtResource("1_ljti6")
+script = ExtResource("1_1sf78")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1834364296]
 offset_right = 1200.0
@@ -15,12 +15,12 @@ color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=1900866494]
 position = Vector2(141, 507)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_l5xv4")
+texture = ExtResource("2_d44vh")
 
 [node name="StudentSprite2" type="Sprite2D" parent="." unique_id=1989254161]
 position = Vector2(313, 499)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_ljti6")
+texture = ExtResource("3_2amww")
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=1986426433]
 offset_left = 52.0
