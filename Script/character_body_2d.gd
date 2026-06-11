@@ -19,6 +19,8 @@ var clicked_on_obstacle := false
 var moving := false
 var idle_dir = DOWN
 
+var current_clicked_area = null
+
 
 func _ready():
 	target_arrow.visible = false
@@ -34,44 +36,66 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			var click_position = get_global_mouse_position()
-			arrow_position = click_position
+			handle_mouse_click()
 
-			var space_state = get_world_2d().direct_space_state
-			var query = PhysicsPointQueryParameters2D.new()
-			query.position = click_position
-			query.collide_with_areas = true
-			query.collide_with_bodies = false
 
-			var results = space_state.intersect_point(query)
+func handle_mouse_click():
+	var click_position = get_global_mouse_position()
+	arrow_position = click_position
 
-			for result in results:
-				var clicked_area = result.collider
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = click_position
+	query.collide_with_areas = true
+	query.collide_with_bodies = false
 
-				if clicked_area.is_in_group("interactable_table"):
-					nav_agent.target_position = clicked_area.approach_point.global_position
-					moving = true
-					clicked_on_obstacle = true
+	var results = space_state.intersect_point(query)
 
-					target_arrow.global_position = click_position
-					target_arrow.visible = true
-					target_arrow.play("default")
-					return
+	for result in results:
+		var clicked_area = result.collider
 
-			var navigation_map = get_world_2d().navigation_map
-			var closest_floor_position = NavigationServer2D.map_get_closest_point(
-				navigation_map,
-				click_position
-			)
+		if clicked_area.is_in_group("interactable_table"):
+			handle_table_click(clicked_area, click_position)
+			return
 
-			clicked_on_obstacle = click_position.distance_to(closest_floor_position) > 5
+	handle_floor_click(click_position)
 
-			nav_agent.target_position = closest_floor_position + foot_offset
-			moving = true
 
-			target_arrow.global_position = click_position
-			target_arrow.visible = true
-			target_arrow.play("default")
+func handle_table_click(clicked_area, click_position: Vector2):
+	if clicked_area.can_start_minigame(global_position):
+		GameState.player_return_position = global_position
+		GameState.has_return_position = true
+		get_tree().change_scene_to_file(clicked_area.minigame_scene_path)
+		return
+
+	current_clicked_area = clicked_area
+
+	nav_agent.target_position = clicked_area.approach_point.global_position
+	moving = true
+	clicked_on_obstacle = true
+
+	target_arrow.global_position = click_position
+	target_arrow.visible = true
+	target_arrow.play("default")
+
+
+func handle_floor_click(click_position: Vector2):
+	current_clicked_area = null
+
+	var navigation_map = get_world_2d().navigation_map
+	var closest_floor_position = NavigationServer2D.map_get_closest_point(
+		navigation_map,
+		click_position
+	)
+
+	clicked_on_obstacle = click_position.distance_to(closest_floor_position) > 5
+
+	nav_agent.target_position = closest_floor_position + foot_offset
+	moving = true
+
+	target_arrow.global_position = click_position
+	target_arrow.visible = true
+	target_arrow.play("default")
 
 
 func _physics_process(delta: float) -> void:

@@ -35,7 +35,7 @@ var task_finished := false
 func _ready():
 	task_panel.visible = false
 	dialogue_box.visible = true
-	ip_label.text = "IP-Adresse: 192.168.178.31  /21"
+	ip_label.text = "IP-Adresse: 192.168.178.31  /24"
 	show_dialogue()
 
 
@@ -102,6 +102,7 @@ func _on_check_button_pressed():
 		correct = false
 
 	if correct:
+		GameState.complete_current_task("tisch1_ip")
 		task_finished = true
 		task_panel.visible = false
 		dialogue_box.visible = true
@@ -123,7 +124,7 @@ func _on_check_button_pressed():
 		line_index = 0
 		show_dialogue()
 	else:
-		ip_label.text = "IP-Adresse: 192.168.178.31  /21 \nLeider falsch. Versuch es noch einmal."
+		ip_label.text = "IP-Adresse: 192.168.178.31  /24 \nLeider falsch. Versuch es noch einmal."
 
 
 func _on_back_button_pressed():
