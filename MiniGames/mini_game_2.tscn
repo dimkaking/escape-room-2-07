@@ -55,31 +55,24 @@ offset_bottom = 122.0
 text = "zurück"
 
 [node name="TaskPanel" type="Panel" parent="." unique_id=683228284]
-offset_left = 127.0
-offset_top = 63.0
-offset_right = 183.0
-offset_bottom = 98.0
+offset_left = 278.0
+offset_top = 101.0
+offset_right = 730.0
+offset_bottom = 364.0
 
 [node name="QuestionLabel" type="Label" parent="TaskPanel" unique_id=977979076]
 layout_mode = 0
-offset_left = 39.0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="AnswerInput" type="LineEdit" parent="TaskPanel" unique_id=748776624]
-layout_mode = 1
-anchors_preset = -1
-offset_left = -14.0
-offset_top = 208.0
-offset_right = 187.0
-offset_bottom = 262.0
+offset_left = -247.0
+offset_top = 174.0
+offset_right = -164.0
+offset_bottom = 197.0
 
 [node name="CheckButton" type="Button" parent="TaskPanel" unique_id=1714020761]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 104.0
-offset_right = 82.0
-offset_bottom = 122.0
+offset_left = -240.0
+offset_top = 108.0
+offset_right = -195.0
+offset_bottom = 126.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=372402557]
 
