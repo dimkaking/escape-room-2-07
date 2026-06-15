@@ -89,11 +89,11 @@ texture = ExtResource("4_6q2gv")
 position = Vector2(-15.753104, 50.485287)
 shape = SubResource("CircleShape2D_0n4ya")
 
-[node name="ScoreLabel" type="Label" parent="PapirArea2D2" unique_id=595598349]
-offset_left = 819.1782
-offset_top = 217.08728
-offset_right = 968.1782
-offset_bottom = 355.08728
+[node name="ScoreLabel" type="Label" parent="." unique_id=595598349]
+offset_left = 1043.0
+offset_top = 251.00002
+offset_right = 1192.0
+offset_bottom = 389.0
 script = ExtResource("8_0n4ya")
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
