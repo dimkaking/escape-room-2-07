@@ -12,72 +12,80 @@ var lines := [
 	"Dafür gebe ich dir etwas, das dir nützlich sein könnte."
 ]
 
+var finish_lines := [
+	"Danke!",
+	"Du hast mir wirklich geholfen.",
+	"Hier, nimm das. Vielleicht wird es dir noch nützlich sein."
+]
+
 var line_index := 0
-var score = 0
-signal paper_scored
+var score := 0
+var task_finished := false
 
 func _ready():
+
 	dialogue_box.visible = true
+
+	$PapirArea2D2.visible = false
+	$MüllArea2D.visible = false
+	$ScoreLabel.visible = false
+
 	show_dialogue()
 
 func show_dialogue():
-	name_label.text = "Max"
+
+	name_label.text = "Kaha"
 	text_label.text = lines[line_index]
 
 func _on_next_button_pressed():
+
 	if line_index < lines.size() - 1:
+
 		line_index += 1
 		show_dialogue()
+
 	else:
-		start_minigame()
+
+		if task_finished:
+			get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
+		else:
+			start_minigame()
 
 func _on_back_button_pressed():
+
 	if line_index > 0:
+
 		line_index -= 1
 		show_dialogue()
 
 func start_minigame():
+
 	dialogue_box.visible = false
-	
-func win_game():
 
-	print("Победа!")
+	$PapirArea2D2.visible = true
+	$MüllArea2D.visible = true
+	$ScoreLabel.visible = true
 
-	# здесь можно выдать предмет
-	# перейти в комнату
-	# показать диалог Макса
-func spawn_new_paper():
-
-	$Paper.position = Vector2(700, 80)
-
-	$Paper.falling = false	
-func _on_paper_scored():
+func paper_hit():
 
 	score += 1
 
-	print("Попаданий: ", score)
+	$ScoreLabel.text = "Treffer: %d/3" % score
 
 	if score >= 3:
 		win_game()
-	else:
-		spawn_new_paper()
 
+func win_game():
 
-func _on_paper_area_entered(area):
-	if area.name == "TrashCan":
-		score += 1
-		print("Попадание! ", score)
+	task_finished = true
 
-		spawn_new_paper()
+	$PapirArea2D2.visible = false
+	$MüllArea2D.visible = false
+	$ScoreLabel.visible = false
 
-		if score >= 3:
-			win_game()
-			
+	line_index = 0
+	lines = finish_lines
 
+	dialogue_box.visible = true
 
-func _on_area_entered(area):
-	print(area.name)
-
-	if area.name == "MüllArea2D":
-		paper_scored.emit()
-	print(area.name)
+	show_dialogue()

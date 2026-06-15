@@ -19,8 +19,10 @@ radius = 43.205193
 script = ExtResource("1_ktwh5")
 
 [node name="Background" type="ColorRect" parent="." unique_id=605188683]
-offset_right = 1200.0
-offset_bottom = 800.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1199.0
+offset_bottom = 799.0
 color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=1005635405]
@@ -83,6 +85,7 @@ scale = Vector2(0.19043478, 0.19807692)
 script = ExtResource("6_0n4ya")
 
 [node name="papir" type="Sprite2D" parent="PapirArea2D2" unique_id=439015840]
+position = Vector2(0.00032043457, -0.00015406933)
 texture = ExtResource("4_6q2gv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PapirArea2D2" unique_id=1997247415]
@@ -90,10 +93,12 @@ position = Vector2(-15.753104, 50.485287)
 shape = SubResource("CircleShape2D_0n4ya")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=595598349]
-offset_left = 1043.0
-offset_top = 251.00002
-offset_right = 1192.0
-offset_bottom = 389.0
+offset_left = 952.0
+offset_top = 234.0
+offset_right = 1619.9272
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 41
+text = "Treffer: 0/3"
 script = ExtResource("8_0n4ya")
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
