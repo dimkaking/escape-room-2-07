@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b75s7pdh3mgc0"]
+
+[ext_resource type="Texture2D" uid="uid://bwtnvxiehor32" path="res://половинка2.png" id="1_8lwdw"]
+
+[node name="SpaghettiHalf" type="Area2D" unique_id=1136944553]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=638153891]
+position = Vector2(543.03143, 464.5)
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("1_8lwdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332998300]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=260347425]
+position = Vector2(401, 483)
