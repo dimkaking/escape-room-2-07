@@ -89,6 +89,8 @@ func puzzle_completed():
 
 	dialogue_box.visible = true
 	
+	GameState.complete_current_task("tisch3_puzzle")
+	
 	speakers = [
 		"Traveler",
 		"Mr.Robot"

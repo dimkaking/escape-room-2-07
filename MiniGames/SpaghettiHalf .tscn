@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://b75s7pdh3mgc0"]
 
-[ext_resource type="Texture2D" uid="uid://bwtnvxiehor32" path="res://половинка2.png" id="1_8lwdw"]
+[ext_resource type="Texture2D" uid="uid://bwtnvxiehor32" path="res://MiniGames/половинка2.png" id="1_8lwdw"]
+[ext_resource type="Script" uid="uid://djoyjr5temkns" path="res://MiniGames/spaghetti_half_.gd" id="1_xdafy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lwdw"]
+size = Vector2(319, 18)
 
 [node name="SpaghettiHalf" type="Area2D" unique_id=1136944553]
+script = ExtResource("1_xdafy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=638153891]
 position = Vector2(543.03143, 464.5)
@@ -10,6 +15,8 @@ scale = Vector2(0.6883774, 0.12878802)
 texture = ExtResource("1_8lwdw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332998300]
+position = Vector2(543, 464)
+shape = SubResource("RectangleShape2D_8lwdw")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=260347425]
-position = Vector2(401, 483)
+position = Vector2(419, 470)
