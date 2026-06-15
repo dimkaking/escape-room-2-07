@@ -31,8 +31,8 @@ a = Vector2(903, -4)
 b = Vector2(904, 547)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_i2e1h"]
-a = Vector2(905, 544)
-b = Vector2(5, 544)
+a = Vector2(905, 543)
+b = Vector2(5, 543)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm08a"]
 size = Vector2(70, 165.875)
@@ -217,7 +217,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="ClickArea" type="Area2D" parent="Raum_2_07/Furniture/Tisch1/table1" unique_id=1390344399 groups=["interactable_table"]]
 script = ExtResource("5_wpxyh")
-minigame_scene_path = "res://MiniGames/minigame1.tscn"
+minigame_scene_path = "res://MiniGames/mini_game_1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tisch1/table1/ClickArea" unique_id=1770551226]
 visible = false
@@ -251,7 +251,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="ClickArea" type="Area2D" parent="Raum_2_07/Furniture/Tisch1/table2" unique_id=366421618 groups=["interactable_table"]]
 script = ExtResource("5_wpxyh")
-minigame_scene_path = "res://MiniGames/minigame1.tscn"
+minigame_scene_path = "res://MiniGames/mini_game_1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tisch1/table2/ClickArea" unique_id=323754134]
 visible = false
@@ -653,7 +653,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="HighlightArea" type="Area2D" parent="Raum_2_07/Furniture/table_highlight/table_highlight2" unique_id=1967224534]
 script = ExtResource("8_vy4s5")
-task_number = 2
+task_number = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table_highlight/table_highlight2/HighlightArea" unique_id=1807345632]
 visible = false
@@ -714,7 +714,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 
 [node name="HighlightArea" type="Area2D" parent="Raum_2_07/Furniture/table_highlight/table_highlight5" unique_id=1246840555]
 script = ExtResource("8_vy4s5")
-task_number = 5
+task_number = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table_highlight/table_highlight5/HighlightArea" unique_id=1081550953]
 visible = false
@@ -805,6 +805,7 @@ position = Vector2(307.25, 91)
 shape = SubResource("RectangleShape2D_hm31w")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Raum_2_07" unique_id=1180720086]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_qm08a")
 
 [node name="Player" parent="Raum_2_07" unique_id=402315286 instance=ExtResource("2_q2tbe")]
