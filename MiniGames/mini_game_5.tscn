@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cb2f4x0bexvbm" path="res://Character/table5/Mona.png" id="3_nxy6g"]
 [ext_resource type="Script" uid="uid://d33nrbhv4chvq" path="res://MiniGames/next_button.gd" id="4_jicsq"]
 [ext_resource type="Script" uid="uid://bkk372ihtqfb6" path="res://MiniGames/name_label.gd" id="5_jicsq"]
+[ext_resource type="Texture2D" uid="uid://byiy81dv0c73x" path="res://MiniGames/iPad.png" id="7_jicsq"]
 
 [node name="MiniGame5" type="Node2D" unique_id=1726641590]
 script = ExtResource("1_nxy6g")
@@ -72,7 +73,7 @@ text = "zurück"
 offset_left = 17.0
 offset_top = 130.0
 offset_right = 723.0
-offset_bottom = 330.0
+offset_bottom = 301.0
 
 [node name="Puzzle1" type="Label" parent="PuzzlePanel" unique_id=329456695]
 layout_mode = 0
@@ -119,6 +120,7 @@ offset_bottom = 30.0
 text = "                Rätsel 1                                         Rätsel 2                                    Rätsel 3"
 
 [node name="PIN" type="Label" parent="PuzzlePanel" unique_id=415920638]
+visible = false
 layout_mode = 0
 offset_left = 7.0
 offset_top = 161.0
@@ -127,58 +129,114 @@ offset_bottom = 184.0
 text = "(1. und 2. Stelle des PIN)			                  (3. Stelle des PIN)                        (4. Stelle des PIN)"
 
 [node name="Tablet" type="Sprite2D" parent="." unique_id=647917575]
+position = Vector2(965, 427)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_jicsq")
 
 [node name="PinLabel" type="Label" parent="Tablet" unique_id=1766923978]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -84.0
+offset_top = -394.0
+offset_right = 302.0
+offset_bottom = -245.0
+theme_override_font_sizes/font_size = 109
 
 [node name="Button1" type="Button" parent="Tablet" unique_id=1012748400]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -168.0
+offset_top = -246.0
+offset_right = -82.0
+offset_bottom = -162.0
 
 [node name="Button2" type="Button" parent="Tablet" unique_id=829539663]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -50.0
+offset_top = -250.0
+offset_right = 48.0
+offset_bottom = -158.0
 
 [node name="Button3" type="Button" parent="Tablet" unique_id=1993398285]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 82.0
+offset_top = -252.0
+offset_right = 176.0
+offset_bottom = -156.0
 
 [node name="Button4" type="Button" parent="Tablet" unique_id=1949424230]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -178.0
+offset_top = -136.0
+offset_right = -78.0
+offset_bottom = -38.0
 
 [node name="Button5" type="Button" parent="Tablet" unique_id=1438970257]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -46.0
+offset_top = -130.0
+offset_right = 48.0
+offset_bottom = -40.0
 
 [node name="Button6" type="Button" parent="Tablet" unique_id=1908397053]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 78.0
+offset_top = -140.0
+offset_right = 182.0
+offset_bottom = -38.0
 
 [node name="Button7" type="Button" parent="Tablet" unique_id=1091036928]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -174.0
+offset_top = -18.0
+offset_right = -80.0
+offset_bottom = 82.0
 
 [node name="Button8" type="Button" parent="Tablet" unique_id=804953144]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 54.0
+offset_bottom = 76.0
 
 [node name="Button9" type="Button" parent="Tablet" unique_id=611383073]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 74.0
+offset_top = -16.0
+offset_right = 184.0
+offset_bottom = 80.0
 
 [node name="Button0" type="Button" parent="Tablet" unique_id=1707887153]
-offset_right = 8.0
-offset_bottom = 8.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -50.0
+offset_top = 100.0
+offset_right = 52.0
+offset_bottom = 200.0
 
 [node name="ClearButton" type="Button" parent="Tablet" unique_id=1816589473]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 88.0
+offset_top = 318.0
+offset_right = 252.0
+offset_bottom = 392.0
+theme_override_font_sizes/font_size = 35
+text = "löschen"
 
 [node name="EnterButton" type="Button" parent="Tablet" unique_id=1245740542]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 86.0
+offset_top = 98.0
+offset_right = 190.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 84
+text = "⏎"
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Tablet/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Tablet/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Tablet/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Tablet/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Tablet/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Tablet/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Tablet/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Tablet/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Tablet/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Tablet/Button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="Tablet/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="Tablet/EnterButton" to="." method="_on_enter_button_pressed"]
