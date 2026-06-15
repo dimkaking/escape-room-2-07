@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://bik67daew8hbh"]
+
+[ext_resource type="Texture2D" uid="uid://dfm32ufr72uqb" path="res://Character/table5/Aylin.png" id="1_l1y2v"]
+[ext_resource type="Script" uid="uid://c2vjtbotrietq" path="res://MiniGames/mini_game_5.gd" id="1_nxy6g"]
+[ext_resource type="Texture2D" uid="uid://bwto0b2h0jsgh" path="res://Character/table5/Fatima.png" id="2_l8622"]
+[ext_resource type="Texture2D" uid="uid://cb2f4x0bexvbm" path="res://Character/table5/Mona.png" id="3_nxy6g"]
+[ext_resource type="Script" uid="uid://d33nrbhv4chvq" path="res://MiniGames/next_button.gd" id="4_jicsq"]
+[ext_resource type="Script" uid="uid://bkk372ihtqfb6" path="res://MiniGames/name_label.gd" id="5_jicsq"]
+
+[node name="MiniGame5" type="Node2D" unique_id=1726641590]
+script = ExtResource("1_nxy6g")
+
+[node name="Background" type="ColorRect" parent="." unique_id=253410813]
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[node name="StudentSprite1" type="Sprite2D" parent="." unique_id=1678528494]
+position = Vector2(528, 555)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_l1y2v")
+
+[node name="StudenSpritet2" type="Sprite2D" parent="." unique_id=2090041735]
+position = Vector2(319, 558)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_l8622")
+
+[node name="StudentSprite3" type="Sprite2D" parent="." unique_id=656033905]
+position = Vector2(110, 549)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_nxy6g")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=80634944]
+offset_left = 33.0
+offset_top = 621.0
+offset_right = 613.0
+offset_bottom = 752.0
+
+[node name="NameLabel" type="Label" parent="DialogueBox" unique_id=2076328084]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 65.0
+offset_bottom = 42.0
+script = ExtResource("5_jicsq")
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=1243744563]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 1.0
+offset_right = 579.0
+offset_bottom = 76.0
+
+[node name="NextButton" type="Button" parent="DialogueBox" unique_id=902425425]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 86.0
+offset_right = 572.0
+offset_bottom = 119.0
+text = "weiter"
+script = ExtResource("4_jicsq")
+
+[node name="BackButton" type="Button" parent="DialogueBox" unique_id=740624686]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 90.0
+offset_right = 71.0
+offset_bottom = 122.0
+text = "zurück"
+
+[node name="PuzzlePanel" type="Panel" parent="." unique_id=355353843]
+offset_left = 17.0
+offset_top = 130.0
+offset_right = 723.0
+offset_bottom = 330.0
+
+[node name="Puzzle1" type="Label" parent="PuzzlePanel" unique_id=329456695]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 38.0
+offset_right = 224.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 14
+text = "In manchen Monaten 
+gibt es 30 Tage, in manchen 31.
+In wie vielen Monaten 
+gibt es 28 Tage?"
+
+[node name="Puzzle2" type="Label" parent="PuzzlePanel" unique_id=1836136390]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 47.0
+offset_right = 438.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 14
+text = "Was erhält man, wenn man
+ alle Zahlen auf einer Tastatur
+miteinander multipliziert?"
+
+[node name="Puzzle3" type="Label" parent="PuzzlePanel" unique_id=2016720040]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.199
+offset_left = 6250.494
+offset_top = 45.0
+offset_right = 697.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 14
+text = "Von einem quadratischen Tisch
+wurde eine Ecke abgesägt.
+Wie viele Ecken hat der Tisch jetzt?"
+
+[node name="Rätsel" type="Label" parent="PuzzlePanel" unique_id=374622564]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 681.0
+offset_bottom = 30.0
+text = "                Rätsel 1                                         Rätsel 2                                    Rätsel 3"
+
+[node name="PIN" type="Label" parent="PuzzlePanel" unique_id=415920638]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 161.0
+offset_right = 667.0
+offset_bottom = 184.0
+text = "(1. und 2. Stelle des PIN)			                  (3. Stelle des PIN)                        (4. Stelle des PIN)"
+
+[node name="Tablet" type="Sprite2D" parent="." unique_id=647917575]
+
+[node name="PinLabel" type="Label" parent="Tablet" unique_id=1766923978]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button1" type="Button" parent="Tablet" unique_id=1012748400]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button2" type="Button" parent="Tablet" unique_id=829539663]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button3" type="Button" parent="Tablet" unique_id=1993398285]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button4" type="Button" parent="Tablet" unique_id=1949424230]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button5" type="Button" parent="Tablet" unique_id=1438970257]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button6" type="Button" parent="Tablet" unique_id=1908397053]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button7" type="Button" parent="Tablet" unique_id=1091036928]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button8" type="Button" parent="Tablet" unique_id=804953144]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button9" type="Button" parent="Tablet" unique_id=611383073]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button0" type="Button" parent="Tablet" unique_id=1707887153]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ClearButton" type="Button" parent="Tablet" unique_id=1816589473]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="EnterButton" type="Button" parent="Tablet" unique_id=1245740542]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
