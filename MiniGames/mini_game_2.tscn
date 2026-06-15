@@ -59,14 +59,6 @@ offset_bottom = 119.0
 text = "weiter"
 script = ExtResource("3_u03jf")
 
-[node name="BackButton" type="Button" parent="DialogueBox" unique_id=999558600]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 90.0
-offset_right = 71.0
-offset_bottom = 122.0
-text = "zurück"
-
 [node name="MüllArea2D" type="Area2D" parent="." unique_id=2000903447]
 position = Vector2(887.99994, 441.99997)
 scale = Vector2(0.18109669, 0.17464115)
@@ -101,7 +93,22 @@ theme_override_font_sizes/font_size = 41
 text = "Treffer: 0/3"
 script = ExtResource("8_0n4ya")
 
+[node name="ExitButton" type="Button" parent="." unique_id=1318255618]
+offset_left = 17.0
+offset_top = 757.0
+offset_right = 93.0
+offset_bottom = 789.0
+text = "beenden"
+
+[node name="BackButton" type="Button" parent="." unique_id=999558600]
+offset_left = 46.0
+offset_top = 712.0
+offset_right = 114.0
+offset_bottom = 744.0
+text = "zurück"
+
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="area_entered" from="PapirArea2D2" to="." method="_on_papir_area_2d_2_area_entered"]
 [connection signal="tree_entered" from="PapirArea2D2/papir" to="." method="_on_papir_tree_entered"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

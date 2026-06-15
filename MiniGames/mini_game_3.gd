@@ -10,6 +10,9 @@ extends Node2D
 @onready var student_sprite_1 = $StudentSprite
 @onready var student_sprite_2 = $StudentSprite2
 
+@onready var back_button = $BackButton
+@onready var exit_button = $ExitButton
+
 var speakers := [
 	"Traveler",
 	"Mr. Robot",
@@ -25,12 +28,17 @@ var lines := [
 ]
 
 var line_index := 0
+var task_finished := false
+var task_completed_saved := false
 
 
 func _ready():
 	puzzle_board.visible = true
 	pieces.visible = true
 	dialogue_box.visible = true
+
+	back_button.visible = true
+	exit_button.visible = true
 	
 	set_pieces_enabled(false)
 	show_dialogue()
@@ -39,7 +47,8 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_accept") and dialogue_box.visible:
 		next_line()
-		
+
+
 func set_pieces_enabled(value: bool):
 	for piece in pieces.get_children():
 		if "can_drag" in piece:
@@ -56,9 +65,22 @@ func next_line():
 	line_index += 1
 
 	if line_index >= lines.size():
-		dialogue_box.visible = false
-		show_puzzle()
+		if task_finished:
+			get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
+		else:
+			dialogue_box.visible = false
+			back_button.visible = false
+			show_puzzle()
 	else:
+		show_dialogue()
+
+
+func previous_line():
+	if not dialogue_box.visible:
+		return
+
+	if line_index > 0:
+		line_index -= 1
 		show_dialogue()
 
 
@@ -66,7 +88,10 @@ func show_puzzle():
 	puzzle_board.visible = true
 	pieces.visible = true
 	set_pieces_enabled(true)
+	show_both_students()
 
+
+func show_both_students():
 	student_sprite_1.modulate = Color(1, 1, 1, 1)
 	student_sprite_2.modulate = Color(1, 1, 1, 1)
 
@@ -83,17 +108,35 @@ func update_speaker_visual():
 func _on_next_button_pressed():
 	if dialogue_box.visible:
 		next_line()
-	
+
+
+func _on_back_button_pressed():
+	previous_line()
+
+
+func _on_exit_button_pressed():
+	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
+
+
 func puzzle_completed():
+	if task_completed_saved:
+		return
+
 	print("Puzzle gelöst!")
 
-	dialogue_box.visible = true
-	
+	task_completed_saved = true
+	task_finished = true
+
 	GameState.complete_current_task("tisch3_puzzle")
+
+	set_pieces_enabled(false)
+
+	dialogue_box.visible = true
+	back_button.visible = true
 	
 	speakers = [
 		"Traveler",
-		"Mr.Robot"
+		"Mr. Robot"
 	]
 	
 	lines = [
@@ -103,7 +146,3 @@ func puzzle_completed():
 	
 	line_index = 0
 	show_dialogue()
-
-
-func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
