@@ -228,9 +228,9 @@ text = "zurück"
 [node name="ExitButton" type="Button" parent="." unique_id=1520588160]
 offset_left = 15.0
 offset_top = 759.0
-offset_right = 91.0
+offset_right = 105.0
 offset_bottom = 791.0
-text = "beenden"
+text = "verlassen"
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="Tablet/Button1" to="." method="_on_button_1_pressed"]
