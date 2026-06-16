@@ -4,7 +4,17 @@ extends Node2D
 @onready var name_label = $DialogueBox/NameLabel
 @onready var text_label = $DialogueBox/TextLabel
 
-# Начальные реплики Дильшада
+@onready var left_button = $LeftButton
+@onready var right_button = $RightButton
+@onready var photo_display = $PhotoDisplay
+
+# --- НОВОЕ: Ссылка на секретную кнопку-линейку ---
+# Убедись, что кнопка на сцене называется именно так, с большой буквы: RulerButton
+@onready var ruler_button = $RulerButton
+
+# --- МАГИЯ ЭКСПОРТА ---
+@export var photos: Array[Texture2D] = []
+
 var lines := [
 	"Hallo!",
 	"Gleich beginnt der Matheunterricht, und ich habe gerade bemerkt, dass ich mein Geodreieck verloren habe.",
@@ -13,10 +23,9 @@ var lines := [
 	"Hilf mir, das Geodreieck zu finden, bevor der Unterricht beginnt, und ich werde dir garantiert dabei helfen, aus unserem Klassenzimmer zu entkommen!"
 ]
 
-# Финальные реплики после нахождения всех 5 линеек
 var finish_lines := [
 	"Großartig!",
-	"Du hast alle 5 Geodreiecke gefunden!",
+	"Du hast das Geodreieck gefunden!",
 	"Jetzt kann der Matheunterricht losgehen, ohne dass Herr Bruno meckert.",
 	"Wie versprochen, helfe ich dir jetzt beim Entkommen.",
 	"Viel Erfolg! Los geht's!"
@@ -24,22 +33,23 @@ var finish_lines := [
 
 var line_index := 0
 var is_finishing := false
-
-# Логика для 5 фотографий
-var current_stage := 0
-var max_stages := 5
+var current_view_index := 0
 
 func _ready() -> void:
 	dialogue_box.visible = true
 	
-	# Сюда в будущем добавишь скрытие узлов с картинками при старте:
-	# Например: $PhotoContainer.visible = false
+	if left_button: left_button.visible = false
+	if right_button: right_button.visible = false
+	if photo_display: photo_display.visible = false
+	
+	# --- НОВОЕ: Прячем линейку в самом начале диалога ---
+	if ruler_button: 
+		ruler_button.visible = false
 	
 	show_dialogue()
 
 func show_dialogue() -> void:
-	name_label.text = "Dil" # Имя персонажа
-	
+	name_label.text = "Dilschad"
 	if not is_finishing:
 		text_label.text = lines[line_index]
 	else:
@@ -57,7 +67,6 @@ func _on_next_button_pressed() -> void:
 			line_index += 1
 			show_dialogue()
 		else:
-			# Конец игры — переход в главный класс
 			get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
 
 func _on_back_button_pressed() -> void:
@@ -67,43 +76,58 @@ func _on_back_button_pressed() -> void:
 
 func start_task() -> void:
 	dialogue_box.visible = false
-	current_stage = 0
-	print("Начался поиск! Показываем фото №", current_stage + 1)
+	current_view_index = 0
 	
-	# КОД НА БУДУЩЕЕ:
-	# Здесь ты включишь видимость контейнера с фотографиями:
-	# $PhotoContainer.visible = true
-	# И вызовешь функцию обновления картинки, например: update_stage_ui()
+	if left_button: left_button.visible = true
+	if right_button: right_button.visible = true
+	if photo_display: photo_display.visible = true
+	
+	update_photo_view()
 
-# --- ФУНКЦИЯ ДЛЯ СЛЕДУЮЩИХ ШАГОВ ---
-# Эту функцию ты будешь вызывать каждый раз, когда игрок успешно кликнет 
-# на спрятанную линейку (Geodreieck) на текущей фотографии.
-func _on_ruler_found() -> void:
-	current_stage += 1
-	print("Линейка найдена! Переходим к фото №", current_stage + 1)
-	
-	if current_stage >= max_stages:
-		# Если успешно прошли все 5 фоток
-		finish_game()
+func _on_left_button_pressed() -> void:
+	current_view_index -= 1
+	if current_view_index < 0:
+		current_view_index = 3 
+	update_photo_view()
+
+func _on_right_button_pressed() -> void:
+	current_view_index += 1
+	if current_view_index > 3:
+		current_view_index = 0 
+	update_photo_view()
+
+# --- ФУНКЦИЯ СМЕНЫ ФОТОГРАФИЙ ---
+func update_photo_view() -> void:
+	if photos.size() >= 4 and photo_display:
+		photo_display.texture = photos[current_view_index]
+		
+		# --- НОВОЕ: Управляем видимостью линейки в зависимости от кадра ---
+		# В данном примере линейка появится ТОЛЬКО на 3-й картинке (индекс 2).
+		# Если захочешь перепрятать её на другую фотографию, просто поменяй цифру 2 ниже.
+		if ruler_button:
+			if current_view_index == 2:
+				ruler_button.visible = true
+			else:
+				ruler_button.visible = false
 	else:
-		# Если ещё остались фотографии, меняем картинку
-		# Пример на будущее: update_stage_ui()
-		pass
+		print("Внимание: Загрузи 4 картинки в Инспекторе!")
 
-func finish_game() -> void:
-	print("Все 5 линеек успешно собраны!")
+# Эту функцию вызовем при нахождении линейки
+func _on_ruler_found() -> void:
+	if left_button: left_button.visible = false
+	if right_button: right_button.visible = false
+	if photo_display: photo_display.visible = false
+	
+	# --- НОВОЕ: Прячем саму линейку после её успешного нахождения ---
+	if ruler_button: 
+		ruler_button.visible = false
+	
 	is_finishing = true
 	line_index = 0
-	
-	# КОД НА БУДУЩЕЕ:
-	# Прячем узел с фотографиями поиска, так как игра завершена
-	# $PhotoContainer.visible = false
-	
-	# Показываем финальный диалог
 	dialogue_box.visible = true
 	show_dialogue()
 
-
-
-func _on_exit_button_pressed():
-	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
+# --- ИЗМЕНЕНО: Клик по кнопке-линейке ---
+func _on_ruler_button_pressed() -> void:
+	print("Ура! Линейка найдена!")
+	_on_ruler_found() # Активируем финал и диалог победы
