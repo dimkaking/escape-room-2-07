@@ -282,7 +282,7 @@ rotation = -0.24260077
 shape = SubResource("RectangleShape2D_8lwdw")
 
 [node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half12" unique_id=82149109]
-position = Vector2(123.36441, -36.43123)
+position = Vector2(-121.42285, 36.911728)
 rotation = -0.24260077
 gizmo_extents = 0.0
 
