@@ -7,9 +7,9 @@ extends Node2D
 @onready var sentence_panel = $SentencePanel
 @onready var answer_box = $SentencePanel/AnswerBox
 @onready var word_buttons = $SentencePanel/WordButtons
+
 @onready var back_button = $BackButton
 @onready var exit_button = $ExitButton
-
 @onready var student_sprite = $StudentSprite
 
 var lines := [
@@ -32,22 +32,13 @@ var line_index := 0
 var task_finished := false
 var task_completed_saved := false
 
-var correct_order := [
-	"Pau",
-	"stört den Unterricht,",
-	"weil er",
-	"ständig redet."
-]
-
-var selected_words := []
-
 
 func _ready():
 	dialogue_box.visible = true
 	sentence_panel.visible = false
 	back_button.visible = true
 	exit_button.visible = true
-	
+
 	show_dialogue()
 
 
@@ -87,52 +78,45 @@ func start_sentence_game():
 	dialogue_box.visible = false
 	back_button.visible = false
 	sentence_panel.visible = true
-	
-	selected_words.clear()
-	update_answer_box()
 
 	for word in word_buttons.get_children():
-		word.visible = true
-		word.placed = false
-		word.set_meta("start_position", word.global_position)
+		if word.has_method("reset_word"):
+			word.reset_word()
 
 
-func add_word(word: String):
-	if selected_words.size() >= correct_order.size():
+func try_place_word(word_piece):
+	var slot = word_piece.get_node_or_null(word_piece.correct_slot_path)
+
+	if slot == null:
+		word_piece.global_position = word_piece.start_position
 		return
-	
-	selected_words.append(word)
-	update_answer_box()
+
+	var slot_rect = Rect2(
+		slot.global_position,
+		slot.size
+	)
+
+	if slot_rect.has_point(word_piece.global_position):
+		word_piece.global_position = slot.global_position + slot.size / 2
+		word_piece.placed = true
+		word_piece.can_drag = false
+		check_sentence_finished()
+	else:
+		word_piece.global_position = word_piece.start_position
 
 
-func update_answer_box():
-	for child in answer_box.get_children():
-		child.queue_free()
+func check_sentence_finished():
+	for word in word_buttons.get_children():
+		if not word.placed:
+			return
 
-	for word in selected_words:
-		var label = Label.new()
-		label.text = word
-		answer_box.add_child(label)
+	win_game()
 
 
 func _on_clear_button_pressed():
-	selected_words.clear()
-	update_answer_box()
-
 	for word in word_buttons.get_children():
-		word.visible = true
-		word.placed = false
-
-		if word.has_meta("start_position"):
-			word.global_position = word.get_meta("start_position")
-
-
-func _on_check_button_pressed():
-	if selected_words == correct_order:
-		win_game()
-	else:
-		selected_words.clear()
-		update_answer_box()
+		if word.has_method("reset_word"):
+			word.reset_word()
 
 
 func win_game():
@@ -163,13 +147,3 @@ func _on_back_button_pressed():
 
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
-	
-func try_place_word(word_piece):
-	var distance = word_piece.global_position.distance_to(answer_box.global_position)
-
-	if distance < 120:
-		add_word(word_piece.word_text)
-		word_piece.placed = true
-		word_piece.visible = false
-	else:
-		word_piece.global_position = word_piece.get_meta("start_position")

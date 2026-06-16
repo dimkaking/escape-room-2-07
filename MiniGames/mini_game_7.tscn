@@ -12,6 +12,7 @@ script = ExtResource("1_6ro7m")
 [node name="Background" type="ColorRect" parent="." unique_id=1384371506]
 offset_right = 1200.0
 offset_bottom = 800.0
+mouse_filter = 2
 color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=577770810]
@@ -24,6 +25,7 @@ offset_left = 33.0
 offset_top = 621.0
 offset_right = 613.0
 offset_bottom = 752.0
+mouse_filter = 2
 
 [node name="NameLabel" type="Label" parent="DialogueBox" unique_id=602033997]
 layout_mode = 0
@@ -52,42 +54,84 @@ script = ExtResource("3_c8037")
 [node name="SentencePanel" type="Panel" parent="." unique_id=1527057603]
 offset_left = 657.0
 offset_top = 267.0
-offset_right = 1082.0
+offset_right = 1122.0
 offset_bottom = 544.0
+mouse_filter = 2
 
-[node name="AnswerBox" type="HBoxContainer" parent="SentencePanel" unique_id=1572652508]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 14.0
-offset_right = 363.0
-offset_bottom = 156.0
+[node name="AnswerBox" type="Node2D" parent="SentencePanel" unique_id=1920693342]
+
+[node name="Slot1" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=2102484364]
+offset_right = 20.0
+offset_bottom = 25.0
+
+[node name="Slot2" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=417863506]
+offset_right = 20.0
+offset_bottom = 25.0
+
+[node name="Slot3" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=149853326]
+offset_right = 20.0
+offset_bottom = 25.0
+
+[node name="Slot4" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=2047739971]
+offset_right = 20.0
+offset_bottom = 25.0
+
+[node name="Slot5" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=1658756218]
+offset_right = 20.0
+offset_bottom = 25.0
+
+[node name="Slot6" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=50820925]
+offset_right = 20.0
+offset_bottom = 25.0
+
+[node name="Slot7" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=1101828518]
+offset_right = 20.0
+offset_bottom = 25.0
+
+[node name="Slot8" type="ColorRect" parent="SentencePanel/AnswerBox" unique_id=460819212]
+offset_left = 316.0
+offset_top = 48.0
+offset_right = 336.0
+offset_bottom = 73.0
 
 [node name="WordButtons" type="GridContainer" parent="SentencePanel" unique_id=2029287912]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 142.0
-offset_right = 331.0
-offset_bottom = 262.0
+offset_left = 124.0
+offset_top = 137.0
+offset_right = 379.0
+offset_bottom = 257.0
 
 [node name="Word1" parent="SentencePanel/WordButtons" unique_id=1766654415 instance=ExtResource("5_c8037")]
-z_index = 10
-position = Vector2(-5, 48)
-word_text = "ständig redet."
-
-[node name="Word2" parent="SentencePanel/WordButtons" unique_id=1259359678 instance=ExtResource("5_c8037")]
-z_index = 10
-position = Vector2(142, 48)
 word_text = "Pau"
+correct_slot_path = NodePath("../../AnswerBox/Slot1")
 
-[node name="Word3" parent="SentencePanel/WordButtons" unique_id=1122323122 instance=ExtResource("5_c8037")]
-z_index = 10
-position = Vector2(145, 100)
-word_text = "weil er"
+[node name="Word2" parent="SentencePanel/WordButtons" unique_id=1190895178 instance=ExtResource("5_c8037")]
+word_text = "stört"
+correct_slot_path = NodePath("../../AnswerBox/Slot2")
 
-[node name="Word4" parent="SentencePanel/WordButtons" unique_id=1175661754 instance=ExtResource("5_c8037")]
-z_index = 10
-position = Vector2(-3, 95)
-word_text = "stört den Unterricht,"
+[node name="Word3" parent="SentencePanel/WordButtons" unique_id=801282781 instance=ExtResource("5_c8037")]
+word_text = "den"
+correct_slot_path = NodePath("../../AnswerBox/Slot3")
+
+[node name="Word4" parent="SentencePanel/WordButtons" unique_id=982314011 instance=ExtResource("5_c8037")]
+word_text = "Unterricht,"
+correct_slot_path = NodePath("../../AnswerBox/Slot4")
+
+[node name="Word5" parent="SentencePanel/WordButtons" unique_id=1196016061 instance=ExtResource("5_c8037")]
+word_text = "weil"
+correct_slot_path = NodePath("../../AnswerBox/Slot5")
+
+[node name="Word6" parent="SentencePanel/WordButtons" unique_id=878080220 instance=ExtResource("5_c8037")]
+word_text = "er"
+correct_slot_path = NodePath("../../AnswerBox/Slot6")
+
+[node name="Word7" parent="SentencePanel/WordButtons" unique_id=1627241512 instance=ExtResource("5_c8037")]
+word_text = "ständig"
+correct_slot_path = NodePath("../../AnswerBox/Slot7")
+
+[node name="Word8" parent="SentencePanel/WordButtons" unique_id=181638464 instance=ExtResource("5_c8037")]
+word_text = "redet."
+correct_slot_path = NodePath("../../AnswerBox/Slot8")
 
 [node name="CheckButton" type="Button" parent="SentencePanel" unique_id=40618788]
 layout_mode = 0
