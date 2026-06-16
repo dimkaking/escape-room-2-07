@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwtnvxiehor32"
-path="res://.godot/imported/половинка2.png-04b258381aca37abbe565f269b22466b.ctex"
+uid="uid://bvdcr8mqhpvg5"
+path="res://.godot/imported/спагетти.png-04fdf2506ca6894ae2afa54dc0962afb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://половинка2.png"
-dest_files=["res://.godot/imported/половинка2.png-04b258381aca37abbe565f269b22466b.ctex"]
+source_file="res://MiniGames/спагетти.png"
+dest_files=["res://.godot/imported/спагетти.png-04fdf2506ca6894ae2afa54dc0962afb.ctex"]
 
 [params]
 

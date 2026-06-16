@@ -1,9 +1,20 @@
 [gd_scene format=3 uid="uid://xrfo4aocuxtl"]
 
+[ext_resource type="Script" uid="uid://bkv2tcx534sf7" path="res://MiniGames/mini_game_4.gd" id="1_cy6ra"]
 [ext_resource type="Texture2D" uid="uid://bbdn1kj18ndvs" path="res://Character/table4/Franco.png" id="1_dwxms"]
+[ext_resource type="Texture2D" uid="uid://bvdcr8mqhpvg5" path="res://MiniGames/спагетти.png" id="2_ggltw"]
 [ext_resource type="Texture2D" uid="uid://bhsdh3illf3bg" path="res://Character/table4/Vincenzo.png" id="2_xwbqi"]
+[ext_resource type="Script" uid="uid://djoyjr5temkns" path="res://MiniGames/spaghetti_half_.gd" id="3_nqs8a"]
+[ext_resource type="Texture2D" uid="uid://bwtnvxiehor32" path="res://MiniGames/половинка2.png" id="4_7sbl5"]
+[ext_resource type="Texture2D" uid="uid://dfmse1mnxf8xe" path="res://MiniGames/половика1.png" id="4_cy6ra"]
+[ext_resource type="Texture2D" uid="uid://co34v7nr2xlsv" path="res://MiniGames/тарелка.png" id="8_v1oq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lwdw"]
+size = Vector2(319, 18)
 
 [node name="MiniGame4" type="Node2D" unique_id=750812407]
+script = ExtResource("1_cy6ra")
+full_spaghetti_texture = ExtResource("2_ggltw")
 
 [node name="Background" type="ColorRect" parent="." unique_id=85837883]
 z_index = -1
@@ -54,6 +65,249 @@ text = "weiter
 
 [node name="SpaghettiArea" type="Area2D" parent="." unique_id=350390872]
 
-[node name="BackButton" type="Button" parent="." unique_id=1532379989]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Half1" type="Area2D" parent="SpaghettiArea" unique_id=1136944553]
+position = Vector2(275, 52)
+rotation = 0.06981317
+script = ExtResource("3_nqs8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half1" unique_id=638153891]
+rotation = 0.06981317
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_cy6ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half1" unique_id=1332998300]
+rotation = 0.06981317
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half1" unique_id=260347425]
+position = Vector2(143.398, 15.033681)
+rotation = 0.06981317
+
+[node name="Half2" type="Area2D" parent="SpaghettiArea" unique_id=1872304709]
+position = Vector2(999, 66.00003)
+rotation = 0.08028515
+script = ExtResource("3_nqs8a")
+side = "right"
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half2" unique_id=1246837445]
+rotation = 0.08028515
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_7sbl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half2" unique_id=1297738562]
+rotation = 0.08028515
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half2" unique_id=1344913507]
+position = Vector2(-126.87732, -5.8434267)
+rotation = 0.08028515
+
+[node name="Half3" type="Area2D" parent="SpaghettiArea" unique_id=146438563]
+position = Vector2(820, 393)
+rotation = -0.32463124
+script = ExtResource("3_nqs8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half3" unique_id=77741009]
+rotation = -0.32463124
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_cy6ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half3" unique_id=1025601455]
+rotation = -0.32463124
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half3" unique_id=1864324855]
+position = Vector2(135.45789, -38.8222)
+rotation = -0.32463124
+
+[node name="Half4" type="Area2D" parent="SpaghettiArea" unique_id=1364254111]
+rotation = 0.32463124
+script = ExtResource("3_nqs8a")
+side = "right"
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half4" unique_id=1254745334]
+position = Vector2(281, 129)
+rotation = 0.32463124
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_7sbl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half4" unique_id=1001826731]
+position = Vector2(278, 129)
+rotation = 0.32463124
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half4" unique_id=351299623]
+position = Vector2(161.86774, 95.35112)
+rotation = 0.32463124
+
+[node name="Half5" type="Area2D" parent="SpaghettiArea" unique_id=1749955737]
+position = Vector2(612, 338.00003)
+rotation = -0.09599311
+script = ExtResource("3_nqs8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half5" unique_id=301445301]
+rotation = -0.09599311
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_cy6ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half5" unique_id=1287827160]
+rotation = -0.09599311
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half5" unique_id=1676992633]
+position = Vector2(141.36821, -7.4849424)
+rotation = -0.09599311
+
+[node name="Half6" type="Area2D" parent="SpaghettiArea" unique_id=1615561379]
+position = Vector2(377, 142)
+rotation = -0.24260077
+script = ExtResource("3_nqs8a")
+side = "right"
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half6" unique_id=999836687]
+rotation = -0.24260077
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_7sbl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half6" unique_id=908338325]
+rotation = -0.24260077
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half6" unique_id=988142269]
+position = Vector2(-113.666985, 34.71045)
+rotation = -0.24260077
+
+[node name="Half7" type="Area2D" parent="SpaghettiArea" unique_id=2010835956]
+position = Vector2(547, 259)
+rotation = 0.08028515
+script = ExtResource("3_nqs8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half7" unique_id=1449510267]
+rotation = 0.08028515
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_cy6ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half7" unique_id=1776498094]
+rotation = 0.08028515
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half7" unique_id=698902933]
+position = Vector2(138.80428, 16.922554)
+rotation = 0.08028515
+
+[node name="Half8" type="Area2D" parent="SpaghettiArea" unique_id=2097095505]
+position = Vector2(163, 86)
+script = ExtResource("3_nqs8a")
+side = "right"
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half8" unique_id=1024408742]
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_7sbl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half8" unique_id=1201201017]
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half8" unique_id=885427736]
+position = Vector2(-123, 6)
+
+[node name="Half9" type="Area2D" parent="SpaghettiArea" unique_id=590811072]
+position = Vector2(627, 174.99998)
+rotation = -0.16231562
+script = ExtResource("3_nqs8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half9" unique_id=379140383]
+rotation = -0.16231562
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_cy6ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half9" unique_id=1748026437]
+rotation = -0.16231562
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half9" unique_id=882131063]
+position = Vector2(142.65024, -17.172886)
+rotation = -0.16231562
+
+[node name="Half10" type="Area2D" parent="SpaghettiArea" unique_id=550093824]
+script = ExtResource("3_nqs8a")
+side = "right"
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half10" unique_id=1650606486]
+position = Vector2(643.96857, 51)
+rotation = 0.32463124
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_7sbl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half10" unique_id=789545879]
+position = Vector2(643.96857, 51)
+rotation = 0.32463124
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half10" unique_id=1579034210]
+position = Vector2(524, 15)
+rotation = 0.32463124
+
+[node name="Half11" type="Area2D" parent="SpaghettiArea" unique_id=2070223203]
+position = Vector2(1014, 304)
+rotation = 0.40491638
+script = ExtResource("3_nqs8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half11" unique_id=936830318]
+rotation = 0.40491638
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_cy6ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half11" unique_id=1028912823]
+rotation = 0.40491638
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half11" unique_id=1139817688]
+position = Vector2(126.0558, 65.650116)
+rotation = 0.40491638
+gizmo_extents = 0.0
+
+[node name="Half12" type="Area2D" parent="SpaghettiArea" unique_id=1890852316]
+position = Vector2(865.99994, 173.99998)
+rotation = -0.24260077
+script = ExtResource("3_nqs8a")
+side = "right"
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaghettiArea/Half12" unique_id=701135333]
+rotation = -0.24260077
+scale = Vector2(0.6883774, 0.12878802)
+texture = ExtResource("4_7sbl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaghettiArea/Half12" unique_id=1981787208]
+rotation = -0.24260077
+shape = SubResource("RectangleShape2D_8lwdw")
+
+[node name="EndPoint" type="Marker2D" parent="SpaghettiArea/Half12" unique_id=82149109]
+position = Vector2(-121.42285, 36.911728)
+rotation = -0.24260077
+gizmo_extents = 0.0
+
+[node name="PlatePoint" type="Marker2D" parent="." unique_id=732135292]
+position = Vector2(997, 599)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=467017346]
+position = Vector2(998, 619)
+scale = Vector2(0.30322263, 0.24194333)
+texture = ExtResource("8_v1oq8")
+
+[node name="BackButton" type="Button" parent="." unique_id=387778946]
+offset_left = 60.0
+offset_top = 666.0
+offset_right = 137.0
+offset_bottom = 705.0
+text = "zurück"
+
+[node name="ExitButton" type="Button" parent="." unique_id=2065192256]
+offset_left = 18.0
+offset_top = 750.0
+offset_right = 95.0
+offset_bottom = 789.0
+text = "beenden"
+
+[connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

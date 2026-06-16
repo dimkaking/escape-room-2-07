@@ -321,5 +321,13 @@ offset_right = 137.0
 offset_bottom = 705.0
 text = "zurück"
 
+[node name="ExitButton" type="Button" parent="." unique_id=1159457354]
+offset_left = 60.0
+offset_top = 666.0
+offset_right = 137.0
+offset_bottom = 705.0
+text = "zurück"
+
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

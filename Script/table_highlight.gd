@@ -21,6 +21,7 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		print("Entered highlight ", get_parent().name, " task=", task_number, " current=", GameState.current_task)
 		player_inside = true
 		glow.visible = GameState.can_start_task(task_number)
 
@@ -29,3 +30,4 @@ func _on_body_exited(body):
 	if body.name == "Player":
 		player_inside = false
 		glow.visible = false
+		

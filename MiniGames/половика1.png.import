@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfmse1mnxf8xe"
-path="res://.godot/imported/половика1.png-23223ef11ba6e4366f53aee923eaa96b.ctex"
+path="res://.godot/imported/половика1.png-5d6880c80c058296ee1b70564f3a5f96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://половика1.png"
-dest_files=["res://.godot/imported/половика1.png-23223ef11ba6e4366f53aee923eaa96b.ctex"]
+source_file="res://MiniGames/половика1.png"
+dest_files=["res://.godot/imported/половика1.png-5d6880c80c058296ee1b70564f3a5f96.ctex"]
 
 [params]
 
