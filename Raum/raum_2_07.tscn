@@ -511,6 +511,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 position = Vector2(143, 0)
 script = ExtResource("5_wpxyh")
 task_number = 6
+minigame_scene_path = "res://MiniGames/mini_game_6.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tisch6/table11/ClickArea" unique_id=1639022074]
 visible = false

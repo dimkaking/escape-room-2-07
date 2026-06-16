@@ -8,22 +8,20 @@
 script = ExtResource("1_vcclq")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1166981600]
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1199.0
-offset_bottom = 799.0
+offset_right = 1200.0
+offset_bottom = 800.0
 color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=1170701166]
-position = Vector2(141, 530)
+position = Vector2(146, 506)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_7m15p")
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=348311922]
-offset_left = 33.0
-offset_top = 621.0
-offset_right = 613.0
-offset_bottom = 752.0
+offset_left = 27.0
+offset_top = 598.0
+offset_right = 607.0
+offset_bottom = 729.0
 
 [node name="NameLabel" type="Label" parent="DialogueBox" unique_id=2111145634]
 layout_mode = 0
@@ -83,6 +81,14 @@ theme_override_colors/font_shadow_color = Color(0.16206557, 0.1620656, 0.1620655
 theme_override_font_sizes/font_size = 29
 text = "Bitte gib deine Antwort ein:"
 
+[node name="ExitButton" type="Button" parent="." unique_id=82053552]
+offset_left = 27.0
+offset_top = 752.0
+offset_right = 107.0
+offset_bottom = 793.0
+text = "verlassen"
+
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="prüfen" to="." method="_on_prüfen_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

@@ -147,7 +147,7 @@ offset_left = 27.0
 offset_top = 752.0
 offset_right = 107.0
 offset_bottom = 793.0
-text = "zurück"
+text = "verlassen"
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="TaskPanel/CheckButton" to="." method="_on_check_button_pressed"]

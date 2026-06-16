@@ -138,3 +138,7 @@ func _on_prüfen_pressed() -> void:
 		if antwort_label:
 			antwort_label.text = "Deine Antwort ist falsch. 
 			Versuche es noch einmal!"
+
+
+func _on_exit_button_pressed():
+	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
