@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dv6cuwqkm3038"]
+
+[ext_resource type="Script" uid="uid://csyagngpbkbwy" path="res://MiniGames/word_piece.gd" id="1_ma5gd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkbed"]
+size = Vector2(130, 36)
+
+[node name="WordPiece" type="Area2D" unique_id=1766654415]
+script = ExtResource("1_ma5gd")
+
+[node name="Label" type="Label" parent="." unique_id=1425062595]
+offset_left = -65.0
+offset_top = -18.0
+offset_right = 65.0
+offset_bottom = 18.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494346736]
+shape = SubResource("RectangleShape2D_jkbed")

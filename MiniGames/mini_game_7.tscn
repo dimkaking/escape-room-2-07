@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dn1ur2bea48gv"]
+
+[ext_resource type="Texture2D" uid="uid://bjv8okus22qea" path="res://Character/table7/Pedro.png" id="1_4y0yc"]
+[ext_resource type="Script" uid="uid://3ud74k3lgyhi" path="res://MiniGames/mini_game_7.gd" id="1_6ro7m"]
+[ext_resource type="Script" uid="uid://bkk372ihtqfb6" path="res://MiniGames/name_label.gd" id="2_6ro7m"]
+[ext_resource type="Script" uid="uid://d33nrbhv4chvq" path="res://MiniGames/next_button.gd" id="3_c8037"]
+[ext_resource type="PackedScene" uid="uid://dv6cuwqkm3038" path="res://MiniGames/WordPiece.tscn" id="5_c8037"]
+
+[node name="MiniGame7" type="Node2D" unique_id=286062968]
+script = ExtResource("1_6ro7m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1384371506]
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[node name="StudentSprite" type="Sprite2D" parent="." unique_id=577770810]
+position = Vector2(128, 518)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("1_4y0yc")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=267453869]
+offset_left = 33.0
+offset_top = 621.0
+offset_right = 613.0
+offset_bottom = 752.0
+
+[node name="NameLabel" type="Label" parent="DialogueBox" unique_id=602033997]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 65.0
+offset_bottom = 42.0
+script = ExtResource("2_6ro7m")
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=2046481264]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 1.0
+offset_right = 579.0
+offset_bottom = 76.0
+
+[node name="NextButton" type="Button" parent="DialogueBox" unique_id=2087710590]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 86.0
+offset_right = 572.0
+offset_bottom = 119.0
+text = "weiter"
+script = ExtResource("3_c8037")
+
+[node name="SentencePanel" type="Panel" parent="." unique_id=1527057603]
+offset_left = 657.0
+offset_top = 267.0
+offset_right = 1082.0
+offset_bottom = 544.0
+
+[node name="AnswerBox" type="HBoxContainer" parent="SentencePanel" unique_id=1572652508]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 14.0
+offset_right = 363.0
+offset_bottom = 156.0
+
+[node name="WordButtons" type="GridContainer" parent="SentencePanel" unique_id=2029287912]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 142.0
+offset_right = 331.0
+offset_bottom = 262.0
+
+[node name="Word1" parent="SentencePanel/WordButtons" unique_id=1766654415 instance=ExtResource("5_c8037")]
+z_index = 10
+position = Vector2(-5, 48)
+word_text = "ständig redet."
+
+[node name="Word2" parent="SentencePanel/WordButtons" unique_id=1259359678 instance=ExtResource("5_c8037")]
+z_index = 10
+position = Vector2(142, 48)
+word_text = "Pau"
+
+[node name="Word3" parent="SentencePanel/WordButtons" unique_id=1122323122 instance=ExtResource("5_c8037")]
+z_index = 10
+position = Vector2(145, 100)
+word_text = "weil er"
+
+[node name="Word4" parent="SentencePanel/WordButtons" unique_id=1175661754 instance=ExtResource("5_c8037")]
+z_index = 10
+position = Vector2(-3, 95)
+word_text = "stört den Unterricht,"
+
+[node name="CheckButton" type="Button" parent="SentencePanel" unique_id=40618788]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 288.0
+offset_right = 443.0
+offset_bottom = 346.0
+
+[node name="ClearButton" type="Button" parent="SentencePanel" unique_id=1300489167]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 290.0
+offset_right = 116.0
+offset_bottom = 359.0
+
+[node name="BackButton" type="Button" parent="." unique_id=1866856648]
+offset_left = 36.0
+offset_top = 711.0
+offset_right = 104.0
+offset_bottom = 743.0
+text = "zurück"
+
+[node name="ExitButton" type="Button" parent="." unique_id=1204313552]
+offset_left = 15.0
+offset_top = 759.0
+offset_right = 91.0
+offset_bottom = 791.0
+text = "beenden"
+
+[connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="SentencePanel/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="SentencePanel/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
