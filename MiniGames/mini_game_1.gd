@@ -14,6 +14,9 @@ extends Node2D
 @onready var student_sprite_1 = $StudentSprite
 @onready var student_sprite_2 = $StudentSprite2
 
+@onready var back_button = $BackButton
+@onready var exit_button = $ExitButton
+
 var speakers := [
 	"Tacos",
 	"Buritos",
@@ -28,13 +31,31 @@ var lines := [
 	"Deine Aufgabe ist es, uns dabei zu helfen, eine IP-Adresse ausfindig zu machen."
 ]
 
+var finish_speakers := [
+	"Tacos",
+	"Buritos",
+	"Tacos",
+	"Buritos"
+]
+
+var finish_lines := [
+	"Sehr gut! Das ist richtig.",
+	"Du hast uns wirklich geholfen.",
+	"Hier, nimm diesen Stift.",
+	"Vielleicht brauchst du ihn noch bei jemand anderem."
+]
+
 var line_index := 0
 var task_finished := false
+var task_completed_saved := false
 
 
 func _ready():
 	task_panel.visible = false
 	dialogue_box.visible = true
+	back_button.visible = true
+	exit_button.visible = true
+	
 	ip_label.text = "IP-Adresse: 192.168.178.31  /24"
 	show_dialogue()
 
@@ -58,8 +79,18 @@ func next_line():
 			get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
 		else:
 			dialogue_box.visible = false
+			back_button.visible = false
 			show_task()
 	else:
+		show_dialogue()
+
+
+func previous_line():
+	if not dialogue_box.visible:
+		return
+
+	if line_index > 0:
+		line_index -= 1
 		show_dialogue()
 
 
@@ -81,9 +112,9 @@ func update_speaker_visual():
 		student_sprite_2.modulate = Color(1, 1, 1, 1)
 
 
-func _on_next_button_pressed():
-	if dialogue_box.visible:
-		next_line()
+func show_both_students():
+	student_sprite_1.modulate = Color(1, 1, 1, 1)
+	student_sprite_2.modulate = Color(1, 1, 1, 1)
 
 
 func _on_check_button_pressed():
@@ -102,34 +133,32 @@ func _on_check_button_pressed():
 		correct = false
 
 	if correct:
-		GameState.complete_current_task("tisch1_ip")
 		task_finished = true
+
+		if not task_completed_saved:
+			task_completed_saved = true
+			GameState.complete_current_task("tisch1_ip")
+
 		task_panel.visible = false
 		dialogue_box.visible = true
+		back_button.visible = true
 
-		speakers = [
-			"Tacos",
-			"Buritos",
-			"Tacos",
-			"Buritos"
-		]
-
-		lines = [
-			"Sehr gut! Das ist richtig.",
-			"Du hast uns wirklich geholfen.",
-			"Hier, nimm diesen Stift.",
-			"Vielleicht brauchst du ihn noch bei jemand anderem."
-		]
-
+		speakers = finish_speakers
+		lines = finish_lines
 		line_index = 0
 		show_dialogue()
 	else:
 		ip_label.text = "IP-Adresse: 192.168.178.31  /24 \nLeider falsch. Versuch es noch einmal."
 
 
+func _on_next_button_pressed():
+	if dialogue_box.visible:
+		next_line()
+
+
 func _on_back_button_pressed():
+	previous_line()
+
+
+func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
-	
-func show_both_students():
-	student_sprite_1.modulate = Color(1, 1, 1, 1)
-	student_sprite_2.modulate = Color(1, 1, 1, 1)

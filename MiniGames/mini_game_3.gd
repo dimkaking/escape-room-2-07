@@ -146,3 +146,5 @@ func puzzle_completed():
 	
 	line_index = 0
 	show_dialogue()
+	
+	

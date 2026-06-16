@@ -13,51 +13,51 @@ offset_bottom = 800.0
 color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=1900866494]
-position = Vector2(141, 507)
+position = Vector2(143, 487.00003)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_d44vh")
 
 [node name="StudentSprite2" type="Sprite2D" parent="." unique_id=1989254161]
-position = Vector2(313, 499)
+position = Vector2(309, 478)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_2amww")
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=1986426433]
-offset_left = 52.0
-offset_top = 599.0
-offset_right = 911.0
-offset_bottom = 767.0
+offset_left = 53.0
+offset_top = 577.0
+offset_right = 875.0
+offset_bottom = 745.0
 
 [node name="NameLabel" type="Label" parent="DialogueBox" unique_id=765789420]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 9.0
-offset_right = 218.0
-offset_bottom = 61.0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 223.0
+offset_bottom = 57.0
 
 [node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=2102238049]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.18300001
 anchor_bottom = -0.18300001
-offset_left = 403.0
-offset_top = 29.744001
-offset_right = 868.0
-offset_bottom = 106.744
+offset_left = 355.0
+offset_top = 33.744003
+offset_right = 820.0
+offset_bottom = 110.744
 
 [node name="NextButton" type="Button" parent="DialogueBox" unique_id=405815047]
 layout_mode = 0
-offset_left = 712.0
-offset_top = 126.0
-offset_right = 849.0
-offset_bottom = 161.0
+offset_left = 665.0
+offset_top = 120.0
+offset_right = 802.0
+offset_bottom = 155.0
 text = "weiter"
 
 [node name="TaskPanel" type="Panel" parent="." unique_id=398995369]
-offset_left = 627.0
-offset_top = 342.0
-offset_right = 1198.0
-offset_bottom = 579.0
+offset_left = 597.0
+offset_top = 282.0
+offset_right = 1168.0
+offset_bottom = 519.0
 
 [node name="IpLabel" type="Label" parent="TaskPanel" unique_id=2100884123]
 layout_mode = 0
@@ -136,12 +136,20 @@ offset_bottom = 224.0
 text = "prüfen"
 
 [node name="BackButton" type="Button" parent="." unique_id=894767634]
-offset_left = 68.0
-offset_top = 720.0
-offset_right = 148.0
-offset_bottom = 761.0
+offset_left = 70.0
+offset_top = 691.0
+offset_right = 150.0
+offset_bottom = 732.0
+text = "zurück"
+
+[node name="ExitButton" type="Button" parent="." unique_id=1909155626]
+offset_left = 27.0
+offset_top = 752.0
+offset_right = 107.0
+offset_bottom = 793.0
 text = "zurück"
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="TaskPanel/CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

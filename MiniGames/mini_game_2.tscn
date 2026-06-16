@@ -98,7 +98,7 @@ offset_left = 17.0
 offset_top = 757.0
 offset_right = 93.0
 offset_bottom = 789.0
-text = "beenden"
+text = "verlassen"
 
 [node name="BackButton" type="Button" parent="." unique_id=999558600]
 offset_left = 46.0
