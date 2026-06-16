@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be7wgxmapywuw" path="res://mini_game_6.gd" id="1_vcclq"]
 [ext_resource type="Texture2D" uid="uid://c2y56c6eq2ton" path="res://Character/table6/Luca.png" id="2_7m15p"]
+[ext_resource type="Texture2D" uid="uid://ca1cb7obq7q1y" path="res://MiniGames/Screenshot 2026-06-16 090117.png" id="3_7m15p"]
 
 [node name="MiniGame6" type="Node2D" unique_id=1268519705]
 script = ExtResource("1_vcclq")
@@ -14,8 +15,8 @@ offset_bottom = 799.0
 color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=1170701166]
-position = Vector2(126, 561)
-scale = Vector2(0.2, 0.2)
+position = Vector2(141, 530)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_7m15p")
 
 [node name="DialogueBox" type="Panel" parent="." unique_id=348311922]
@@ -54,5 +55,34 @@ offset_right = 71.0
 offset_bottom = 122.0
 text = "zurück"
 
+[node name="aufgabe" type="Sprite2D" parent="." unique_id=1023720196]
+position = Vector2(771.99994, 219)
+scale = Vector2(1.115, 1.115)
+texture = ExtResource("3_7m15p")
+
+[node name="prüfen" type="Button" parent="." unique_id=692758478]
+offset_left = 1008.0
+offset_top = 616.0
+offset_right = 1145.0
+offset_bottom = 729.0
+text = "prüfen"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=669181530]
+offset_left = 722.0
+offset_top = 591.0
+offset_right = 912.1207
+offset_bottom = 649.37573
+
+[node name="antwort" type="Label" parent="." unique_id=143677929]
+offset_left = 611.0
+offset_top = 433.0
+offset_right = 994.0
+offset_bottom = 516.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.16206557, 0.1620656, 0.16206557, 0)
+theme_override_font_sizes/font_size = 29
+text = "Bitte gib deine Antwort ein:"
+
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="prüfen" to="." method="_on_prüfen_pressed"]
