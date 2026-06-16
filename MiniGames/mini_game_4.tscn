@@ -295,10 +295,10 @@ scale = Vector2(0.30322263, 0.24194333)
 texture = ExtResource("8_v1oq8")
 
 [node name="BackButton" type="Button" parent="." unique_id=387778946]
-offset_left = 60.0
-offset_top = 666.0
-offset_right = 137.0
-offset_bottom = 705.0
+offset_left = 51.0
+offset_top = 663.0
+offset_right = 128.0
+offset_bottom = 702.0
 text = "zurück"
 
 [node name="ExitButton" type="Button" parent="." unique_id=2065192256]
