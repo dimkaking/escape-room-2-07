@@ -163,7 +163,7 @@ offset_right = 371.0
 offset_bottom = 254.0
 
 [node name="Word1" type="Area2D" parent="SentencePanel/WordButtons" unique_id=1766654415]
-position = Vector2(-594, 34.000015)
+position = Vector2(-334, 38.000015)
 script = ExtResource("6_llgor")
 word_text = "Pau"
 correct_slot_path = NodePath("../../AnswerBox/Slot1")
@@ -176,6 +176,7 @@ offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SentencePanel/WordButtons/Word1" unique_id=494346736]
 scale = Vector2(2, 2)
@@ -201,7 +202,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jkbed")
 
 [node name="Word3" type="Area2D" parent="SentencePanel/WordButtons" unique_id=801282781]
-position = Vector2(-344, 132)
+position = Vector2(194, 36)
 script = ExtResource("6_llgor")
 word_text = "den"
 correct_slot_path = NodePath("../../AnswerBox/Slot3")
@@ -214,13 +215,14 @@ offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SentencePanel/WordButtons/Word3" unique_id=1561613639]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jkbed")
 
 [node name="Word4" type="Area2D" parent="SentencePanel/WordButtons" unique_id=982314011]
-position = Vector2(-594, 131.99997)
+position = Vector2(-338, 129.99997)
 script = ExtResource("6_llgor")
 word_text = "Unterricht"
 correct_slot_path = NodePath("../../AnswerBox/Slot4")
@@ -233,13 +235,14 @@ offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SentencePanel/WordButtons/Word4" unique_id=1479311801]
 scale = Vector2(2.2, 2)
 shape = SubResource("RectangleShape2D_jkbed")
 
 [node name="Word5" type="Area2D" parent="SentencePanel/WordButtons" unique_id=1196016061]
-position = Vector2(-66, 134)
+position = Vector2(-576, 36)
 script = ExtResource("6_llgor")
 word_text = "weil"
 correct_slot_path = NodePath("../../AnswerBox/Slot5")
@@ -252,13 +255,14 @@ offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SentencePanel/WordButtons/Word5" unique_id=1669954160]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jkbed")
 
 [node name="Word6" type="Area2D" parent="SentencePanel/WordButtons" unique_id=878080220]
-position = Vector2(-340, 30)
+position = Vector2(204, 122)
 script = ExtResource("6_llgor")
 word_text = "er"
 correct_slot_path = NodePath("../../AnswerBox/Slot6")
@@ -271,13 +275,14 @@ offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SentencePanel/WordButtons/Word6" unique_id=1294061150]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jkbed")
 
 [node name="Word7" type="Area2D" parent="SentencePanel/WordButtons" unique_id=1627241512]
-position = Vector2(214, 132)
+position = Vector2(-566, 126)
 script = ExtResource("6_llgor")
 word_text = "ständig"
 correct_slot_path = NodePath("../../AnswerBox/Slot7")
@@ -290,13 +295,14 @@ offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SentencePanel/WordButtons/Word7" unique_id=1561357829]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jkbed")
 
 [node name="Word8" type="Area2D" parent="SentencePanel/WordButtons" unique_id=181638464]
-position = Vector2(216, 34)
+position = Vector2(-84, 124)
 script = ExtResource("6_llgor")
 word_text = "redet"
 correct_slot_path = NodePath("../../AnswerBox/Slot8")
@@ -309,6 +315,7 @@ offset_bottom = 6.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SentencePanel/WordButtons/Word8" unique_id=1117147402]
 scale = Vector2(2, 2)
