@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://c3gecthybarap" path="res://MiniGames/mini_game_1.gd" id="1_1sf78"]
 [ext_resource type="Texture2D" uid="uid://bqjn5r4tntjlk" path="res://Character/table1/TarasK.png" id="2_d44vh"]
+[ext_resource type="Texture2D" uid="uid://b54mixy843vqf" path="res://MiniGames/Бумажка .png" id="2_mbbbp"]
 [ext_resource type="Texture2D" uid="uid://dhghfjyaq437e" path="res://Character/table1/TarasS.png" id="3_2amww"]
 
 [node name="MiniGame1" type="Node2D" unique_id=1124920780]
 script = ExtResource("1_1sf78")
+reward_texture = ExtResource("2_mbbbp")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1834364296]
 offset_right = 1200.0

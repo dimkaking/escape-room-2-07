@@ -17,6 +17,8 @@ extends Node2D
 @onready var back_button = $BackButton
 @onready var exit_button = $ExitButton
 
+@export var reward_texture: Texture2D
+
 var speakers := [
 	"Tacos",
 	"Buritos",
@@ -137,7 +139,7 @@ func _on_check_button_pressed():
 
 		if not task_completed_saved:
 			task_completed_saved = true
-			GameState.complete_current_task("tisch1_ip")
+			GameState.complete_current_task("tisch1_ip", "trash_bag")
 
 		task_panel.visible = false
 		dialogue_box.visible = true

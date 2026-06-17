@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://babvwq2kpe31v"]
+
+[sub_resource type="GDScript" id="GDScript_qppb4"]
+script/source = "extends Area2D
+
+@export var item_name := \"\"
+@onready var sprite = $Sprite2D
+
+func _ready():
+	if GameState.pending_drop_texture != null:
+		sprite.texture = GameState.pending_drop_texture
+
+	body_entered.connect(_on_body_entered)
+
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+		GameState.pick_item(item_name)
+		queue_free()
+		
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vy0nv"]
+radius = 18.027756
+
+[node name="PickupItem" type="Area2D" unique_id=192180239]
+script = SubResource("GDScript_qppb4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=570636275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=530227468]
+shape = SubResource("CircleShape2D_vy0nv")

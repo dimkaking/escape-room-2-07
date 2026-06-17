@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://fren2nj1sao3"]
+
+[node name="PickupItem" type="Area2D" unique_id=336519464]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=642267559]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95091489]
