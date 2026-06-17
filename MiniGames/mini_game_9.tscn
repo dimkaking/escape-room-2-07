@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://c5q74lb51vcd3"]
+
+[ext_resource type="Script" uid="uid://xjqyywimoube" path="res://mini_game_9.gd" id="1_7asdo"]
+[ext_resource type="Texture2D" uid="uid://xqvebeecm4s1" path="res://Character/table_teacher/Doctor_Barth.png" id="2_3o3wa"]
+
+[node name="MiniGame9" type="Node2D" unique_id=1211247222]
+script = ExtResource("1_7asdo")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1597833226]
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[node name="StudentSprite" type="Sprite2D" parent="." unique_id=1670585076]
+position = Vector2(132.00002, 496.00003)
+scale = Vector2(0.242513, 0.2861328)
+texture = ExtResource("2_3o3wa")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=447443841]
+offset_left = 23.0
+offset_top = 589.0
+offset_right = 603.0
+offset_bottom = 743.0
+
+[node name="NameLabel" type="Label" parent="DialogueBox" unique_id=1842908876]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 65.0
+offset_bottom = 42.0
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueBox" unique_id=926568878]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 1.0
+offset_right = 579.0
+offset_bottom = 96.0
+
+[node name="NextButton" type="Button" parent="DialogueBox" unique_id=121997477]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 105.0
+offset_right = 573.0
+offset_bottom = 138.0
+text = "weiter"
+
+[node name="BackButton" type="Button" parent="DialogueBox" unique_id=1198150704]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 109.0
+offset_right = 71.0
+offset_bottom = 141.0
+text = "zurück"
+
+[node name="ExitButton" type="Button" parent="." unique_id=85498152]
+offset_left = 27.0
+offset_top = 752.0
+offset_right = 109.0
+offset_bottom = 793.0
+text = "verlassen"
+
+[connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
