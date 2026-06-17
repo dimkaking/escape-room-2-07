@@ -45,14 +45,6 @@ offset_right = 572.0
 offset_bottom = 119.0
 text = "weiter"
 
-[node name="BackButton" type="Button" parent="DialogueBox" unique_id=306069430]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 90.0
-offset_right = 71.0
-offset_bottom = 122.0
-text = "zurück"
-
 [node name="aufgabe" type="Sprite2D" parent="." unique_id=1023720196]
 position = Vector2(771.99994, 219)
 scale = Vector2(1.115, 1.115)
@@ -81,6 +73,13 @@ theme_override_colors/font_shadow_color = Color(0.16206557, 0.1620656, 0.1620655
 theme_override_font_sizes/font_size = 29
 text = "Bitte gib deine Antwort ein:"
 
+[node name="BackButton" type="Button" parent="." unique_id=306069430]
+offset_left = 30.0
+offset_top = 688.0
+offset_right = 98.0
+offset_bottom = 720.0
+text = "zurück"
+
 [node name="ExitButton" type="Button" parent="." unique_id=82053552]
 offset_left = 27.0
 offset_top = 752.0
@@ -89,6 +88,6 @@ offset_bottom = 793.0
 text = "verlassen"
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="prüfen" to="." method="_on_prüfen_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
