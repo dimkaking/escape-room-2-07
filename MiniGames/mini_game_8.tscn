@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c8y7cpn5bbwpt" path="res://MiniGames/mini_game_8.gd" id="1_fk8y0"]
 [ext_resource type="Texture2D" uid="uid://cgmhgj3wf0bcq" path="res://Character/table8/Dilschad.png" id="1_wlhqj"]
-[ext_resource type="Texture2D" uid="uid://c2y56c6eq2ton" path="res://Character/table6/Luca.png" id="2_ka5sv"]
-[ext_resource type="Texture2D" uid="uid://w4j7olyidqmg" path="res://fotos/5298489115294769405.jpg" id="2_sepe2"]
-[ext_resource type="Texture2D" uid="uid://crwatc73gfdy2" path="res://fotos/5298489115294769408.jpg" id="3_ka5sv"]
-[ext_resource type="Texture2D" uid="uid://cph16hpcvec3m" path="res://fotos/5298489115294769406.jpg" id="4_1ypxn"]
+[ext_resource type="Texture2D" uid="uid://dihggqnjf48l8" path="res://fotos/foto1.png" id="2_sepe2"]
+[ext_resource type="Texture2D" uid="uid://cnapf43vatx1n" path="res://fotos/foto2+geo.png" id="3_ka5sv"]
+[ext_resource type="Texture2D" uid="uid://bjxhn83a62abd" path="res://fotos/foto3.png" id="4_1ypxn"]
+[ext_resource type="Texture2D" uid="uid://b6u3us5g584ui" path="res://fotos/foto4.png" id="5_vwtnd"]
 
 [node name="MiniGame8" type="Node2D" unique_id=518662815]
 script = ExtResource("1_fk8y0")
-photos = Array[Texture2D]([ExtResource("2_ka5sv"), ExtResource("2_sepe2"), ExtResource("3_ka5sv"), ExtResource("4_1ypxn")])
+photos = Array[Texture2D]([ExtResource("2_sepe2"), ExtResource("4_1ypxn"), ExtResource("3_ka5sv"), ExtResource("5_vwtnd")])
 
 [node name="Background" type="ColorRect" parent="." unique_id=2050671894]
 offset_right = 1200.0
@@ -66,31 +66,44 @@ text = "verlassen"
 
 [node name="PhotoDisplay" type="TextureRect" parent="." unique_id=1374949467]
 offset_left = 307.0
-offset_top = 18.0
+offset_top = 16.0
 offset_right = 1107.0
-offset_bottom = 518.0
+offset_bottom = 516.0
+expand_mode = 1
+stretch_mode = 5
 
 [node name="LeftButton" type="Button" parent="." unique_id=848896371]
 offset_left = 1115.0
 offset_top = 227.0
 offset_right = 1195.0
 offset_bottom = 307.0
-text = "R"
+theme_override_font_sizes/font_size = 53
+text = "	🢩"
 
 [node name="RightButton" type="Button" parent="." unique_id=1196597000]
 offset_left = 215.0
 offset_top = 225.0
 offset_right = 295.0
 offset_bottom = 305.0
-text = "L"
+theme_override_font_sizes/font_size = 53
+text = "🢨"
 
 [node name="RulerButton" type="Button" parent="." unique_id=1648274005]
-offset_left = 345.0
-offset_top = 368.0
-offset_right = 399.0
-offset_bottom = 419.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 130.0
+offset_right = 357.0
+offset_bottom = 168.0
+
+[node name="Foto2+geo" type="Sprite2D" parent="." unique_id=1776440517]
+visible = false
+position = Vector2(707.4375, 266.00003)
+scale = Vector2(0.50496536, 0.50403225)
+texture = ExtResource("3_ka5sv")
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
 [connection signal="pressed" from="RulerButton" to="." method="_on_ruler_button_pressed"]

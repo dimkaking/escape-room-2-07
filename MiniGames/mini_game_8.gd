@@ -101,17 +101,14 @@ func update_photo_view() -> void:
 	if photos.size() >= 4 and photo_display:
 		photo_display.texture = photos[current_view_index]
 		
-		# --- НОВОЕ: Управляем видимостью линейки в зависимости от кадра ---
-		# В данном примере линейка появится ТОЛЬКО на 3-й картинке (индекс 2).
-		# Если захочешь перепрятать её на другую фотографию, просто поменяй цифру 2 ниже.
 		if ruler_button:
-			if current_view_index == 2:
+			# Теперь линейка будет появляться ТОЛЬКО на картинке под номером 2 в массиве
+			if current_view_index == 2: 
 				ruler_button.visible = true
 			else:
 				ruler_button.visible = false
 	else:
 		print("Внимание: Загрузи 4 картинки в Инспекторе!")
-
 # Эту функцию вызовем при нахождении линейки
 func _on_ruler_found() -> void:
 	if left_button: left_button.visible = false
