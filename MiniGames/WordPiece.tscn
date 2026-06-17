@@ -3,16 +3,20 @@
 [ext_resource type="Script" uid="uid://csyagngpbkbwy" path="res://MiniGames/word_piece.gd" id="1_ma5gd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkbed"]
-size = Vector2(130, 36)
+size = Vector2(94.681816, 36)
 
 [node name="WordPiece" type="Area2D" unique_id=1766654415]
 script = ExtResource("1_ma5gd")
 
 [node name="Label" type="Label" parent="." unique_id=1425062595]
-offset_left = -65.0
-offset_top = -18.0
-offset_right = 65.0
-offset_bottom = 18.0
+offset_left = -44.0
+offset_top = -22.0
+offset_right = 20.538467
+offset_bottom = 6.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494346736]
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jkbed")

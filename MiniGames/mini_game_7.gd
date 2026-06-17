@@ -7,6 +7,7 @@ extends Node2D
 @onready var sentence_panel = $SentencePanel
 @onready var answer_box = $SentencePanel/AnswerBox
 @onready var word_buttons = $SentencePanel/WordButtons
+@onready var error_label = $SentencePanel/ErrorLabel
 
 @onready var back_button = $BackButton
 @onready var exit_button = $ExitButton
@@ -34,6 +35,7 @@ var task_completed_saved := false
 
 
 func _ready():
+	error_label.visible = false
 	dialogue_box.visible = true
 	sentence_panel.visible = false
 	back_button.visible = true
@@ -79,6 +81,9 @@ func start_sentence_game():
 	back_button.visible = false
 	sentence_panel.visible = true
 
+	for slot in answer_box.get_children():
+		slot.visible = true
+
 	for word in word_buttons.get_children():
 		if word.has_method("reset_word"):
 			word.reset_word()
@@ -91,19 +96,16 @@ func try_place_word(word_piece):
 		word_piece.global_position = word_piece.start_position
 		return
 
-	var slot_rect = Rect2(
-		slot.global_position,
-		slot.size
-	)
+	var slot_rect = slot.get_global_rect()
+	slot_rect = slot_rect.grow(25)
 
-	if slot_rect.has_point(word_piece.global_position):
-		word_piece.global_position = slot.global_position + slot.size / 2
+	if slot_rect.has_point(word_piece.drop_position):
+		word_piece.global_position = slot.get_global_rect().get_center() - word_piece.get_center_offset()
 		word_piece.placed = true
 		word_piece.can_drag = false
-		check_sentence_finished()
+		slot.visible = false
 	else:
 		word_piece.global_position = word_piece.start_position
-
 
 func check_sentence_finished():
 	for word in word_buttons.get_children():
@@ -111,12 +113,6 @@ func check_sentence_finished():
 			return
 
 	win_game()
-
-
-func _on_clear_button_pressed():
-	for word in word_buttons.get_children():
-		if word.has_method("reset_word"):
-			word.reset_word()
 
 
 func win_game():
@@ -136,6 +132,21 @@ func win_game():
 	show_dialogue()
 
 
+func show_error():
+	error_label.visible = true
+	error_label.text = "Du musst den Eintrag zuerst fertigstellen!"
+
+	await get_tree().create_timer(2.0).timeout
+
+	error_label.visible = false
+
+func all_words_placed() -> bool:
+	for word in word_buttons.get_children():
+		if not word.placed:
+			return false
+
+	return true
+
 func _on_next_button_pressed():
 	if dialogue_box.visible:
 		next_line()
@@ -147,3 +158,10 @@ func _on_back_button_pressed():
 
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
+
+
+func _on_check_button_pressed():
+	if all_words_placed():
+		win_game()
+	else:
+		show_error()
