@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c8y7cpn5bbwpt" path="res://MiniGames/mini_game_8.gd" id="1_fk8y0"]
 [ext_resource type="Texture2D" uid="uid://cgmhgj3wf0bcq" path="res://Character/table8/Dilschad.png" id="1_wlhqj"]
+[ext_resource type="Texture2D" uid="uid://c2y56c6eq2ton" path="res://Character/table6/Luca.png" id="2_ka5sv"]
 [ext_resource type="Texture2D" uid="uid://w4j7olyidqmg" path="res://fotos/5298489115294769405.jpg" id="2_sepe2"]
 [ext_resource type="Texture2D" uid="uid://crwatc73gfdy2" path="res://fotos/5298489115294769408.jpg" id="3_ka5sv"]
 [ext_resource type="Texture2D" uid="uid://cph16hpcvec3m" path="res://fotos/5298489115294769406.jpg" id="4_1ypxn"]
-[ext_resource type="Texture2D" uid="uid://cteq4r075v3pe" path="res://fotos/5298489115294769410.jpg" id="5_vwtnd"]
 
 [node name="MiniGame8" type="Node2D" unique_id=518662815]
 script = ExtResource("1_fk8y0")
-photos = Array[Texture2D]([ExtResource("2_sepe2"), ExtResource("3_ka5sv"), ExtResource("4_1ypxn"), ExtResource("5_vwtnd")])
+photos = Array[Texture2D]([ExtResource("2_ka5sv"), ExtResource("2_sepe2"), ExtResource("3_ka5sv"), ExtResource("4_1ypxn")])
 
 [node name="Background" type="ColorRect" parent="." unique_id=2050671894]
 offset_right = 1200.0
@@ -65,30 +65,30 @@ offset_bottom = 793.0
 text = "verlassen"
 
 [node name="PhotoDisplay" type="TextureRect" parent="." unique_id=1374949467]
-offset_left = 557.0
-offset_top = 89.0
-offset_right = 1036.0
-offset_bottom = 376.0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 1107.0
+offset_bottom = 518.0
 
 [node name="LeftButton" type="Button" parent="." unique_id=848896371]
-offset_left = 1077.0
-offset_top = 363.0
-offset_right = 1186.0
-offset_bottom = 500.0
+offset_left = 1115.0
+offset_top = 227.0
+offset_right = 1195.0
+offset_bottom = 307.0
 text = "R"
 
 [node name="RightButton" type="Button" parent="." unique_id=1196597000]
-offset_left = 440.0
-offset_top = 342.0
-offset_right = 521.0
-offset_bottom = 453.0
+offset_left = 215.0
+offset_top = 225.0
+offset_right = 295.0
+offset_bottom = 305.0
 text = "L"
 
 [node name="RulerButton" type="Button" parent="." unique_id=1648274005]
-offset_left = 576.0
-offset_top = 263.0
-offset_right = 669.0
-offset_bottom = 360.0
+offset_left = 345.0
+offset_top = 368.0
+offset_right = 399.0
+offset_bottom = 419.0
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
