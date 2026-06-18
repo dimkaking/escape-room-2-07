@@ -49,14 +49,6 @@ offset_right = 573.0
 offset_bottom = 138.0
 text = "weiter"
 
-[node name="BackButton" type="Button" parent="DialogueBox" unique_id=1321796969]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 109.0
-offset_right = 71.0
-offset_bottom = 141.0
-text = "zurück"
-
 [node name="ExitButton" type="Button" parent="." unique_id=985749069]
 offset_left = 27.0
 offset_top = 752.0
@@ -101,9 +93,16 @@ position = Vector2(707.4375, 266.00003)
 scale = Vector2(0.50496536, 0.50403225)
 texture = ExtResource("3_ka5sv")
 
+[node name="BackButton" type="Button" parent="." unique_id=1321796969]
+offset_left = 26.0
+offset_top = 698.0
+offset_right = 94.0
+offset_bottom = 730.0
+text = "zurück"
+
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
 [connection signal="pressed" from="RulerButton" to="." method="_on_ruler_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
