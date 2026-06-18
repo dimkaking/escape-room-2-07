@@ -120,7 +120,7 @@ func win_game():
 
 	if not task_completed_saved:
 		task_completed_saved = true
-		GameState.complete_current_task("tisch7_klassenbuch")
+		GameState.complete_current_task("tisch6_angle", "notebook")
 
 	lines = finish_lines
 	line_index = 0

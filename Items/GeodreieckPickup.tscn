@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://3vtqh6drm8bg"]
 
+[ext_resource type="Texture2D" uid="uid://wc2yhhw1p8u5" path="res://Items/geodreieck.png" id="1_f4w08"]
+[ext_resource type="Script" uid="uid://vf12uex8224a" path="res://Script/pickup_item.gd" id="1_s7tip"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4w08"]
+radius = 26.239378
+
 [node name="PickupItem" type="Area2D" unique_id=142456275]
+script = ExtResource("1_s7tip")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1278251157]
+position = Vector2(5, 7)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_f4w08")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1520109761]
+position = Vector2(-1.962203, -0.015501515)
+rotation = -2.5464354
+skew = 0.58643043
+shape = SubResource("CircleShape2D_f4w08")

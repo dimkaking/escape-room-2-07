@@ -108,7 +108,7 @@ func win_game():
 
 	if not task_completed_saved:
 		task_completed_saved = true
-		GameState.complete_current_task("tisch6_angle")
+		GameState.complete_current_task("tisch6_angle", "pen")
 
 	answer_input.visible = false
 	task_image.visible = false

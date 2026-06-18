@@ -140,7 +140,7 @@ func finish_minigame():
 	task_completed_saved = true
 	task_finished = true
 
-	GameState.complete_current_task("tisch4_spaghetti")
+	GameState.complete_current_task("tisch4_spaghetti", "tablet")
 
 	dialogue_box.visible = true
 	back_button.visible = true

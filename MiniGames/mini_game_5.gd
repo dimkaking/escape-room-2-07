@@ -202,7 +202,7 @@ func win_game():
 
 	if not task_completed_saved:
 		task_completed_saved = true
-		GameState.complete_current_task("tisch5_tablet")
+		GameState.complete_current_task("tisch5_tablet", "geodreieck")
 
 	speakers = finish_speakers
 	lines = finish_lines

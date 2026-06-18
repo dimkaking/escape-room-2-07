@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://65tpjcppxpx4"
-path="res://.godot/imported/mull.png-70ffc5612d4f8f57b3984b0dae70d9d7.ctex"
+uid="uid://epnsqxyhjhir"
+path="res://.godot/imported/glue.png-256da87aac90789ec56d4c9d3b534ae6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/mull.png"
-dest_files=["res://.godot/imported/mull.png-70ffc5612d4f8f57b3984b0dae70d9d7.ctex"]
+source_file="res://Items/glue.png"
+dest_files=["res://.godot/imported/glue.png-256da87aac90789ec56d4c9d3b534ae6.ctex"]
 
 [params]
 

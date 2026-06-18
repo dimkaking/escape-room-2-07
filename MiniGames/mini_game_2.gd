@@ -97,7 +97,7 @@ func win_game():
 
 	if not task_completed_saved:
 		task_completed_saved = true
-		GameState.complete_current_task("tisch2_paper")
+		GameState.complete_current_task("tisch2_paper", "puzzle_piece")
 
 	paper.visible = false
 	trash.visible = false

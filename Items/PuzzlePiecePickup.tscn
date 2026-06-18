@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://cgubgadqcoiq"]
 
+[ext_resource type="Texture2D" uid="uid://dr2t0jgki17be" path="res://Items/puzzle_piece.png" id="1_jun4f"]
+[ext_resource type="Script" uid="uid://vf12uex8224a" path="res://Script/pickup_item.gd" id="1_v3dvw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jun4f"]
+radius = 29.0
+
 [node name="PickupItem" type="Area2D" unique_id=557698980]
+script = ExtResource("1_v3dvw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=550148919]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_jun4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1765014321]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_jun4f")

@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://bvoy2njwgxyos"]
 
-[ext_resource type="Texture2D" uid="uid://65tpjcppxpx4" path="res://Items/mull.png" id="1_xlogd"]
+[ext_resource type="Script" uid="uid://vf12uex8224a" path="res://Script/pickup_item.gd" id="1_ibtty"]
+[ext_resource type="Texture2D" uid="uid://c77pihanwco8c" path="res://Items/trash_bag.png" id="2_ibtty"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlogd"]
 radius = 19.416489
 
 [node name="PickupItem" type="Area2D" unique_id=1073934802]
+script = ExtResource("1_ibtty")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=756176268]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_xlogd")
+texture = ExtResource("2_ibtty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=33047532]
-position = Vector2(-3, 5)
+position = Vector2(-2, 3)
 shape = SubResource("CircleShape2D_xlogd")

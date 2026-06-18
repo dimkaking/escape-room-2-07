@@ -10,7 +10,8 @@
 [ext_resource type="Script" uid="uid://dfbfpqgb1k8ce" path="res://MiniGames/score_label.gd" id="8_0n4ya"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_l2l81"]
-a = Vector2(-281.6172, 0)
+a = Vector2(-215.35498, 22.904297)
+b = Vector2(-11.043945, 22.904297)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0n4ya"]
 radius = 43.205193
@@ -60,7 +61,7 @@ text = "weiter"
 script = ExtResource("3_u03jf")
 
 [node name="MüllArea2D" type="Area2D" parent="." unique_id=2000903447]
-position = Vector2(887.99994, 441.99997)
+position = Vector2(890.99994, 526)
 scale = Vector2(0.18109669, 0.17464115)
 script = ExtResource("4_a0fn5")
 

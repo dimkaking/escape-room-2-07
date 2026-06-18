@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dm7ats78pkdwv"]
+
+[ext_resource type="Texture2D" uid="uid://epnsqxyhjhir" path="res://Items/glue.png" id="1_61qon"]
+[ext_resource type="Script" uid="uid://vf12uex8224a" path="res://Script/pickup_item.gd" id="1_eieju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61qon"]
+size = Vector2(34.341156, 47.490463)
+
+[node name="PickupItem" type="Area2D" unique_id=1843970276]
+script = ExtResource("1_eieju")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597111614]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_61qon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699585033]
+position = Vector2(-2.6612291, -4.7695127)
+rotation = 0.80983275
+scale = Vector2(0.9999999, 1)
+skew = -0.19547689
+shape = SubResource("RectangleShape2D_61qon")

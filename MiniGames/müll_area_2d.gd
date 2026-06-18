@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed =300.0
+var speed =500.0
 var direction = 1
 
 func _process(delta):
@@ -9,5 +9,5 @@ func _process(delta):
 	if position.x > 1100:
 		direction = -1
 
-	if position.x < 800:
+	if position.x < 700:
 		direction = 1

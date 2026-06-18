@@ -127,7 +127,7 @@ func puzzle_completed():
 	task_completed_saved = true
 	task_finished = true
 
-	GameState.complete_current_task("tisch3_puzzle")
+	GameState.complete_current_task("tisch3_puzzle", "glue")
 
 	set_pieces_enabled(false)
 

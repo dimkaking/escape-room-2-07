@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://fren2nj1sao3"]
 
+[ext_resource type="Texture2D" uid="uid://cqenbwvsedlhh" path="res://Items/tablet.png" id="1_8thli"]
+[ext_resource type="Script" uid="uid://vf12uex8224a" path="res://Script/pickup_item.gd" id="1_wxup7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8thli"]
+size = Vector2(37.40916, 38.00879)
+
 [node name="PickupItem" type="Area2D" unique_id=336519464]
+script = ExtResource("1_wxup7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=642267559]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_8thli")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95091489]
+position = Vector2(-0.8316674, -7.6830597)
+rotation = 0.23038344
+scale = Vector2(1, 0.9999999)
+skew = 0.51312673
+shape = SubResource("RectangleShape2D_8thli")
