@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xjqyywimoube" path="res://mini_game_9.gd" id="1_7asdo"]
 [ext_resource type="Texture2D" uid="uid://xqvebeecm4s1" path="res://Character/table_teacher/Doctor_Barth.png" id="2_3o3wa"]
+[ext_resource type="Texture2D" uid="uid://rdvgg2n1prbr" path="res://MiniGames/monitor.png" id="3_3o3wa"]
 
 [node name="MiniGame9" type="Node2D" unique_id=1211247222]
 script = ExtResource("1_7asdo")
@@ -58,6 +59,18 @@ offset_top = 752.0
 offset_right = 109.0
 offset_bottom = 793.0
 text = "verlassen"
+
+[node name="monitor" type="Sprite2D" parent="." unique_id=1175443284]
+position = Vector2(709, 426)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("3_3o3wa")
+
+[node name="CodeContainer" type="VBoxContainer" parent="monitor" unique_id=1502357517]
+offset_left = -525.54736
+offset_top = -369.34302
+offset_right = 604.37964
+offset_bottom = 252.55481
+theme_override_constants/separation = 19
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]
