@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://nfp2b8f158a7" path="res://Raum/raum_2_07.gd" id="1_0regy"]
 [ext_resource type="Texture2D" uid="uid://bd4mt3xssppw1" path="res://Raum/Floor.png" id="1_qm08a"]
 [ext_resource type="Texture2D" uid="uid://b2edfwhctluho" path="res://Raum/classroom_bottom_wall_900x60 (3).png" id="2_1gs6l"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://babvwq2kpe31v" path="res://Items/PickupItem.tscn" id="2_i1l4i"]
+>>>>>>> bef4245a053777df2141ca71fc112bceb756c38c
 [ext_resource type="Texture2D" uid="uid://6vaphcm7kq0d" path="res://Raum/Wall_front.png" id="2_li45p"]
 [ext_resource type="PackedScene" uid="uid://deamc044ynb4f" path="res://Character/character_body_2d.tscn" id="2_q2tbe"]
 [ext_resource type="Texture2D" uid="uid://0dwcsyel658o" path="res://Raum/Furniture/Tisch+Stuhl.png" id="2_qm08a"]
@@ -137,6 +141,7 @@ scale = Vector2(1, 0.967647)
 texture = ExtResource("6_wo1wm")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=1532252712]
+visible = false
 shape = SubResource("SegmentShape2D_xc3s8")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=530827505]
@@ -222,6 +227,7 @@ shape = SubResource("CapsuleShape2D_li45p")
 position = Vector2(140, 2)
 script = ExtResource("5_wpxyh")
 task_number = 9
+minigame_scene_path = "res://MiniGames/mini_game_9.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/table_teacher/ClickArea" unique_id=1517040102]
 visible = false
