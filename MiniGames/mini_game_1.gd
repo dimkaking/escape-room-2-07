@@ -43,7 +43,7 @@ var finish_speakers := [
 var finish_lines := [
 	"Sehr gut! Das ist richtig.",
 	"Du hast uns wirklich geholfen.",
-	"Hier, nimm diesen Stift.",
+	"Hier, nimm diese Mülltüte.",
 	"Vielleicht brauchst du ihn noch bei jemand anderem."
 ]
 

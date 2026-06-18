@@ -26,7 +26,7 @@ var finish_lines := [
 	"Perfekt!",
 	"Endlich habe ich meinen Eintrag ins Klassenbuch bekommen.",
 	"Vielleicht höre ich jetzt endlich auf, im Unterricht die ganze Zeit zu reden.",
-	"Danke für deine Hilfe!"
+	"Danke für deine Hilfe und nimm das Blatt Papier!"
 ]
 
 var line_index := 0

@@ -25,7 +25,8 @@ var finish_lines := [
 	"Du hast das Rätsel richtig gelöst!",
 	"Jetzt verstehe ich die Aufgabe endlich.",
 	"Vielen Dank für deine Hilfe!",
-	"Ich helfe dir jetzt beim nächsten Schritt."
+	"Ich helfe dir jetzt beim nächsten Schritt.",
+	"Hier, nimm den Stift"
 ]
 
 var line_index := 0

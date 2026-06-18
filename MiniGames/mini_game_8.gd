@@ -28,6 +28,7 @@ var finish_lines := [
 	"Du hast das Geodreieck gefunden!",
 	"Jetzt kann der Matheunterricht losgehen, ohne dass Herr Bruno meckert.",
 	"Wie versprochen, helfe ich dir jetzt beim Entkommen.",
+	"Behalte diesen USB-Stick für die Flucht",
 	"Viel Erfolg! Los geht's!"
 ]
 

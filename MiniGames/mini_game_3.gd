@@ -136,12 +136,16 @@ func puzzle_completed():
 	
 	speakers = [
 		"Traveler",
+		"Mr. Robot",
+		"Traveler",
 		"Mr. Robot"
 	]
 	
 	lines = [
 		"Wow, du hast das Puzzle gelöst!",
-		"Danke! Jetzt können wir dir weiterhelfen."
+		"Danke! Jetzt können wir dir weiterhelfen.",
+		"Hier, nimm diesen Kleber.",
+		 "Der wird bestimmt jemandem nützlich sein."
 	]
 	
 	line_index = 0

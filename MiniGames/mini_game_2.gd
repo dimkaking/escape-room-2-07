@@ -21,7 +21,7 @@ var lines := [
 var finish_lines := [
 	"Danke!",
 	"Du hast mir wirklich geholfen.",
-	"Hier, nimm das. Vielleicht wird es dir noch nützlich sein."
+	"Hier, nimm dieses Puzzleteil. Vielleicht wird es dir noch nützlich sein."
 ]
 
 var line_index := 0

@@ -40,7 +40,8 @@ var finish_speakers := [
 	"Fatona",
 	"Alina",
 	"Lisa",
-	"Fatona"
+	"Fatona",
+	"Alina"
 ]
 
 var finish_lines := [
@@ -48,6 +49,7 @@ var finish_lines := [
 	"Du hast alle Rätsel richtig gelöst.",
 	"Jetzt konnten wir das Tablet entsperren.",
 	"Vielen Dank für deine Hilfe!",
+	"Hier, nimm dieses Geodreieck als Dankeschön für deine Hilfe",
 	"Viel Erfolg auf deinem weiteren Weg!"
 ]
 

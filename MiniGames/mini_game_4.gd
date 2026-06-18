@@ -147,12 +147,16 @@ func finish_minigame():
 
 	speakers = [
 		"Bartolomeo",
+		"Fisch",
+		"Bartolomeo",
 		"Fisch"
 	]
 
 	lines = [
 		"Perfetto! Du hast unsere Spaghetti gerettet!",
-		"Jetzt helfen wir dir beim nächsten Schritt."
+		"Jetzt helfen wir dir beim nächsten Schritt.",
+		"Wir haben ein Tablet, wissen aber nicht, wem es gehört.", 
+		"Behalte es, vielleicht findest du den Besitzer."
 	]
 
 	line_index = 0
