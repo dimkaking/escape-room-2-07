@@ -4,16 +4,17 @@
 [ext_resource type="Script" uid="uid://vf12uex8224a" path="res://Script/pickup_item.gd" id="1_umc7p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umc7p"]
-height = 67.69427
+radius = 6.388748
+height = 49.512054
 
 [node name="PickupItem" type="Area2D" unique_id=410145257]
 script = ExtResource("1_umc7p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1508615356]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("1_e7mvp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1216232557]
-position = Vector2(2, -10)
+position = Vector2(0.99999976, -7)
 rotation = 0.7417649
 shape = SubResource("CapsuleShape2D_umc7p")

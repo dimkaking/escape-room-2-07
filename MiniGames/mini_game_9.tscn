@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://xjqyywimoube" path="res://mini_game_9.gd" id="1_7asdo"]
 [ext_resource type="Texture2D" uid="uid://xqvebeecm4s1" path="res://Character/table_teacher/Doctor_Barth.png" id="2_3o3wa"]
 [ext_resource type="Texture2D" uid="uid://rdvgg2n1prbr" path="res://MiniGames/monitor.png" id="3_3o3wa"]
+[ext_resource type="Texture2D" uid="uid://bf681jjwglyr3" path="res://MiniGames/monitor2.png" id="4_w1eey"]
+[ext_resource type="Texture2D" uid="uid://b71ubwhacxly5" path="res://MiniGames/monitor3.png" id="5_8q17l"]
 
 [node name="MiniGame9" type="Node2D" unique_id=1211247222]
 script = ExtResource("1_7asdo")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1597833226]
-offset_right = 1200.0
-offset_bottom = 800.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 1205.0
+offset_bottom = 803.0
 color = Color(0.8117647, 0.8117647, 0.8117647, 1)
 
 [node name="StudentSprite" type="Sprite2D" parent="." unique_id=1670585076]
@@ -61,16 +65,28 @@ offset_bottom = 793.0
 text = "verlassen"
 
 [node name="monitor" type="Sprite2D" parent="." unique_id=1175443284]
-position = Vector2(709, 426)
-scale = Vector2(0.685, 0.685)
+position = Vector2(723, 394)
+scale = Vector2(0.965, 0.965)
 texture = ExtResource("3_3o3wa")
 
 [node name="CodeContainer" type="VBoxContainer" parent="monitor" unique_id=1502357517]
-offset_left = -525.54736
-offset_top = -369.34302
-offset_right = 604.37964
-offset_bottom = 252.55481
-theme_override_constants/separation = 19
+offset_left = -359.5855
+offset_top = -268.3938
+offset_right = 414.50787
+offset_bottom = 95.33682
+theme_override_constants/separation = 30
+
+[node name="monitor2" type="Sprite2D" parent="." unique_id=1002942149]
+visible = false
+position = Vector2(701.5, 396)
+scale = Vector2(0.58050025, 0.57879084)
+texture = ExtResource("4_w1eey")
+
+[node name="monitor3" type="Sprite2D" parent="." unique_id=863324218]
+visible = false
+position = Vector2(710, 719)
+scale = Vector2(0.69686407, 0.7145047)
+texture = ExtResource("5_8q17l")
 
 [connection signal="pressed" from="DialogueBox/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="DialogueBox/BackButton" to="." method="_on_back_button_pressed"]

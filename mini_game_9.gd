@@ -4,177 +4,129 @@ extends Node2D
 @onready var name_label = $DialogueBox/NameLabel
 @onready var text_label = $DialogueBox/TextLabel
 
-# Кнопки и объекты на главной сцене
-@onready var next_button = $NextButton
-@onready var back_button = $BackButton
-@onready var exit_button = $ExitButton
+@onready var next_button = $DialogueBox/NextButton
+@onready var back_button = $DialogueBox/BackButton
+@onready var exit_button = $DialogueBox/ExitButton
+
 @onready var student_sprite = $StudentSprite
 @onready var monitor = $monitor
+@onready var code_container = $monitor/CodeContainer
 
-var code_container: VBoxContainer
 var line_index := 0
-var is_finishing := false
+var task_finished := false
+var task_completed_saved := false
+
 var correct_answers := {}
 
-# --- НАЧАЛЬНЫЙ ДИАЛОГ ---
 var lines := [
 	"Ho-ho-ho!",
 	"Da sind wir uns also endlich begegnet.",
 	"Ich bin das letzte Hindernis zwischen dir und deiner Freiheit.",
 	"Ich hoffe, du hast diesen einen Gegenstand gefunden, denn ohne ihn kommst du hier nicht weiter.",
 	"Jetzt ist es Zeit für die finale Aufgabe.",
-	"Wenn du scheiterst, bleibst du für immer in diesem Klassenzimmer!",
-	"HA-HA-HA-HA!",
-	"Mach dich bereit für die schwierigste Prüfung der Welt…",
 	"Du musst ein Programm schreiben, das Hallo Welt! in C++ ausgibt."
 ]
 
-# --- ФИНАЛЬНЫЙ ДИАЛОГ ПОСЛЕ ПОБЕДЫ ---
 var finish_lines := [
 	"Was?! Das ist unmöglich!",
 	"Du hast es tatsächlich geschafft, den Code fehlerfrei zu schreiben...",
-	"Ich muss zugeben, das war eine beeindruckende Leistung.",
-	"Wie versprochen, halte ich mich an mein Wort. Du darfst gehen.",
-	"Die Freiheit wartet auf dich! Viel Erfolg!"
+	"Wie versprochen, halte ich mich an mein Wort.",
+	"Die Freiheit wartet auf dich!"
 ]
 
-func _ready() -> void:
-	# Автоматически связываем сигналы кнопок с функциями
-	if next_button and not next_button.pressed.is_connected(_on_next_button_pressed):
-		next_button.pressed.connect(_on_next_button_pressed)
-	if back_button and not back_button.pressed.is_connected(_on_back_button_pressed):
-		back_button.pressed.connect(_on_back_button_pressed)
-	if exit_button and not exit_button.pressed.is_connected(_on_exit_button_pressed):
-		exit_button.pressed.connect(_on_exit_button_pressed)
-			
-	# Настройка контейнера для кода на мониторе
-	if has_node("monitor/CodeContainer"):
-		code_container = $monitor/CodeContainer as VBoxContainer
-	elif has_node("CodeContainer"):
-		code_container = $CodeContainer as VBoxContainer
-	else:
-		code_container = VBoxContainer.new()
-		code_container.name = "CodeContainer"
-		if monitor:
-			monitor.add_child(code_container)
-			code_container.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_MINSIZE)
-			code_container.position = Vector2(110, 70) 
 
-	if dialogue_box: dialogue_box.visible = true
-	if student_sprite: student_sprite.visible = true
-	if next_button: next_button.visible = true
-	if back_button: back_button.visible = true
-	if monitor: monitor.visible = false
-	
+func _ready() -> void:
+	dialogue_box.visible = true
+	monitor.visible = false
 	show_dialogue()
 
-func show_dialogue() -> void:
-	if name_label: name_label.text = "Dr. Barth"
-	if text_label:
-		if not is_finishing:
-			text_label.text = lines[line_index]
-		else:
-			text_label.text = finish_lines[line_index]
 
-func _on_next_button_pressed() -> void:
-	if not is_finishing:
-		if line_index < lines.size() - 1:
-			line_index += 1
-			show_dialogue()
+func _input(event):
+	if event.is_action_pressed("ui_accept") and dialogue_box.visible:
+		next_line()
+
+
+func show_dialogue():
+	name_label.text = "Dr. Barth"
+	text_label.text = lines[line_index]
+
+
+func next_line():
+	line_index += 1
+
+	if line_index >= lines.size():
+		if task_finished:
+			get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
 		else:
 			start_code_game()
 	else:
-		if line_index < finish_lines.size() - 1:
-			line_index += 1
-			show_dialogue()
-		else:
-			get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
+		show_dialogue()
 
-func _on_back_button_pressed() -> void:
+
+func previous_line():
+	if not dialogue_box.visible:
+		return
+
 	if line_index > 0:
 		line_index -= 1
 		show_dialogue()
 
-func _on_exit_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
 
-func start_code_game() -> void:
-	if dialogue_box: dialogue_box.visible = false
-	if monitor: monitor.visible = true
+func start_code_game():
+	dialogue_box.visible = false
+	back_button.visible = false
+	monitor.visible = true
 	build_code_pieces()
 
-func build_code_pieces() -> void:
-	if not code_container: return
 
-	var children_list: Array = code_container.get_children()
-	for child in children_list:
+func build_code_pieces():
+	for child in code_container.get_children():
 		child.queue_free()
-		
+
 	correct_answers.clear()
-	var font_size = 20
-	
-	# Строка 1
+
+	var font_size := 32
+
 	var row1 = HBoxContainer.new()
 	row1.add_child(create_label("#", font_size))
-	row1.add_child(create_input("include", font_size))
+	row1.add_child(create_input("include", font_size, 15))
 	row1.add_child(create_label(" <", font_size))
-	row1.add_child(create_input("iostream", font_size))
+	row1.add_child(create_input("iostream", font_size, 150))
 	row1.add_child(create_label(">", font_size))
 	code_container.add_child(row1)
-	
-	# Строка 2
+
 	var row2 = HBoxContainer.new()
-	row2.add_child(create_input("int", font_size))
+	row2.add_child(create_input("int", font_size, 80))
 	row2.add_child(create_label(" ", font_size))
-	row2.add_child(create_input("main", font_size))
+	row2.add_child(create_input("main", font_size, 105))
 	row2.add_child(create_label("(){", font_size))
 	code_container.add_child(row2)
-	
-	# Строка 3
+
 	var row3 = HBoxContainer.new()
 	row3.add_child(create_label("    ", font_size))
-	row3.add_child(create_input("std", font_size))
+	row3.add_child(create_input("std", font_size, 85))
 	row3.add_child(create_label("::", font_size))
-	row3.add_child(create_input("cout", font_size))
+	row3.add_child(create_input("cout", font_size, 105))
 	row3.add_child(create_label(" << \"", font_size))
-	row3.add_child(create_input("Hallo Welt!", font_size))
+	row3.add_child(create_input("Hallo Welt!", font_size, 200))
 	row3.add_child(create_label("\";", font_size))
 	code_container.add_child(row3)
-	
-	# Строка 4
+
 	var row4 = HBoxContainer.new()
 	row4.add_child(create_label("}", font_size))
 	code_container.add_child(row4)
-	
+
 	var spacer = Control.new()
-	spacer.custom_minimum_size.y = 12
+	spacer.custom_minimum_size.y = 20
 	code_container.add_child(spacer)
-	
-	# Красивая и заметная кнопка проверки
+
 	var verify_btn = Button.new()
-	verify_btn.text = " Code verifizieren "
-	verify_btn.add_theme_font_size_override("font_size", 18)
-	verify_btn.add_theme_color_override("font_color", Color.WHITE)
-	
-	var btn_normal = StyleBoxFlat.new()
-	btn_normal.bg_color = Color(0.05, 0.25, 0.5)
-	btn_normal.border_color = Color(0.2, 0.6, 1.0)
-	btn_normal.set_border_width_all(2)
-	btn_normal.set_corner_radius_all(5)
-	btn_normal.set_content_margin_all(8)
-	
-	var btn_hover = btn_normal.duplicate() as StyleBoxFlat
-	btn_hover.bg_color = Color(0.1, 0.4, 0.7)
-	btn_hover.border_color = Color(0.4, 0.8, 1.0)
-	
-	verify_btn.add_theme_stylebox_override("normal", btn_normal)
-	verify_btn.add_theme_stylebox_override("hover", btn_hover)
-	verify_btn.add_theme_stylebox_override("focus", btn_normal)
-	
+	verify_btn.text = "Code prüfen"
+	verify_btn.add_theme_font_size_override("font_size", 28)
+	verify_btn.custom_minimum_size = Vector2(500, 55)
 	verify_btn.pressed.connect(_check_code_answers)
 	code_container.add_child(verify_btn)
 
-# --- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ГЕНЕРАЦИИ ИНТЕРФЕЙСА ---
 
 func create_label(text: String, size: int) -> Label:
 	var lbl = Label.new()
@@ -183,48 +135,90 @@ func create_label(text: String, size: int) -> Label:
 	lbl.add_theme_color_override("font_color", Color.WHITE)
 	return lbl
 
-func create_input(correct_text: String, size: int) -> LineEdit:
+
+func create_input(correct_text: String, size: int, width: int) -> LineEdit:
 	var input = LineEdit.new()
+
 	input.add_theme_font_size_override("font_size", size)
-	input.expand_to_text_length = true
+	input.custom_minimum_size = Vector2(width, 45)
 	input.alignment = HORIZONTAL_ALIGNMENT_CENTER
-	input.custom_minimum_size.x = correct_text.length() * 13 + 16
-	
+	input.expand_to_text_length = false
+
 	var style = StyleBoxFlat.new()
-	style.bg_color = Color(0, 0, 0, 0.6)
+	style.bg_color = Color(0, 0, 0, 0.65)
 	style.border_color = Color(0.2, 0.6, 1.0)
 	style.set_border_width_all(2)
-	style.set_content_margin_all(2)
-	
+	style.set_content_margin_all(4)
+
 	input.add_theme_stylebox_override("normal", style)
 	input.add_theme_stylebox_override("focus", style)
-	
+
 	correct_answers[input] = correct_text
 	return input
 
-func _check_code_answers() -> void:
-	var all_correct = true
-	
-	for input_node in correct_answers:
-		var user_text: String = input_node.text.strip_edges()
-		var right_text: String = correct_answers[input_node]
-		var current_style = input_node.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
-		
-		if user_text == right_text:
-			current_style.border_color = Color(0.2, 0.9, 0.2)
-		else:
-			current_style.border_color = Color(1.0, 0.2, 0.2)
-			all_correct = false
-			
-		input_node.add_theme_stylebox_override("normal", current_style)
-		input_node.add_theme_stylebox_override("focus", current_style)
-		
-	if all_correct:
-		_on_puzzle_solved()
 
-func _on_puzzle_solved() -> void:
-	if monitor: monitor.visible = false
-	is_finishing = true
+func normalize_answer(text: String) -> String:
+	return text.strip_edges().to_lower()
+
+
+func is_answer_correct(user_text: String, right_text: String) -> bool:
+	var user := normalize_answer(user_text)
+	var right := normalize_answer(right_text)
+
+	if right == "hallo welt!":
+		return user == "hallo welt!" or user == "hallo welt"
+
+	return user == right
+
+
+func _check_code_answers():
+	var all_correct := true
+
+	for input_node in correct_answers:
+		var user_text = input_node.text
+		var right_text = correct_answers[input_node]
+
+		var style = input_node.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
+
+		if is_answer_correct(user_text, right_text):
+			style.border_color = Color(0.2, 0.9, 0.2)
+		else:
+			style.border_color = Color(1.0, 0.2, 0.2)
+			all_correct = false
+
+		input_node.add_theme_stylebox_override("normal", style)
+		input_node.add_theme_stylebox_override("focus", style)
+
+	if all_correct:
+		win_game()
+
+
+func win_game():
+	task_finished = true
+
+	if not task_completed_saved:
+		task_completed_saved = true
+		GameState.complete_current_task("tisch9_code", "door_key")
+
+	monitor.visible = false
+
+	lines = finish_lines
 	line_index = 0
-	if dialogue_box: dialogue_box.visible = true
+
+	dialogue_box.visible = true
+	back_button.visible = true
+
 	show_dialogue()
+
+
+func _on_next_button_pressed():
+	if dialogue_box.visible:
+		next_line()
+
+
+func _on_back_button_pressed():
+	previous_line()
+
+
+func _on_exit_button_pressed():
+	get_tree().change_scene_to_file("res://Raum/raum_2_07.tscn")
