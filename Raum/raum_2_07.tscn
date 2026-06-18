@@ -137,7 +137,6 @@ scale = Vector2(1, 0.967647)
 texture = ExtResource("6_wo1wm")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=1532252712]
-visible = false
 shape = SubResource("SegmentShape2D_xc3s8")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Raum_2_07/Wall" unique_id=530827505]
@@ -298,7 +297,7 @@ minigame_scene_path = "res://MiniGames/mini_game_1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/Furniture/Tisch1/table2/ClickArea" unique_id=323754134]
 visible = false
-position = Vector2(282, 203)
+position = Vector2(245, 176)
 shape = SubResource("RectangleShape2D_wo1wm")
 
 [node name="ApproachPoint" type="Marker2D" parent="Raum_2_07/Furniture/Tisch1/table2" unique_id=1030078051]
