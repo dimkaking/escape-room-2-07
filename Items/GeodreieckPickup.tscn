@@ -7,6 +7,7 @@
 radius = 26.239378
 
 [node name="PickupItem" type="Area2D" unique_id=142456275]
+z_index = 100
 script = ExtResource("1_s7tip")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1278251157]

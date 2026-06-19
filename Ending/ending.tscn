@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://dvve0sb24akcw"]
+
+[ext_resource type="Script" uid="uid://bm2laidgefe" path="res://Ending/ending.gd" id="1_6epc7"]
+[ext_resource type="Texture2D" uid="uid://bij36cvifg5pu" path="res://Character/CATSPRITESHEET_Orange.png" id="2_0j85r"]
+[ext_resource type="AudioStream" uid="uid://cejq8fa3qcl4t" path="res://Sounds/door.mp3" id="2_bxowh"]
+[ext_resource type="Texture2D" uid="uid://ddqr8ldn51v1f" path="res://Ending/background.png" id="2_t7lcb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7lcb"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(0, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggowg"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(32, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5gap"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(64, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0ehc"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(96, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3eqr"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4f2a"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(32, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbi3i"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(64, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6v6d"]
+atlas = ExtResource("2_0j85r")
+region = Rect2(96, 384, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g11oq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7lcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggowg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5gap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0ehc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3eqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4f2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbi3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6v6d")
+}],
+"loop": true,
+"name": &"run_up",
+"speed": 10.0
+}]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n0d4e"]
+
+[node name="Ending" type="Node2D" unique_id=1589965004]
+script = ExtResource("1_6epc7")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=147200732]
+position = Vector2(600, 400)
+scale = Vector2(0.78125, 0.78125)
+texture = ExtResource("2_t7lcb")
+
+[node name="DoorClosed" type="Sprite2D" parent="." unique_id=955309278]
+
+[node name="DoorOpen" type="Sprite2D" parent="." unique_id=1580007291]
+visible = false
+
+[node name="CatSprite" type="AnimatedSprite2D" parent="." unique_id=1761477166]
+position = Vector2(606, 412)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_g11oq")
+animation = &"run_up"
+frame_progress = 0.76528066
+
+[node name="DoorOpenSound" type="AudioStreamPlayer2D" parent="." unique_id=124328650]
+stream = ExtResource("2_bxowh")
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1709370363]
+visible = false
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 0)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=485893453]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CreditsLabel" type="Label" parent="." unique_id=880327828]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MenuButton" type="Button" parent="." unique_id=118157866]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=265752753]
+libraries/ = SubResource("AnimationLibrary_n0d4e")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

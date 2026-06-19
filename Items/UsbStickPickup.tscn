@@ -7,6 +7,7 @@
 size = Vector2(23.201488, 54.114)
 
 [node name="PickupItem" type="Area2D" unique_id=1843970276]
+z_index = 100
 script = ExtResource("1_8gkk1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597111614]

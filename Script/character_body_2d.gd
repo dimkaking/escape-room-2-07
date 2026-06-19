@@ -57,9 +57,26 @@ func handle_mouse_click():
 		if clicked_area.is_in_group("interactable_table"):
 			handle_table_click(clicked_area, click_position)
 			return
+		if clicked_area.is_in_group("interactable_door"):
+			handle_door_click(clicked_area, click_position)
+			return
 
 	handle_floor_click(click_position)
 
+func handle_door_click(clicked_area, click_position: Vector2):
+	if clicked_area.can_open_door(global_position):
+		get_tree().change_scene_to_file("res://Ending/ending.tscn")
+		return
+
+	current_clicked_area = clicked_area
+
+	nav_agent.target_position = clicked_area.approach_point.global_position
+	moving = true
+	clicked_on_obstacle = true
+
+	target_arrow.global_position = click_position
+	target_arrow.visible = true
+	target_arrow.play("default")
 
 func handle_table_click(clicked_area, click_position: Vector2):
 	if clicked_area.can_start_minigame(global_position):

@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ceyuf2sse10kg" path="res://Raum/Furniture/two_tables_glow.png" id="9_a0ont"]
 [ext_resource type="Texture2D" uid="uid://cmpycl1ekfsr3" path="res://Raum/Furniture/teacher_table_glow.png" id="13_0regy"]
 [ext_resource type="PackedScene" uid="uid://csauua65ntl2y" path="res://Raum/PauseMenu.tscn" id="17_80rol"]
+[ext_resource type="Script" uid="uid://poam6hh4njpq" path="res://Raum/door_area.gd" id="17_i1l4i"]
 
 [sub_resource type="GDScript" id="GDScript_qppb4"]
 script/source = "extends Area2D
@@ -900,6 +901,13 @@ position = Vector2(710, 377)
 
 [node name="DropPoint9" type="Marker2D" parent="Raum_2_07/DropPoints" unique_id=354528347]
 position = Vector2(795, 263)
+
+[node name="DoorArea" type="Area2D" parent="Raum_2_07" unique_id=1119587289 groups=["interactable_door"]]
+script = ExtResource("17_i1l4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/DoorArea" unique_id=89036254]
+
+[node name="ApproachPoint" type="Marker2D" parent="Raum_2_07/DoorArea" unique_id=1836859901]
 
 [node name="CanvasLayer" parent="." unique_id=1943059786 instance=ExtResource("17_80rol")]
 visible = false

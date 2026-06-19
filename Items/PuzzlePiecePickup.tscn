@@ -7,6 +7,7 @@
 radius = 29.0
 
 [node name="PickupItem" type="Area2D" unique_id=557698980]
+z_index = 100
 script = ExtResource("1_v3dvw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=550148919]
