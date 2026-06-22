@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5q74lb51vcd3"]
 
-[ext_resource type="Script" uid="uid://xjqyywimoube" path="res://mini_game_9.gd" id="1_7asdo"]
+[ext_resource type="Script" uid="uid://xjqyywimoube" path="res://MiniGames/mini_game_9.gd" id="1_7asdo"]
 [ext_resource type="Texture2D" uid="uid://xqvebeecm4s1" path="res://Character/table_teacher/Doctor_Barth.png" id="2_3o3wa"]
 [ext_resource type="Texture2D" uid="uid://rdvgg2n1prbr" path="res://MiniGames/monitor.png" id="3_3o3wa"]
 [ext_resource type="Texture2D" uid="uid://bf681jjwglyr3" path="res://MiniGames/monitor2.png" id="4_w1eey"]

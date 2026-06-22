@@ -9,11 +9,14 @@ extends Node2D
 @onready var credits_label = $CreditsLabel
 @onready var menu_button = $MenuButton
 @onready var camera = $Camera2D
+@onready var escape_misic = $EscapeMusic
 
 @export var cat_start_position := Vector2(430, 680)
 @export var cat_door_position := Vector2(610, 680)
 @export var cat_exit_position := Vector2(610, 450)
 @export var camera_door_position := Vector2(610, 330)
+
+@export var menu_scene_path := "res://Menu/menu.tscn"
 
 
 func _ready():
@@ -23,15 +26,22 @@ func _ready():
 	title_label.visible = false
 	credits_label.visible = false
 	menu_button.visible = false
-
+	
 	setup_fade_rect()
 
 	camera.enabled = true
-
 	cat_sprite.global_position = cat_start_position
-	cat_sprite.play("run_up")
+	
+	if GameMusic:
+		GameMusic.stop_music()
+	
+	if MenuMusic:
+		MenuMusic.stop_music()
+	
+	escape_misic.play()
 
 	start_ending()
+
 
 
 func setup_fade_rect():
@@ -91,15 +101,21 @@ func start_ending():
 
 	await fade_tween.finished
 
-	show_credits()
+	show_ending_texts()
 
 
-func show_credits():
+func show_ending_texts():
 	title_label.z_index = 1001
 	credits_label.z_index = 1001
 	menu_button.z_index = 1001
 
 	title_label.visible = true
+	credits_label.visible = false
+	menu_button.visible = false
+
+	await get_tree().create_timer(3.0).timeout
+
+	title_label.visible = false
 	credits_label.visible = true
 
 	await get_tree().create_timer(3.0).timeout
@@ -108,4 +124,9 @@ func show_credits():
 
 
 func _on_menu_button_pressed():
-	get_tree().change_scene_to_file("res://menu.tscn")
+	escape_misic.stop()
+	
+	if MenuMusic:
+		MenuMusic.play_music()
+	
+	get_tree().change_scene_to_file(menu_scene_path)

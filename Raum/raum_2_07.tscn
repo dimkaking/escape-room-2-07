@@ -93,6 +93,9 @@ vertices = PackedVector2Array(219.10156, 393.10938, 232.09375, 542, 6, 542, 70.4
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15), PackedInt32Array(16, 17, 3, 2), PackedInt32Array(18, 19, 20, 21, 12), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(26, 27, 28, 29, 22), PackedInt32Array(4, 30, 31, 32, 0), PackedInt32Array(7, 0, 32, 33, 8), PackedInt32Array(33, 34, 35, 36, 8), PackedInt32Array(15, 37, 38, 39, 13), PackedInt32Array(29, 8, 36, 22), PackedInt32Array(11, 26, 25, 18), PackedInt32Array(12, 11, 18), PackedInt32Array(39, 12, 21, 13), PackedInt32Array(40, 41, 37, 15)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -9, 89, -9, 81, 150, 172, 150, 165, -12, 238, -12, 240, 295, 329, 296, 317, -12, 381, -12, 381, 293, 473, 294, 459, -10, 521, -10, 522, 294, 613, 295, 598, -12, 658, -12, 660, 295, 749, 297, 747, 219, 819, 221, 819, 68, 902, 67, 908, 551, 744, 551, 747, 398, 656, 398, 665, 552, 602, 552, 612, 398, 516, 398, 523, 553, 458, 553, 465, 401, 370, 401, 380, 554, 320, 554, 332, 402, 230, 403, 243, 552, -4, 552)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1l4i"]
+size = Vector2(75, 46)
+
 [node name="main" type="Node2D" unique_id=938015616]
 script = ExtResource("1_0regy")
 pickup_item_scene = SubResource("PackedScene_80rol")
@@ -903,11 +906,15 @@ position = Vector2(710, 377)
 position = Vector2(795, 263)
 
 [node name="DoorArea" type="Area2D" parent="Raum_2_07" unique_id=1119587289 groups=["interactable_door"]]
+position = Vector2(817, 560)
 script = ExtResource("17_i1l4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raum_2_07/DoorArea" unique_id=89036254]
+position = Vector2(2.5, 5)
+shape = SubResource("RectangleShape2D_i1l4i")
 
 [node name="ApproachPoint" type="Marker2D" parent="Raum_2_07/DoorArea" unique_id=1836859901]
+position = Vector2(-1, -1)
 
 [node name="CanvasLayer" parent="." unique_id=1943059786 instance=ExtResource("17_80rol")]
 visible = false

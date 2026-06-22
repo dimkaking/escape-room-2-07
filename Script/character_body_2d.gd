@@ -185,3 +185,4 @@ func idle():
 			anim.play("idle_left")
 		RIGHT:
 			anim.play("idle_right")
+			

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bqslch452n13d"]
 
-[ext_resource type="Script" uid="uid://be7wgxmapywuw" path="res://mini_game_6.gd" id="1_vcclq"]
+[ext_resource type="Script" uid="uid://be7wgxmapywuw" path="res://MiniGames/mini_game_6.gd" id="1_vcclq"]
 [ext_resource type="Texture2D" uid="uid://c2y56c6eq2ton" path="res://Character/table6/Luca.png" id="2_7m15p"]
 [ext_resource type="Texture2D" uid="uid://ca1cb7obq7q1y" path="res://MiniGames/Screenshot 2026-06-16 090117.png" id="3_7m15p"]
 
