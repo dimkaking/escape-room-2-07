@@ -37,9 +37,9 @@ texture = ExtResource("2_raj00")
 
 [node name="Spielen" type="Button" parent="." unique_id=21572017]
 modulate = Color(0.9987819, 0.9987819, 0.9987819, 1)
-offset_left = 519.0
+offset_left = 525.0
 offset_top = 237.0
-offset_right = 738.0
+offset_right = 744.0
 offset_bottom = 315.0
 theme_override_font_sizes/font_size = 51
 text = "Spielen"
@@ -53,12 +53,12 @@ theme_override_font_sizes/font_size = 50
 text = "Beenden"
 
 [node name="Label" type="Label" parent="." unique_id=1319987980]
-offset_left = 1596.0
-offset_top = 72.0
-offset_right = 1654.0
-offset_bottom = 136.0
+visible = false
+offset_left = 1167.0
+offset_top = 2.0
+offset_right = 1198.0
+offset_bottom = 56.0
 theme_override_font_sizes/font_size = 39
-text = "e"
 script = ExtResource("1_lti8b")
 
 [node name="Setting" type="Button" parent="." unique_id=1534612216]

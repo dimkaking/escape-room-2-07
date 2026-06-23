@@ -47,7 +47,7 @@ func _input(event):
 
 
 func show_dialogue():
-	name_label.text = "Dr. Barth"
+	name_label.text = "Dr. Borat"
 	text_label.text = lines[line_index]
 
 

@@ -13,6 +13,7 @@ config_version=5
 config/name="Escape Room 2-07"
 run/main_scene="uid://c5cllwra1sbp7"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [audio]
@@ -32,6 +33,7 @@ GameState="*uid://b5ksmvmr7jkk8"
 
 window/size/viewport_width=1200
 window/size/viewport_height=800
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -64,3 +66,5 @@ up={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
+textures/decals/filter=0

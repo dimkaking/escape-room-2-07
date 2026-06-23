@@ -56,7 +56,7 @@ func _input(event):
 
 
 func show_dialogue() -> void:
-	name_label.text = "Dilschad"
+	name_label.text = "Dilan"
 	text_label.text = lines[line_index]
 
 
