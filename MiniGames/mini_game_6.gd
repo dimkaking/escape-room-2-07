@@ -101,7 +101,8 @@ func _on_prüfen_pressed() -> void:
 		win_game()
 	else:
 		answer_input.text = ""
-		antwort_label.text = "Deine Antwort ist falsch. Versuch es noch einmal!"
+		antwort_label.text = "Deine Antwort ist falsch.
+		 Versuch es noch einmal!"
 
 
 func win_game():

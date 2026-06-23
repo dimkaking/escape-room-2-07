@@ -6,7 +6,7 @@ extends Node2D
 
 @onready var next_button = $DialogueBox/NextButton
 @onready var back_button = $DialogueBox/BackButton
-@onready var exit_button = $DialogueBox/ExitButton
+@onready var exit_button = $ExitButton
 
 @onready var student_sprite = $StudentSprite
 @onready var monitor = $monitor
